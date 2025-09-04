@@ -1,31 +1,138 @@
 import Link from "next/link";
-import questions from "../data/qwestion.json";
 import { BsStarFill } from "react-icons/bs";
 import { FaArrowRotateLeft } from "react-icons/fa6";
+import questionsData from "../data/qwestion.json";
+import { FaLink } from "react-icons/fa";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+
+type ContentBlock =
+  | { type: "title"; text: string }
+  | { type: "paragraph"; text: string }
+  | { type: "list"; items: string[] }
+  | { type: "links"; items: string[] }
+  | { type: "code"; code: string; language?: string }
+  | { type: string; [key: string]: unknown };
+
+type Question = {
+  id: number;
+  title: string;
+  content: ContentBlock[] | string;
+  [key: string]: unknown;
+};
 
 export default function Qwestions() {
+  const questions: Question[] = questionsData;
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] justify-items-center p-8 pb-20 gap-16 sm:p-20">
-      <h1>Вопросы</h1>
-      <Link href={"/"}>
-        <div className="flex items-center gap-2">
-          <FaArrowRotateLeft size={12}/> назад
-        </div>
-      </Link>
+    <div className="font-sans grid justify-item s-center p-8 pb-20 gap-16 sm:p-20">
+      <div className="flex justify-between">
+        <h1 className="text-4xl">Вопросы</h1>
+        <Link href={"/"}>
+          <div className="flex items-center gap-2">
+            <FaArrowRotateLeft size={12} /> назад
+          </div>
+        </Link>
+      </div>
 
       <div>
-        <h2>List</h2>
-        <ul className="gap-6">
+        <h2 className="text-2xl">Список</h2>
+        <ul className="gap-6 list-disc list-inside">
           {questions.map((item) => (
             <li
-              key={item.id}
-              className="flex gap-2 items-center cursor-pointer hover:text-red-400 hover:underline"
+              key={item.title}
+              className="flex gap-2 items-center cursor-pointer text-green-600 hover:underline"
             >
-              <BsStarFill size={9} />
-              <h3>{item.title}</h3>
+              <a href={`#${item.title}`} className="flex items-center gap-2">
+                <BsStarFill size={9} />
+                <h3>{item.title}</h3>
+              </a>
             </li>
           ))}
         </ul>
+      </div>
+      <div>
+        {questions.map((item) => (
+          <div key={item.id} id={item.title} className="my-10">
+            <h2 className="font-bold text-2xl">{item.title}</h2>
+
+            {Array.isArray(item.content) &&
+              item.content.map((block, index) => {
+                switch (block.type) {
+                  case "title":
+                    return (
+                      <h3 key={index} className="my-4 font-bold">
+                        {(block as { text: string }).text}
+                      </h3>
+                    );
+
+                  case "paragraph":
+                    return (
+                      <p key={index} className="my-4">
+                        {(block as { text: string }).text}
+                      </p>
+                    );
+
+                  case "list":
+                    if (!("items" in block) || !Array.isArray(block.items))
+                      return null;
+
+                    return (
+                      <ul
+                        key={index}
+                        className="my-4 ml-4 list-disc border px-8 py-4 rounded-xl"
+                        
+                      >
+                        {block.items.map((li, i) => (
+                          <li key={i}>{li}</li>
+                        ))}
+                      </ul>
+                    );
+
+                  case "links":
+                    if (!("items" in block) || !Array.isArray(block.items))
+                      return null;
+
+                    return (
+                      <div
+                        key={index}
+                        className="my-4 mx-4 grid-cols-1 text-green-600"
+                      >
+                        {block.items.map((link, i) => (
+                          <a
+                            key={i}
+                            href={link}
+                            target="_blank"
+                            rel="noopen noreferrer"
+                            className="flex gap-2 items-center hover:underline"
+                          >
+                            <FaLink size={10} /> {link}
+                          </a>
+                        ))}
+                      </div>
+                    );
+
+                  case "code":
+                    if (!("code" in block && typeof block.code === "string"))
+                      return null;
+                    return (
+                      <SyntaxHighlighter
+                        key={index}
+                        language="javascript"
+                        style={oneDark}
+                        showLineNumbers
+                        customStyle={{ borderRadius: "8px", padding: "12px" }}
+                      >
+                        {block.code}
+                      </SyntaxHighlighter>
+                    );
+
+                  default:
+                    return null;
+                }
+              })}
+          </div>
+        ))}
       </div>
     </div>
   );
