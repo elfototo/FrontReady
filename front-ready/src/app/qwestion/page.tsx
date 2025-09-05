@@ -5,6 +5,8 @@ import questionsData from "../data/qwestion.json";
 import { FaLink } from "react-icons/fa";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import Image from "next/image";
+import ReactMarkdown from "react-markdown";
 
 type ContentBlock =
   | { type: "title"; text: string }
@@ -12,7 +14,8 @@ type ContentBlock =
   | { type: "list"; items: string[] }
   | { type: "links"; items: string[] }
   | { type: "code"; code: string; language?: string }
-  | { type: string; [key: string]: unknown };
+  | { type: string; [key: string]: unknown }
+  | { type: "image"; url: string };
 
 type Question = {
   id: number;
@@ -36,17 +39,15 @@ export default function Qwestions() {
       </div>
 
       <div className="flex gap-6">
-
         <div className="w-[20%]">
           <h2 className="text-2xl">Список</h2>
           <ul className="list-disc list-inside">
             {questions.map((item) => (
               <li
-                key={item.title}
+                key={item.id}
                 className="flex items-center cursor-pointer text-gray-400  hover:text-black py-2 border-t-1 solid border-gray-300"
               >
                 <a href={`#${item.title}`} className="flex items-center gap-2">
-                  
                   <h3>{item.title}</h3>
                 </a>
               </li>
@@ -60,18 +61,24 @@ export default function Qwestions() {
 
               {Array.isArray(item.content) &&
                 item.content.map((block, index) => {
+                  const key = `${item.id}-${block.type}-${index}`;
+
                   switch (block.type) {
                     case "title":
                       return (
-                        <h3 key={index} className="my-4 font-bold">
-                          {(block as { text: string }).text}
+                        <h3 key={key} className="my-4 font-bold underline">
+                          <ReactMarkdown>
+                            {(block as { text: string }).text}
+                          </ReactMarkdown>
                         </h3>
                       );
 
                     case "paragraph":
                       return (
-                        <p key={index} className="my-4">
-                          {(block as { text: string }).text}
+                        <p key={key} className="my-4">
+                          <ReactMarkdown>
+                            {(block as { text: string }).text}
+                          </ReactMarkdown>
                         </p>
                       );
 
@@ -81,11 +88,13 @@ export default function Qwestions() {
 
                       return (
                         <ul
-                          key={index}
+                          key={key}
                           className="my-4 ml-4 list-disc border px-8 py-4 rounded-xl"
                         >
                           {block.items.map((li, i) => (
-                            <li key={i}>{li}</li>
+                            <li key={i}>
+                              <ReactMarkdown>{li}</ReactMarkdown>
+                            </li>
                           ))}
                         </ul>
                       );
@@ -96,7 +105,7 @@ export default function Qwestions() {
 
                       return (
                         <div
-                          key={index}
+                          key={key}
                           className="my-4 mx-4 grid-cols-1 text-green-600"
                         >
                           {block.items.map((link, i) => (
@@ -118,7 +127,7 @@ export default function Qwestions() {
                         return null;
                       return (
                         <SyntaxHighlighter
-                          key={index}
+                          key={key}
                           language="javascript"
                           style={oneDark}
                           showLineNumbers
@@ -126,6 +135,18 @@ export default function Qwestions() {
                         >
                           {block.code}
                         </SyntaxHighlighter>
+                      );
+
+                    case "image":
+                      return (
+                        <Image
+                          key={key}
+                          src={(block as { url: string }).url}
+                          alt=""
+                          width={1000}
+                          height={1000}
+                          className="w-full h-full p-5"
+                        />
                       );
 
                     default:
