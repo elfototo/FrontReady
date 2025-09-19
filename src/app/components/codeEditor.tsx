@@ -1,6 +1,7 @@
 "use client";
 import Editor, { DiffEditor, useMonaco, loader } from "@monaco-editor/react";
 import { useEffect, useState } from "react";
+import { TbWashDrycleanOff } from "react-icons/tb";
 
 type Language = "html" | "css" | "javascript" | "tsx";
 
@@ -64,17 +65,20 @@ export default function CodeEditor({
       }
 
       const saved = localStorage.getItem(`exercise-${exercise.id}`);
-      if(saved) {
+      if (saved) {
         setUserCode(JSON.parse(saved));
       } else {
-        setUserCode(initial)
+        setUserCode(initial);
       }
     }
   }, [exercise]);
 
   useEffect(() => {
     if (Object.values(userCode).some((val) => val)) {
-      localStorage.setItem(`exercise-${exercise?.id}`, JSON.stringify(userCode));
+      localStorage.setItem(
+        `exercise-${exercise?.id}`,
+        JSON.stringify(userCode)
+      );
     }
   }, [userCode, exercise]);
 
@@ -108,37 +112,68 @@ export default function CodeEditor({
 
   const file = files[fileName];
 
+  function getInitialCode(exercise: Exercise): Record<Language, string> {
+    return {
+      html: exercise.html ?? "",
+      css: exercise.css ?? "",
+      javascript: exercise.javascript ?? "",
+      tsx: exercise.tsx ?? "",
+    };
+  }
+
+  const handlerClean = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (!exercise) return;
+
+    const initial = getInitialCode(exercise);
+
+    // 1. Убираем сохранённое из localStorage
+    localStorage.removeItem(`exercise-${exercise.id}`);
+
+    // 2. Возвращаем код к исходному
+    setUserCode(initial);
+  };
+
   return (
     <>
-      <div className="flex gap-1">
-        <button
-          className="p-2 bg-gray-100 hover:bg-gray-200"
-          disabled={fileName === "script.js"}
-          onClick={() => setFileName("script.js")}
-        >
-          script.js
-        </button>
-        <button
-          className="p-2 bg-gray-100 hover:bg-gray-200"
-          disabled={fileName === "script.tsx"}
-          onClick={() => setFileName("script.tsx")}
-        >
-          script.tsx
-        </button>
-        <button
-          className="p-2 bg-gray-100 hover:bg-gray-200"
-          disabled={fileName === "style.css"}
-          onClick={() => setFileName("style.css")}
-        >
-          style.css
-        </button>
-        <button
-          className="p-2 bg-gray-100 hover:bg-gray-200"
-          disabled={fileName === "index.html"}
-          onClick={() => setFileName("index.html")}
-        >
-          index.html
-        </button>
+      <div className="flex justify-between">
+        <div className="flex gap-1">
+          <button
+            className="p-2 bg-gray-100 hover:bg-gray-200"
+            disabled={fileName === "script.js"}
+            onClick={() => setFileName("script.js")}
+          >
+            script.js
+          </button>
+          <button
+            className="p-2 bg-gray-100 hover:bg-gray-200"
+            disabled={fileName === "script.tsx"}
+            onClick={() => setFileName("script.tsx")}
+          >
+            script.tsx
+          </button>
+          <button
+            className="p-2 bg-gray-100 hover:bg-gray-200"
+            disabled={fileName === "style.css"}
+            onClick={() => setFileName("style.css")}
+          >
+            style.css
+          </button>
+          <button
+            className="p-2 bg-gray-100 hover:bg-gray-200"
+            disabled={fileName === "index.html"}
+            onClick={() => setFileName("index.html")}
+          >
+            index.html
+          </button>
+        </div>
+        <div>
+          <button
+            className="text-gray-500 cursor-pointer p-2 bg-gray-100 hover:bg-gray-200 rounded-full"
+            onClick={handlerClean}
+          >
+            <TbWashDrycleanOff />
+          </button>
+        </div>
       </div>
 
       <Editor
@@ -147,8 +182,8 @@ export default function CodeEditor({
         path={file.name}
         defaultLanguage={file.language}
         defaultValue={file.value}
-        value={userCode[activeLang]} 
-        onChange={(val: string) =>
+        value={userCode[activeLang]}
+        onChange={(val: string | undefined) =>
           setUserCode((prev) => ({ ...prev, [activeLang]: val || "" }))
         }
       />

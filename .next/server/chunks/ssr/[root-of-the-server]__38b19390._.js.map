@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 15, "column": 0}, "map": {"version":3,"sources":["file:///Users/liza/Desktop/FrontReady/src/app/page.tsx"],"sourcesContent":["import Link from \"next/link\";\nexport default function Home() {\n  return (\n    <div className=\"font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20\">\n      <h1>FrontReady</h1>\n      <div className=\"grid gap-2 w-[10rem]\">\n        <Link href={\"/qwestion\"} className=\"py-2 w-full rounded flex justify-center cursor-pointer bg-emerald-400 text-white m-auto hover:bg-emerald-600\">К вопросам</Link>\n        <Link href={\"/exercise\"} className=\"py-2 w-full rounded flex justify-center cursor-pointer bg-emerald-400 text-white m-auto hover:bg-emerald-600\">К упражнениям</Link>\n      </div>\n    </div>\n  );\n}\n"],"names":[],"mappings":";;;;;AAAA;;;AACe,SAAS;IACtB,qBACE,8OAAC;QAAI,WAAU;;0BACb,8OAAC;0BAAG;;;;;;0BACJ,8OAAC;gBAAI,WAAU;;kCACb,8OAAC,uKAAI;wBAAC,MAAM;wBAAa,WAAU;kCAA+G;;;;;;kCAClJ,8OAAC,uKAAI;wBAAC,MAAM;wBAAa,WAAU;kCAA+G;;;;;;;;;;;;;;;;;;AAI1J","debugId":null}}]
+}
