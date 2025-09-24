@@ -17,9 +17,9 @@ type Exercise = {
   note: string;
   requirements: string;
   html: string;
-  javascript: string;
+  app: string;
   css: string;
-  tsx: string;
+  index: string;
   [key: string]: unknown;
 };
 

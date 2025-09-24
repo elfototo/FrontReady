@@ -88,7 +88,7 @@ export default function Qwestions() {
                             components={{
                               code({ children }) {
                                 return (
-                                  <code className="bg-gray-100 dark:bg-gray-700 rounded text-sm p-1 font-bold">
+                                  <code className="bg-gray-100 dark:bg-gray-700 dark:text-gray-200 rounded text-sm p-1 font-bold">
                                     {children}
                                   </code>
                                 );
@@ -107,7 +107,7 @@ export default function Qwestions() {
                             components={{
                               code({ children }) {
                                 return (
-                                  <code className="bg-gray-100 dark:bg-gray-700 rounded text-sm p-1 font-bold">
+                                  <code className="bg-gray-100 dark:bg-gray-700 dark:text-gray-200 rounded text-sm p-1 font-bold">
                                     {children}
                                   </code>
                                 );
@@ -132,7 +132,7 @@ export default function Qwestions() {
                             components={{
                               code({ children }) {
                                 return (
-                                  <code className="bg-gray-100 dark:bg-gray-700 rounded text-sm p-1 font-bold">
+                                  <code className="bg-gray-100 dark:bg-gray-700 dark:text-gray-200 rounded text-sm p-1 font-bold">
                                     {children}
                                   </code>
                                 );
@@ -151,7 +151,7 @@ export default function Qwestions() {
                       return (
                         <ul
                           key={key}
-                          className="my-4 ml-4  px-8 py-4 rounded-xl bg-green-50 dark:bg-green-950"
+                          className="my-4 ml-4  px-8 py-4 rounded-xl bg-green-50 dark:bg-green-950 dark:text-gray-200"
                         >
                           {block.items.map((li, i) => (
                             <li key={i} className="flex">
@@ -163,7 +163,7 @@ export default function Qwestions() {
                                 components={{
                                   code({ children }) {
                                     return (
-                                      <code className="bg-green-200 dark:bg-green-900 rounded text-sm p-1 font-bold">
+                                      <code className="bg-green-200 dark:bg-green-900  dark:text-gray-200 rounded text-sm p-1 font-bold">
                                         {children}
                                       </code>
                                     );

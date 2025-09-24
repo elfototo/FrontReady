@@ -22,7 +22,7 @@ export default function Card({
   return (
     <div>
       <Link href={`/exercise/${id}`}>
-        <div className="border border-gray-200 p-5 flex items-center gap-5 hover:bg-gray-50">
+        <div className="border border-gray-200 p-5 flex items-center gap-5 hover:bg-gray-50 dark:hover:bg-gray-800">
           <div>
             <h2 className="font-bold text-2xl mb-5">{title}</h2>
             <p>{requirements}</p>
