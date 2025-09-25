@@ -174,7 +174,7 @@ export default function CodeEditor({
       </div>
 
       <Editor
-        height="50vh"
+        height="79vh"
         theme={theme}
         path={files[activeFile].name}
         defaultLanguage={files[activeFile].language}

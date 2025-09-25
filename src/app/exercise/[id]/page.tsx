@@ -95,7 +95,7 @@ export default function ExercisePage({
   }, [code, exercise, initialized]);
 
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center p-8 pb-20 gap-16 sm:p-20">
+    <div className="relative font-sans px-16 mt-10 h-screen">
       <div className="flex justify-between">
         <h1 className="text-4xl">{exercise?.title}</h1>
         <Link href={"/"}>
@@ -107,7 +107,7 @@ export default function ExercisePage({
 
       <div className="flex gap-5">
         {/* Условия */}
-        <div className="w-1/3">
+        <div className="w-1/4">
           <div className="flex gap-5 text-gray-400 whitespace-nowrap">
             <div className="flex items-center gap-1">
               <TbCodeCircleFilled />
@@ -127,21 +127,26 @@ export default function ExercisePage({
             {exercise?.requirements}
           </div>
         </div>
+        <div className="w-full flex gap-5 h-full">
+          <div className="w-1/2">
+            <CodeEditor
+              code={code}
+              exercise={exercise}
+              setCode={setCode}
+              onChange={(newCode) => setCode(newCode)}
+            />
+          </div>
 
+          {/* Браузер */}
+          <div className="w-1/2">
+            <Brawser code={code} setCode={setCode} />
+          </div>
+        </div>
         {/* Code Editor */}
-        <div className="w-full">
-          <CodeEditor
-            code={code}
-            exercise={exercise}
-            setCode={setCode}
-            onChange={(newCode) => setCode(newCode)}
-          />
-        </div>
+      </div>
 
-        {/* Браузер */}
-        <div className="">
-          <Brawser code={code} setCode={setCode} />
-        </div>
+      <div className="fixed bottom-0 left-0 w-full h-20 bg-gray-200 flex justify-end items-center px-16 z-10">
+        <button className="p-2 bg-white cursor-pointer rounded-xl">Проверть</button>
       </div>
     </div>
   );

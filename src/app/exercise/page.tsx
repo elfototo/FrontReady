@@ -27,7 +27,7 @@ export default function Exercises() {
   const exercises: Exercise[] = exerciseData;
 
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] min-h-screen p-8 pb-20 gap-16 sm:p-20">
+    <div className="font-sans grid grid-rows-[20px_1fr_20px] p-8 pb-20 gap-16 sm:p-20">
       <div className="flex justify-between">
         <h1 className="text-4xl">Задачи</h1>
         <Link href={"/"}>
