@@ -1,21 +1,7 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
 import * as Babel from "@babel/standalone";
-
-type Exercise = {
-  id: number;
-  theme: string;
-  title: string;
-  dificult: string;
-  time: string;
-  note: string;
-  requirements: string;
-  html: string;
-  app: string;
-  css: string;
-  index: string;
-  [key: string]: unknown;
-};
+import debounce from "lodash.debounce";
 
 export default function Brawser({
   code,
@@ -25,11 +11,9 @@ export default function Brawser({
   setCode: (code: {
     "index.html": string | undefined;
     "styles.css": string | undefined;
-    "App.tsx": string | undefined;
-    "index.tsx": string | undefined;
+    "App.js": string | undefined;
   }) => void;
 }) {
-
   function sanitizeReactCode(source: string): string {
     return (
       source
@@ -44,43 +28,33 @@ export default function Brawser({
 
   const [compiledJS, setCompiledJS] = useState("");
 
-  useEffect(() => {
-    if (code["App.tsx"]) {
-      try {
-        const sanitized = sanitizeReactCode(code["App.tsx"]);
-        const result = Babel.transform(sanitized, {
-          filename: "file.tsx",
-          presets: ["react", "typescript"],
-        }).code;
-        setCompiledJS(result || "");
-      } catch (err) {
-        console.error("Ошибка компиляции TSX:", err);
-        setCompiledJS("");
-      }
-    } else {
-      setCompiledJS("");
-    }
-  }, [code, setCompiledJS]);
+  const run = useMemo(
+    () =>
+      debounce(() => {
+        try {
+          if (code["App.js"]) {
+            const sanitized = sanitizeReactCode(code["App.js"]);
+            const result = Babel.transform(sanitized, {
+              filename: "file.js",
+              presets: ["react", "env"],
+            }).code;
+            setCompiledJS(result || "");
+          }
+        } catch (err) {
+          console.error("Ошибка компиляции TSX:", err);
+          setCompiledJS("");
+        }
+      }, 300),
+    [code]
+  );
 
-  const [compiledTSX, setCompiledTSX] = useState("");
-
   useEffect(() => {
-    if (code["index.tsx"]) {
-      try {
-        // Транспилируем TSX с React и TypeScript в JS
-        const result = Babel.transform(code["index.tsx"], {
-          filename: "file.tsx",
-          presets: ["react", "typescript"],
-        }).code;
-        setCompiledTSX(result || "");
-      } catch (err) {
-        console.error("Ошибка компиляции TSX:", err);
-        setCompiledTSX("");
-      }
-    } else {
-      setCompiledTSX("");
-    }
-  }, [code]);
+    run(); // используем
+
+    return () => {
+      run.cancel(); // чистим при размонтировании
+    };
+  }, [run]);
 
   const srcDoc = useMemo(() => {
     return `
@@ -111,7 +85,6 @@ export default function Brawser({
       </html>
     `;
   }, [code, compiledJS]);
-
 
   return (
     <iframe

@@ -10,8 +10,6 @@ import { TbCodeCircleFilled } from "react-icons/tb";
 import CodeEditor from "../../components/codeEditor";
 import Brawser from "../../components/brawser";
 
-type Language = "index.html" | "styles.css" | "App.tsx" | "index.tsx";
-
 type Exercise = {
   id: number;
   theme: string;
@@ -39,16 +37,14 @@ export default function ExercisePage({
   const [code, setCode] = useState({
     "index.html": exercise?.html || undefined,
     "styles.css": exercise?.css || undefined,
-    "App.tsx": exercise?.app || undefined,
-    "index.tsx": exercise?.index || undefined,
+    "App.js": exercise?.app || undefined,
   });
 
   useEffect(() => {
     setCode({
       "index.html": exercise?.html || undefined,
       "styles.css": exercise?.css || undefined,
-      "App.tsx": exercise?.app || undefined,
-      "index.tsx": exercise?.index || undefined,
+      "App.js": exercise?.app || undefined,
     });
   }, [exercise]);
 
@@ -79,8 +75,7 @@ export default function ExercisePage({
       const initial = {
         "index.html": exercise.html ?? "",
         "styles.css": exercise.css ?? "",
-        "App.tsx": exercise.app ?? "",
-        "index.tsx": exercise.index ?? "",
+        "App.js": exercise.app ?? "",
       };
 
       setCode(initial);

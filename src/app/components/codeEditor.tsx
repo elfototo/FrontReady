@@ -10,6 +10,7 @@ import solarizedLight from "monaco-themes/themes/Solarized-light.json";
 import cobalt from "monaco-themes/themes/Cobalt.json";
 import tomorrowNight from "monaco-themes/themes/Tomorrow-Night.json";
 import type { editor } from "monaco-editor";
+import * as monaco from "monaco-editor";
 
 const themes: Record<string, editor.IStandaloneThemeData> = {
   github: github as editor.IStandaloneThemeData,
@@ -21,7 +22,7 @@ const themes: Record<string, editor.IStandaloneThemeData> = {
   "tomorrow-night": tomorrowNight as editor.IStandaloneThemeData,
 };
 
-type Language = "index.html" | "styles.css" | "App.tsx" | "index.tsx";
+type Language = "index.html" | "styles.css" | "App.js";
 
 type Exercise = {
   id: number;
@@ -41,35 +42,24 @@ type Exercise = {
 export default function CodeEditor({
   code,
   exercise,
-  // jsValue,
-  // tsxValue,
-  // htmlValue,
-  // cssValue,
   setCode,
   onChange,
 }: {
   code: { [key: string]: string | undefined };
   exercise: Exercise | undefined;
-  // jsValue: string | undefined;
-  // tsxValue: string | undefined;
-  // htmlValue: string | undefined;
-  // cssValue: string | undefined;
   setCode: (code: {
     "index.html": string | undefined;
     "styles.css": string | undefined;
-    "App.tsx": string | undefined;
-    "index.tsx": string | undefined;
+    "App.js": string | undefined;
   }) => void;
   onChange: (code: {
     "index.html": string | undefined;
     "styles.css": string | undefined;
-    "App.tsx": string | undefined;
-    "index.tsx": string | undefined;
+    "App.js": string | undefined;
   }) => void;
 }) {
-
   const [theme, setTheme] = useState<string>("dracula");
-  const [activeFile, setActiveFile] = useState<Language>("App.tsx");
+  const [activeFile, setActiveFile] = useState<Language>("App.js");
 
   // темы редактора
   useEffect(() => {
@@ -98,15 +88,10 @@ export default function CodeEditor({
     string,
     { name: string; language: string; value: string | undefined }
   > = {
-    "App.tsx": {
-      name: "App.tsx",
+    "App.js": {
+      name: "App.js",
       language: "javascript",
-      value: code["App.tsx"] || "",
-    },
-    "index.tsx": {
-      name: "index.tsx",
-      language: "typescript",
-      value: code["index.tsx"] || "",
+      value: code["App.js"] || "",
     },
     "styles.css": {
       name: "styles.css",
@@ -116,40 +101,16 @@ export default function CodeEditor({
     "index.html": {
       name: "index.html",
       language: "html",
-      value: code["index.html"] || ""
+      value: code["index.html"] || "",
     },
   };
-
-//   const files: Record<Language, { name: string; language: string; value: string }> = {
-//   "App.tsx": {
-//     name: "App.tsx",
-//     language: "typescript",
-//     value: code["App.tsx"] ?? "",
-//   },
-//   "index.tsx": {
-//     name: "index.tsx",
-//     language: "typescript",
-//     value: code["index.tsx"] ?? "",
-//   },
-//   "styles.css": {
-//     name: "styles.css",
-//     language: "css",
-//     value: code["styles.css"] ?? "",
-//   },
-//   "index.html": {
-//     name: "index.html",
-//     language: "html",
-//     value: code["index.html"] ?? "",
-//   },
-// };
 
   // кнопка сброса
   function getInitialCode(exercise: Exercise): Record<Language, string> {
     return {
       "index.html": exercise.html ?? "",
       "styles.css": exercise.css ?? "",
-      "App.tsx": exercise.app ?? "",
-      "index.tsx": exercise.index ?? "",
+      "App.js": exercise.app ?? "",
     };
   }
 
@@ -167,12 +128,13 @@ export default function CodeEditor({
 
   const handleCodeChange = (val: string | undefined) => {
     onChange({
-      "index.html": activeFile === "index.html" ? val || undefined : code["index.html"],
-      "styles.css": activeFile === "styles.css" ? val || undefined : code["styles.css"],
-      "App.tsx": activeFile === "App.tsx" ? val || undefined : code["App.tsx"],
-      "index.tsx": activeFile === "index.tsx" ? val || undefined : code["index.tsx"],
+      "index.html":
+        activeFile === "index.html" ? val || undefined : code["index.html"],
+      "styles.css":
+        activeFile === "styles.css" ? val || undefined : code["styles.css"],
+      "App.js": activeFile === "App.js" ? val || undefined : code["App.js"]
     });
-  }; // ← следим только за id, а не за setCode
+  };
 
   return (
     <div className="shadow-2xl">

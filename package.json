@@ -11,6 +11,8 @@
   "dependencies": {
     "@babel/standalone": "^7.28.4",
     "@monaco-editor/react": "^4.7.0",
+    "lodash": "^4.17.21",
+    "lodash.debounce": "^4.0.8",
     "monaco-themes": "^0.4.7",
     "next": "15.5.2",
     "react": "19.1.0",
@@ -22,6 +24,8 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@types/lodash": "^4.17.20",
+    "@types/lodash.debounce": "^4.0.9",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
