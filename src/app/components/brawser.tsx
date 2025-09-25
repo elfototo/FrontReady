@@ -19,19 +19,9 @@ type Exercise = {
 
 export default function Brawser({
   code,
-  exercise,
-  jsValue,
-  tsxValue,
-  htmlValue,
-  cssValue,
   setCode,
 }: {
   code: { [key: string]: string | undefined };
-  exercise: Exercise | undefined;
-  jsValue: string | undefined;
-  tsxValue: string | undefined;
-  htmlValue: string | undefined;
-  cssValue: string | undefined;
   setCode: (code: {
     "index.html": string | undefined;
     "styles.css": string | undefined;
@@ -55,10 +45,9 @@ export default function Brawser({
   const [compiledJS, setCompiledJS] = useState("");
 
   useEffect(() => {
-    if (jsValue) {
+    if (code["App.tsx"]) {
       try {
-        const sanitized = sanitizeReactCode(jsValue);
-        console.log("sanitized", sanitized)
+        const sanitized = sanitizeReactCode(code["App.tsx"]);
         const result = Babel.transform(sanitized, {
           filename: "file.tsx",
           presets: ["react", "typescript"],
@@ -71,15 +60,15 @@ export default function Brawser({
     } else {
       setCompiledJS("");
     }
-  }, [jsValue, setCompiledJS]);
+  }, [code, setCompiledJS]);
 
   const [compiledTSX, setCompiledTSX] = useState("");
 
   useEffect(() => {
-    if (tsxValue) {
+    if (code["index.tsx"]) {
       try {
         // Транспилируем TSX с React и TypeScript в JS
-        const result = Babel.transform(tsxValue, {
+        const result = Babel.transform(code["index.tsx"], {
           filename: "file.tsx",
           presets: ["react", "typescript"],
         }).code;
@@ -91,7 +80,7 @@ export default function Brawser({
     } else {
       setCompiledTSX("");
     }
-  }, [tsxValue]);
+  }, [code]);
 
   const srcDoc = useMemo(() => {
     return `
@@ -99,10 +88,10 @@ export default function Brawser({
       <html lang="en">
         <head>
           <meta charset="UTF-8" />
-          <style>${cssValue || ""}</style>
+          <style>${code["styles.css"]}</style>
         </head>
         <body>
-          ${htmlValue || "<div id='root'></div>"}
+          ${code["index.html"] || "<div id='root'></div>"}
           <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
           <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
           <script>
@@ -121,10 +110,7 @@ export default function Brawser({
         </body>
       </html>
     `;
-  }, [htmlValue, cssValue, compiledJS]);
-
-  console.log("srcDoc", srcDoc);
-  console.log("compiledJS", compiledJS);
+  }, [code, compiledJS]);
 
 
   return (

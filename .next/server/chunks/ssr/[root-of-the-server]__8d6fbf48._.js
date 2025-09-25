@@ -7,7 +7,7 @@ module.exports = mod;
 }),
 "[project]/src/app/data/exercise.json (json)", ((__turbopack_context__) => {
 
-__turbopack_context__.v(JSON.parse("[{\"id\":1,\"theme\":\"UI coding\",\"title\":\"Counter (Счётчик)\",\"dificult\":\"Лёгкая\",\"time\":\"5 min\",\"note\":\"Это короткий разминочный вопрос, который поможет тебе привыкнуть к рабочему пространству для кодинга. Реальные UI-вопросы на интервью будут сложнее.\",\"requirements\":\"Сделать так, чтобы текст внутри кнопки отображал количество раз, сколько по ней кликнули.\",\"app\":\"import { useState } from 'react';\\n\\n// This is a warm up question to help you\\n// get familiar with the editor.\\n// Most of the code has been filled in for you.\\nexport default function App() {\\n  const [count, setCount] = useState(0);\\n\\n  return (\\n    <div>\\n      <button\\n\\n      onClick={() => {\\n          // Fix the bug in the next line\\n          // to complete the question.\\n          setCount(count - 1);\\n        }}>\\n        Clicks: {count}\\n      </button>\\n    </div>\\n  );\\n}\",\"html\":\"<!doctype html>\\n<html lang='en'>\\n  <head>\\n    <meta charset='UTF-8' />\\n    <meta\\n      name='viewport'\\n      content='width=device-width, initial-scale=1.0' />\\n  </head>\\n  <body>\\n    <div id='root'></div>\\n  </body>\\n</html>\",\"css\":\"body {\\n  font-family: sans-serif;\\n}\",\"index\":\"import React, { StrictMode } from 'react';\\nimport { createRoot } from 'react-dom/client';\\n\\nimport App from './App';\\n\\nimport './styles.css';\\n\\nconst root = createRoot(document.getElementById('root'));\\nroot.render(\\n  <StrictMode>\\n    <App />\\n  </StrictMode>,\\n);\"}]"));}),
+__turbopack_context__.v(JSON.parse("[{\"id\":1,\"theme\":\"UI coding\",\"title\":\"Counter (Счётчик)\",\"dificult\":\"Лёгкая\",\"time\":\"5 min\",\"note\":\"Это короткий разминочный вопрос, который поможет тебе привыкнуть к рабочему пространству для кодинга. Реальные UI-вопросы на интервью будут сложнее.\",\"requirements\":\"Сделать так, чтобы текст внутри кнопки отображал количество раз, сколько по ней кликнули.\",\"app\":\"import { useState } from 'react';\\n\\n\\nexport default function App() {\\n  const [count, setCount] = useState(0);\\n\\n  return (\\n    <div>\\n      <button\\n\\n      onClick={() => {\\n\\n          setCount(count - 1);\\n        }}>\\n        Clicks: {count}\\n      </button>\\n    </div>\\n  );\\n}\",\"html\":\"<!doctype html>\\n<html lang='en'>\\n  <head>\\n    <meta charset='UTF-8' />\\n    <meta\\n      name='viewport'\\n      content='width=device-width, initial-scale=1.0' />\\n  </head>\\n  <body>\\n    <div id='root'></div>\\n  </body>\\n</html>\",\"css\":\"body {\\n  font-family: sans-serif;\\n}\",\"index\":\"import React, { StrictMode } from 'react';\\nimport { createRoot } from 'react-dom/client';\\n\\nimport App from './App';\\n\\nimport './styles.css';\\n\\nconst root = createRoot(document.getElementById('root'));\\nroot.render(\\n  <StrictMode>\\n    <App />\\n  </StrictMode>,\\n);\"},{\"id\":2,\"theme\":\"UI coding\",\"title\":\"Counter (Счётчик)\",\"dificult\":\"Лёгкая\",\"time\":\"5 min\",\"note\":\"Это короткий разминочный вопрос, который поможет тебе привыкнуть к рабочему пространству для кодинга. Реальные UI-вопросы на интервью будут сложнее.\",\"requirements\":\"Сделать так, чтобы текст внутри кнопки отображал количество раз, сколько по ней кликнули.\",\"app\":\"import { useState } from 'react';\\n\\n// This is a warm up question to help you\\n// get familiar with the editor.\\n// Most of the code has been filled in for you.\\nexport default function App() {\\n  const [count, setCount] = useState(0);\\n\\n  return (\\n    <div>\\n      <button\\n\\n      onClick={() => {\\n          // Fix the bug in the next line\\n          // to complete the question.\\n          setCount(count - 1);\\n        }}>\\n        Clicks: {count}\\n      </button>\\n    </div>\\n  );\\n}\",\"html\":\"<!doctype html>\\n<html lang='en'>\\n  <head>\\n    <meta charset='UTF-8' />\\n    <meta\\n      name='viewport'\\n      content='width=device-width, initial-scale=1.0' />\\n  </head>\\n  <body>\\n    <div id='root'></div>\\n  </body>\\n</html>\",\"css\":\"body {\\n  font-family: sans-serif;\\n}\",\"index\":\"import React, { StrictMode } from 'react';\\nimport { createRoot } from 'react-dom/client';\\n\\nimport App from './App';\\n\\nimport './styles.css';\\n\\nconst root = createRoot(document.getElementById('root'));\\nroot.render(\\n  <StrictMode>\\n    <App />\\n  </StrictMode>,\\n);\"},{\"id\":3,\"theme\":\"UI coding\",\"title\":\"Counter (Счётчик)\",\"dificult\":\"Лёгкая\",\"time\":\"5 min\",\"note\":\"Это короткий разминочный вопрос, который поможет тебе привыкнуть к рабочему пространству для кодинга. Реальные UI-вопросы на интервью будут сложнее.\",\"requirements\":\"Сделать так, чтобы текст внутри кнопки отображал количество раз, сколько по ней кликнули.\",\"app\":\"import { useState } from 'react';\\n\\nexport default function App() {\\n  const [count, setCount] = useState(0);\\n\\n  return (\\n    <div>\\n      <button\\n\\n      onClick={() => {\\n          \\n          setCount(count - 1);\\n        }}>\\n        Clicks: {count}\\n      </button>\\n    </div>\\n  );\\n}\",\"html\":\"<!doctype html>\\n<html lang='en'>\\n  <head>\\n    <meta charset='UTF-8' />\\n    <meta\\n      name='viewport'\\n      content='width=device-width, initial-scale=1.0' />\\n  </head>\\n  <body>\\n    <div id='root'></div>\\n  </body>\\n</html>\",\"css\":\"body {\\n  font-family: sans-serif;\\n}\",\"index\":\"import React, { StrictMode } from 'react';\\nimport { createRoot } from 'react-dom/client';\\n\\nimport App from './App';\\n\\nimport './styles.css';\\n\\nconst root = createRoot(document.getElementById('root'));\\nroot.render(\\n  <StrictMode>\\n    <App />\\n  </StrictMode>,\\n);\"}]"));}),
 "[externals]/next/dist/server/app-render/action-async-storage.external.js [external] (next/dist/server/app-render/action-async-storage.external.js, cjs)", ((__turbopack_context__, module, exports) => {
 
 const mod = __turbopack_context__.x("next/dist/server/app-render/action-async-storage.external.js", () => require("next/dist/server/app-render/action-async-storage.external.js"));
@@ -66,9 +66,14 @@ const themes = {
     cobalt: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$monaco$2d$themes$2f$themes$2f$Cobalt$2e$json__$28$json$29$__["default"],
     "tomorrow-night": __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$monaco$2d$themes$2f$themes$2f$Tomorrow$2d$Night$2e$json__$28$json$29$__["default"]
 };
-function CodeEditor({ code, exercise, jsValue, tsxValue, htmlValue, cssValue, setCode, onChange }) {
+function CodeEditor({ code, exercise, // jsValue,
+// tsxValue,
+// htmlValue,
+// cssValue,
+setCode, onChange }) {
     const [theme, setTheme] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("dracula");
-    const [activeLang, setActiveLang] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("App.tsx");
+    const [activeFile, setActiveFile] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("App.tsx");
+    // темы редактора
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$monaco$2d$editor$2f$loader$2f$lib$2f$es$2f$loader$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__loader$3e$__["loader"].init().then((monacoInstance)=>{
             Object.entries(themes).forEach(([name, themeData])=>{
@@ -85,30 +90,51 @@ function CodeEditor({ code, exercise, jsValue, tsxValue, htmlValue, cssValue, se
         if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
         ;
     };
-    const [fileName, setFileName] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("App.tsx");
     const files = {
         "App.tsx": {
             name: "App.tsx",
             language: "javascript",
-            value: jsValue
+            value: code["App.tsx"] || ""
         },
         "index.tsx": {
             name: "index.tsx",
             language: "typescript",
-            value: tsxValue
+            value: code["index.tsx"] || ""
         },
         "styles.css": {
             name: "styles.css",
             language: "css",
-            value: cssValue
+            value: code["styles.css"] || ""
         },
         "index.html": {
             name: "index.html",
             language: "html",
-            value: htmlValue
+            value: code["index.html"] || ""
         }
     };
-    const file = files[fileName];
+    //   const files: Record<Language, { name: string; language: string; value: string }> = {
+    //   "App.tsx": {
+    //     name: "App.tsx",
+    //     language: "typescript",
+    //     value: code["App.tsx"] ?? "",
+    //   },
+    //   "index.tsx": {
+    //     name: "index.tsx",
+    //     language: "typescript",
+    //     value: code["index.tsx"] ?? "",
+    //   },
+    //   "styles.css": {
+    //     name: "styles.css",
+    //     language: "css",
+    //     value: code["styles.css"] ?? "",
+    //   },
+    //   "index.html": {
+    //     name: "index.html",
+    //     language: "html",
+    //     value: code["index.html"] ?? "",
+    //   },
+    // };
+    // кнопка сброса
     function getInitialCode(exercise) {
         return {
             "index.html": exercise.html ?? "",
@@ -127,69 +153,12 @@ function CodeEditor({ code, exercise, jsValue, tsxValue, htmlValue, cssValue, se
     };
     const handleCodeChange = (val)=>{
         onChange({
-            "index.html": activeLang === "index.html" ? val || "" : htmlValue,
-            "styles.css": activeLang === "styles.css" ? val || "" : cssValue,
-            "App.tsx": activeLang === "App.tsx" ? val || "" : jsValue,
-            "index.tsx": activeLang === "index.tsx" ? val || "" : tsxValue
+            "index.html": activeFile === "index.html" ? val || undefined : code["index.html"],
+            "styles.css": activeFile === "styles.css" ? val || undefined : code["styles.css"],
+            "App.tsx": activeFile === "App.tsx" ? val || undefined : code["App.tsx"],
+            "index.tsx": activeFile === "index.tsx" ? val || undefined : code["index.tsx"]
         });
-    };
-    const fileMap = {
-        "App.tsx": {
-            language: "javascript",
-            value: jsValue
-        },
-        "index.tsx": {
-            language: "typescript",
-            value: tsxValue
-        },
-        "styles.css": {
-            language: "css",
-            value: cssValue
-        },
-        "index.html": {
-            language: "html",
-            value: htmlValue
-        }
-    };
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        if (Object.values(code).some((val)=>val)) {
-            localStorage.setItem(`exercise-${exercise?.id}`, JSON.stringify(code));
-        }
-    }, [
-        code,
-        exercise
-    ]);
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        if (exercise) {
-            const initial = {
-                "index.html": "",
-                "styles.css": "",
-                "App.tsx": "",
-                "index.tsx": ""
-            };
-            if (exercise.app) {
-                initial["App.tsx"] = exercise.app;
-            }
-            if (exercise.html) {
-                initial["index.html"] = exercise.html;
-            }
-            if (exercise.css) {
-                initial["styles.css"] = exercise.css;
-            }
-            if (exercise.index) {
-                initial["index.tsx"] = exercise.index;
-            }
-            const saved = localStorage.getItem(`exercise-${exercise.id}`);
-            if (saved) {
-                setCode(JSON.parse(saved));
-            } else {
-                setCode(initial);
-            }
-        }
-    }, [
-        exercise,
-        setCode
-    ]);
+    }; // ← следим только за id, а не за setCode
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "shadow-2xl",
         children: [
@@ -198,51 +167,19 @@ function CodeEditor({ code, exercise, jsValue, tsxValue, htmlValue, cssValue, se
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "flex gap-1",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        children: Object.keys(files).map((f)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 className: "p-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700",
-                                disabled: fileName === "App.tsx",
-                                onClick: ()=>setFileName("App.tsx"),
-                                children: "App.tsx"
-                            }, void 0, false, {
+                                disabled: activeFile === f,
+                                onClick: ()=>setActiveFile(f),
+                                children: f
+                            }, f, false, {
                                 fileName: "[project]/src/app/components/codeEditor.tsx",
-                                lineNumber: 204,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                className: "p-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700",
-                                disabled: fileName === "index.tsx",
-                                onClick: ()=>setFileName("index.tsx"),
-                                children: "index.tsx"
-                            }, void 0, false, {
-                                fileName: "[project]/src/app/components/codeEditor.tsx",
-                                lineNumber: 211,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                className: "p-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700",
-                                disabled: fileName === "styles.css",
-                                onClick: ()=>setFileName("styles.css"),
-                                children: "styles.css"
-                            }, void 0, false, {
-                                fileName: "[project]/src/app/components/codeEditor.tsx",
-                                lineNumber: 218,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                className: "p-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700",
-                                disabled: fileName === "index.html",
-                                onClick: ()=>setFileName("index.html"),
-                                children: "index.html"
-                            }, void 0, false, {
-                                fileName: "[project]/src/app/components/codeEditor.tsx",
-                                lineNumber: 225,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
+                                lineNumber: 182,
+                                columnNumber: 13
+                            }, this))
+                    }, void 0, false, {
                         fileName: "[project]/src/app/components/codeEditor.tsx",
-                        lineNumber: 203,
+                        lineNumber: 180,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -257,12 +194,12 @@ function CodeEditor({ code, exercise, jsValue, tsxValue, htmlValue, cssValue, se
                                         children: name
                                     }, name, false, {
                                         fileName: "[project]/src/app/components/codeEditor.tsx",
-                                        lineNumber: 240,
+                                        lineNumber: 199,
                                         columnNumber: 15
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/codeEditor.tsx",
-                                lineNumber: 234,
+                                lineNumber: 193,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -270,43 +207,43 @@ function CodeEditor({ code, exercise, jsValue, tsxValue, htmlValue, cssValue, se
                                 onClick: handlerClean,
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$tb$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TbWashDrycleanOff"], {}, void 0, false, {
                                     fileName: "[project]/src/app/components/codeEditor.tsx",
-                                    lineNumber: 250,
+                                    lineNumber: 209,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/codeEditor.tsx",
-                                lineNumber: 246,
+                                lineNumber: 205,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/codeEditor.tsx",
-                        lineNumber: 233,
+                        lineNumber: 192,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/components/codeEditor.tsx",
-                lineNumber: 202,
+                lineNumber: 179,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$monaco$2d$editor$2f$react$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"], {
                 height: "50vh",
                 theme: theme,
-                path: file.name,
-                defaultLanguage: file.language,
-                defaultValue: file.value,
-                value: fileMap[activeLang].value,
+                path: files[activeFile].name,
+                defaultLanguage: files[activeFile].language,
+                defaultValue: files[activeFile].value,
+                value: files[activeFile].value,
                 onChange: handleCodeChange
             }, void 0, false, {
                 fileName: "[project]/src/app/components/codeEditor.tsx",
-                lineNumber: 255,
+                lineNumber: 214,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/components/codeEditor.tsx",
-        lineNumber: 201,
+        lineNumber: 178,
         columnNumber: 5
     }, this);
 }
@@ -325,7 +262,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$babel$2f$s
 ;
 ;
 ;
-function Brawser({ code, exercise, jsValue, tsxValue, htmlValue, cssValue, setCode }) {
+function Brawser({ code, setCode }) {
     function sanitizeReactCode(source) {
         return source// убираем import React или import * as React
         .replace(/import\s+(React|.*\*\s+as\s+React).*;\s*/g, "")// убираем import { useState } from 'react';
@@ -334,10 +271,9 @@ function Brawser({ code, exercise, jsValue, tsxValue, htmlValue, cssValue, setCo
     }
     const [compiledJS, setCompiledJS] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        if (jsValue) {
+        if (code["App.tsx"]) {
             try {
-                const sanitized = sanitizeReactCode(jsValue);
-                console.log("sanitized", sanitized);
+                const sanitized = sanitizeReactCode(code["App.tsx"]);
                 const result = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$babel$2f$standalone$2f$babel$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["transform"](sanitized, {
                     filename: "file.tsx",
                     presets: [
@@ -354,15 +290,15 @@ function Brawser({ code, exercise, jsValue, tsxValue, htmlValue, cssValue, setCo
             setCompiledJS("");
         }
     }, [
-        jsValue,
+        code,
         setCompiledJS
     ]);
     const [compiledTSX, setCompiledTSX] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        if (tsxValue) {
+        if (code["index.tsx"]) {
             try {
                 // Транспилируем TSX с React и TypeScript в JS
-                const result = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$babel$2f$standalone$2f$babel$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["transform"](tsxValue, {
+                const result = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$babel$2f$standalone$2f$babel$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["transform"](code["index.tsx"], {
                     filename: "file.tsx",
                     presets: [
                         "react",
@@ -378,7 +314,7 @@ function Brawser({ code, exercise, jsValue, tsxValue, htmlValue, cssValue, setCo
             setCompiledTSX("");
         }
     }, [
-        tsxValue
+        code
     ]);
     const srcDoc = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>{
         return `
@@ -386,10 +322,10 @@ function Brawser({ code, exercise, jsValue, tsxValue, htmlValue, cssValue, setCo
       <html lang="en">
         <head>
           <meta charset="UTF-8" />
-          <style>${cssValue || ""}</style>
+          <style>${code["styles.css"]}</style>
         </head>
         <body>
-          ${htmlValue || "<div id='root'></div>"}
+          ${code["index.html"] || "<div id='root'></div>"}
           <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
           <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
           <script>
@@ -409,12 +345,9 @@ function Brawser({ code, exercise, jsValue, tsxValue, htmlValue, cssValue, setCo
       </html>
     `;
     }, [
-        htmlValue,
-        cssValue,
+        code,
         compiledJS
     ]);
-    console.log("srcDoc", srcDoc);
-    console.log("compiledJS", compiledJS);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("iframe", {
         title: "preview",
         srcDoc: srcDoc,
@@ -427,7 +360,7 @@ function Brawser({ code, exercise, jsValue, tsxValue, htmlValue, cssValue, setCo
         }
     }, void 0, false, {
         fileName: "[project]/src/app/components/brawser.tsx",
-        lineNumber: 131,
+        lineNumber: 117,
         columnNumber: 5
     }, this);
 }
@@ -480,8 +413,37 @@ function ExercisePage({ params }) {
     }, [
         exercise
     ]);
-    console.log("code", code);
-    console.log("exercise", exercise);
+    // console.log("code", code);
+    // console.log("exercise", exercise);
+    const [initialized, setInitialized] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        if (!exercise) {
+            console.log("exercise", exercise);
+            return;
+        }
+        if ("TURBOPACK compile-time truthy", 1) {
+            console.log("typeof window", "undefined");
+            return;
+        }
+        //TURBOPACK unreachable
+        ;
+        const key = undefined;
+        const saved = undefined;
+    }, [
+        exercise,
+        setCode
+    ]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        if (!exercise) return;
+        if (!initialized) return;
+        const key = `exercise-${exercise.id}`;
+        localStorage.setItem(key, JSON.stringify(code));
+        console.log("сохранили изменения в localStorage", key, code);
+    }, [
+        code,
+        exercise,
+        initialized
+    ]);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "font-sans grid grid-rows-[20px_1fr_20px] items-center p-8 pb-20 gap-16 sm:p-20",
         children: [
@@ -493,7 +455,7 @@ function ExercisePage({ params }) {
                         children: exercise?.title
                     }, void 0, false, {
                         fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                        lineNumber: 61,
+                        lineNumber: 105,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -505,25 +467,25 @@ function ExercisePage({ params }) {
                                     size: 12
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                                    lineNumber: 64,
+                                    lineNumber: 108,
                                     columnNumber: 13
                                 }, this),
                                 " назад"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                            lineNumber: 63,
+                            lineNumber: 107,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                        lineNumber: 62,
+                        lineNumber: 106,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                lineNumber: 60,
+                lineNumber: 104,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -540,14 +502,14 @@ function ExercisePage({ params }) {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$tb$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TbCodeCircleFilled"], {}, void 0, false, {
                                                 fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                                                lineNumber: 74,
+                                                lineNumber: 118,
                                                 columnNumber: 15
                                             }, this),
                                             exercise?.theme
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                                        lineNumber: 73,
+                                        lineNumber: 117,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -555,14 +517,14 @@ function ExercisePage({ params }) {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$pi$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PiFireFill"], {}, void 0, false, {
                                                 fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                                                lineNumber: 78,
+                                                lineNumber: 122,
                                                 columnNumber: 15
                                             }, this),
                                             exercise?.dificult
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                                        lineNumber: 77,
+                                        lineNumber: 121,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -570,20 +532,20 @@ function ExercisePage({ params }) {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$hi$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["HiClock"], {}, void 0, false, {
                                                 fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                                                lineNumber: 82,
+                                                lineNumber: 126,
                                                 columnNumber: 15
                                             }, this),
                                             exercise?.time
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                                        lineNumber: 81,
+                                        lineNumber: 125,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                                lineNumber: 72,
+                                lineNumber: 116,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -591,13 +553,13 @@ function ExercisePage({ params }) {
                                 children: exercise?.requirements
                             }, void 0, false, {
                                 fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                                lineNumber: 87,
+                                lineNumber: 131,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                        lineNumber: 71,
+                        lineNumber: 115,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -605,52 +567,43 @@ function ExercisePage({ params }) {
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$codeEditor$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                             code: code,
                             exercise: exercise,
-                            jsValue: code["App.tsx"],
-                            tsxValue: code["index.tsx"],
-                            htmlValue: code["index.html"],
-                            cssValue: code["styles.css"],
                             setCode: setCode,
                             onChange: (newCode)=>setCode(newCode)
                         }, void 0, false, {
                             fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                            lineNumber: 94,
+                            lineNumber: 138,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                        lineNumber: 93,
+                        lineNumber: 137,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$brawser$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                             code: code,
-                            exercise: exercise,
-                            jsValue: code["App.tsx"],
-                            tsxValue: code["index.tsx"],
-                            htmlValue: code["index.html"],
-                            cssValue: code["styles.css"],
                             setCode: setCode
                         }, void 0, false, {
                             fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                            lineNumber: 108,
+                            lineNumber: 148,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                        lineNumber: 107,
+                        lineNumber: 147,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                lineNumber: 69,
+                lineNumber: 113,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/exercise/[id]/page.tsx",
-        lineNumber: 59,
+        lineNumber: 103,
         columnNumber: 5
     }, this);
 }

@@ -52,8 +52,52 @@ export default function ExercisePage({
     });
   }, [exercise]);
 
-  console.log("code", code);
-  console.log("exercise", exercise);
+  // console.log("code", code);
+  // console.log("exercise", exercise);
+
+  const [initialized, setInitialized] = useState(false);
+
+  useEffect(() => {
+    if (!exercise) {
+      console.log("exercise", exercise);
+      return;
+    }
+    if (typeof window === "undefined") {
+      console.log("typeof window", typeof window);
+      return;
+    }
+
+    const key = `exercise-${exercise.id}`;
+    const saved = localStorage.getItem(key);
+
+    console.log("key", key, "saved", saved);
+
+    if (saved) {
+      setCode(JSON.parse(saved));
+      console.log("есть сохраненное");
+    } else {
+      const initial = {
+        "index.html": exercise.html ?? "",
+        "styles.css": exercise.css ?? "",
+        "App.tsx": exercise.app ?? "",
+        "index.tsx": exercise.index ?? "",
+      };
+
+      setCode(initial);
+      console.log("нет сохраненного, ставим:", initial);
+    }
+    // выставляем флаг ТОЛЬКО после загрузки из localStorage/инициализации
+    setInitialized(true);
+  }, [exercise, setCode]);
+
+  useEffect(() => {
+    if (!exercise) return;
+    if (!initialized) return;
+
+    const key = `exercise-${exercise.id}`;
+    localStorage.setItem(key, JSON.stringify(code));
+    console.log("сохранили изменения в localStorage", key, code);
+  }, [code, exercise, initialized]);
 
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center p-8 pb-20 gap-16 sm:p-20">
@@ -94,10 +138,6 @@ export default function ExercisePage({
           <CodeEditor
             code={code}
             exercise={exercise}
-            jsValue={code["App.tsx"]}
-            tsxValue={code["index.tsx"]}
-            htmlValue={code["index.html"]}
-            cssValue={code["styles.css"]}
             setCode={setCode}
             onChange={(newCode) => setCode(newCode)}
           />
@@ -105,15 +145,7 @@ export default function ExercisePage({
 
         {/* Браузер */}
         <div className="">
-          <Brawser
-            code={code}
-            exercise={exercise}
-            jsValue={code["App.tsx"]}
-            tsxValue={code["index.tsx"]}
-            htmlValue={code["index.html"]}
-            cssValue={code["styles.css"]}
-            setCode={setCode}
-          />
+          <Brawser code={code} setCode={setCode} />
         </div>
       </div>
     </div>

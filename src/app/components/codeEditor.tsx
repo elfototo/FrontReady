@@ -41,19 +41,19 @@ type Exercise = {
 export default function CodeEditor({
   code,
   exercise,
-  jsValue,
-  tsxValue,
-  htmlValue,
-  cssValue,
+  // jsValue,
+  // tsxValue,
+  // htmlValue,
+  // cssValue,
   setCode,
   onChange,
 }: {
   code: { [key: string]: string | undefined };
   exercise: Exercise | undefined;
-  jsValue: string | undefined;
-  tsxValue: string | undefined;
-  htmlValue: string | undefined;
-  cssValue: string | undefined;
+  // jsValue: string | undefined;
+  // tsxValue: string | undefined;
+  // htmlValue: string | undefined;
+  // cssValue: string | undefined;
   setCode: (code: {
     "index.html": string | undefined;
     "styles.css": string | undefined;
@@ -67,10 +67,11 @@ export default function CodeEditor({
     "index.tsx": string | undefined;
   }) => void;
 }) {
+
   const [theme, setTheme] = useState<string>("dracula");
+  const [activeFile, setActiveFile] = useState<Language>("App.tsx");
 
-  const [activeLang, setActiveLang] = useState<Language>("App.tsx");
-
+  // темы редактора
   useEffect(() => {
     loader.init().then((monacoInstance) => {
       Object.entries(themes).forEach(([name, themeData]) => {
@@ -93,8 +94,6 @@ export default function CodeEditor({
     }
   };
 
-  const [fileName, setFileName] = useState("App.tsx");
-
   const files: Record<
     string,
     { name: string; language: string; value: string | undefined }
@@ -102,27 +101,49 @@ export default function CodeEditor({
     "App.tsx": {
       name: "App.tsx",
       language: "javascript",
-      value: jsValue,
+      value: code["App.tsx"] || "",
     },
     "index.tsx": {
       name: "index.tsx",
       language: "typescript",
-      value: tsxValue,
+      value: code["index.tsx"] || "",
     },
     "styles.css": {
       name: "styles.css",
       language: "css",
-      value: cssValue,
+      value: code["styles.css"] || "",
     },
     "index.html": {
       name: "index.html",
       language: "html",
-      value: htmlValue,
+      value: code["index.html"] || ""
     },
   };
 
-  const file = files[fileName];
+//   const files: Record<Language, { name: string; language: string; value: string }> = {
+//   "App.tsx": {
+//     name: "App.tsx",
+//     language: "typescript",
+//     value: code["App.tsx"] ?? "",
+//   },
+//   "index.tsx": {
+//     name: "index.tsx",
+//     language: "typescript",
+//     value: code["index.tsx"] ?? "",
+//   },
+//   "styles.css": {
+//     name: "styles.css",
+//     language: "css",
+//     value: code["styles.css"] ?? "",
+//   },
+//   "index.html": {
+//     name: "index.html",
+//     language: "html",
+//     value: code["index.html"] ?? "",
+//   },
+// };
 
+  // кнопка сброса
   function getInitialCode(exercise: Exercise): Record<Language, string> {
     return {
       "index.html": exercise.html ?? "",
@@ -146,89 +167,27 @@ export default function CodeEditor({
 
   const handleCodeChange = (val: string | undefined) => {
     onChange({
-      "index.html": activeLang === "index.html" ? val || "" : htmlValue,
-      "styles.css": activeLang === "styles.css" ? val || "" : cssValue,
-      "App.tsx": activeLang === "App.tsx" ? val || "" : jsValue,
-      "index.tsx": activeLang === "index.tsx" ? val || "" : tsxValue,
+      "index.html": activeFile === "index.html" ? val || undefined : code["index.html"],
+      "styles.css": activeFile === "styles.css" ? val || undefined : code["styles.css"],
+      "App.tsx": activeFile === "App.tsx" ? val || undefined : code["App.tsx"],
+      "index.tsx": activeFile === "index.tsx" ? val || undefined : code["index.tsx"],
     });
-  };
-
-  const fileMap = {
-    "App.tsx": { language: "javascript", value: jsValue },
-    "index.tsx": { language: "typescript", value: tsxValue },
-    "styles.css": { language: "css", value: cssValue },
-    "index.html": { language: "html", value: htmlValue },
-  };
-
-  useEffect(() => {
-    if (Object.values(code).some((val) => val)) {
-      localStorage.setItem(`exercise-${exercise?.id}`, JSON.stringify(code));
-    }
-  }, [code, exercise]);
-
-  useEffect(() => {
-    if (exercise) {
-      const initial: Record<Language, string> = {
-        "index.html": "",
-        "styles.css": "",
-        "App.tsx": "",
-        "index.tsx": "",
-      };
-
-      if (exercise.app) {
-        initial["App.tsx"] = exercise.app;
-      }
-      if (exercise.html) {
-        initial["index.html"] = exercise.html;
-      }
-      if (exercise.css) {
-        initial["styles.css"] = exercise.css;
-      }
-      if (exercise.index) {
-        initial["index.tsx"] = exercise.index;
-      }
-
-      const saved = localStorage.getItem(`exercise-${exercise.id}`);
-      if (saved) {
-        setCode(JSON.parse(saved));
-      } else {
-        setCode(initial);
-      }
-    }
-  }, [exercise, setCode]);
+  }; // ← следим только за id, а не за setCode
 
   return (
     <div className="shadow-2xl">
       <div className="flex justify-between">
         <div className="flex gap-1">
-          <button
-            className="p-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
-            disabled={fileName === "App.tsx"}
-            onClick={() => setFileName("App.tsx")}
-          >
-            App.tsx
-          </button>
-          <button
-            className="p-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
-            disabled={fileName === "index.tsx"}
-            onClick={() => setFileName("index.tsx")}
-          >
-            index.tsx
-          </button>
-          <button
-            className="p-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
-            disabled={fileName === "styles.css"}
-            onClick={() => setFileName("styles.css")}
-          >
-            styles.css
-          </button>
-          <button
-            className="p-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
-            disabled={fileName === "index.html"}
-            onClick={() => setFileName("index.html")}
-          >
-            index.html
-          </button>
+          {(Object.keys(files) as Language[]).map((f) => (
+            <button
+              key={f}
+              className="p-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
+              disabled={activeFile === f}
+              onClick={() => setActiveFile(f)}
+            >
+              {f}
+            </button>
+          ))}
         </div>
         <div className="gap-2 flex items-center">
           <select
@@ -255,10 +214,10 @@ export default function CodeEditor({
       <Editor
         height="50vh"
         theme={theme}
-        path={file.name}
-        defaultLanguage={file.language}
-        defaultValue={file.value}
-        value={fileMap[activeLang].value}
+        path={files[activeFile].name}
+        defaultLanguage={files[activeFile].language}
+        defaultValue={files[activeFile].value}
+        value={files[activeFile].value}
         onChange={handleCodeChange}
       />
     </div>
