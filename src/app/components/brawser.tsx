@@ -95,7 +95,7 @@ export default function Brawser({
       width="100%"
       height="100%"
       style={{
-        borderRadius: "8px",
+        borderRadius: "8px" 
       }}
     />
   );
