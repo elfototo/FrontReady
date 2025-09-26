@@ -24,6 +24,13 @@ const themes: Record<string, editor.IStandaloneThemeData> = {
 
 type Language = "index.html" | "styles.css" | "App.js";
 
+type Test = {
+  description: string;
+  query: string;
+  expectText: string;
+  clicks?: number;
+};
+
 type Exercise = {
   id: number;
   theme: string;
@@ -35,7 +42,7 @@ type Exercise = {
   html: string;
   app: string;
   css: string;
-  index: string;
+  tests: Test[];
   [key: string]: unknown;
 };
 
@@ -132,13 +139,13 @@ export default function CodeEditor({
         activeFile === "index.html" ? val || undefined : code["index.html"],
       "styles.css":
         activeFile === "styles.css" ? val || undefined : code["styles.css"],
-      "App.js": activeFile === "App.js" ? val || undefined : code["App.js"]
+      "App.js": activeFile === "App.js" ? val || undefined : code["App.js"],
     });
   };
 
   return (
     <div className="shadow-2xl">
-      <div className="flex justify-between">
+      <div className="flex justify-between flex-wrap">
         <div className="flex gap-1">
           {(Object.keys(files) as Language[]).map((f) => (
             <button

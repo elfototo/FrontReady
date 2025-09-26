@@ -7,7 +7,7 @@ module.exports = mod;
 }),
 "[project]/src/app/data/exercise.json (json)", ((__turbopack_context__) => {
 
-__turbopack_context__.v(JSON.parse("[{\"id\":1,\"theme\":\"UI coding\",\"title\":\"Counter (Счётчик)\",\"dificult\":\"Лёгкая\",\"time\":\"5 min\",\"note\":\"Это короткий разминочный вопрос, который поможет тебе привыкнуть к рабочему пространству для кодинга. Реальные UI-вопросы на интервью будут сложнее.\",\"requirements\":\"Сделать так, чтобы текст внутри кнопки отображал количество раз, сколько по ней кликнули.\",\"app\":\"import { useState } from 'react';\\n\\n// Это разминочный вопрос, который поможет тебе\\n// познакомиться с редактором.\\n// Большая часть кода уже заполнена за тебя.\\nexport default function App() {\\n  const [count, setCount] = useState(0);\\n\\n  return (\\n    <div>\\n      <button\\n        onClick={() => {\\n          // Исправь ошибку в следующей строке, \\n          // чтобы завершить задание.\\n          setCount(count - 1);\\n        }}>\\n        Clicks: {count}\\n      </button>\\n    </div>\\n  );\\n}\",\"html\":\"<!doctype html>\\n<html lang='en'>\\n  <head>\\n    <meta charset='UTF-8' />\\n    <meta\\n      name='viewport'\\n      content='width=device-width, initial-scale=1.0' />\\n  </head>\\n  <body>\\n    <div id='root'></div>\\n  </body>\\n</html>\",\"css\":\"body {\\n  font-family: sans-serif;\\n}\",\"tests\":[{\"description\":\"Кнопка отображается с начальным значением\",\"query\":\"button\",\"expectText\":\"Clicks: 0\"},{\"description\":\"Один клик увеличивает значение до 1\",\"query\":\"button\",\"clicks\":1,\"expectText\":\"Clicks: 1\"},{\"description\":\"Несколько кликов увеличивают значение правильно\",\"query\":\"button\",\"clicks\":5,\"expectText\":\"Clicks: 5\"}]}]"));}),
+__turbopack_context__.v(JSON.parse("[{\"id\":1,\"theme\":\"UI coding\",\"title\":\"Counter (Счётчик)\",\"dificult\":\"Лёгкая\",\"time\":\"5 min\",\"note\":\"Это короткий разминочный вопрос, который поможет тебе привыкнуть к рабочему пространству для кодинга. Реальные UI-вопросы на интервью будут сложнее.\",\"requirements\":\"Сделать так, чтобы текст внутри кнопки отображал количество раз, сколько по ней кликнули.\",\"app\":\"import { useState } from 'react';\\n\\n// Это разминочный вопрос, который поможет тебе\\n// познакомиться с редактором.\\n// Большая часть кода уже заполнена за тебя.\\nexport default function App() {\\n  const [count, setCount] = useState(0);\\n\\n  return (\\n    <div>\\n      <button\\n        onClick={() => {\\n          // Исправь ошибку в следующей строке, \\n          // чтобы завершить задание.\\n          setCount(count - 1);\\n        }}>\\n        Clicks: {count}\\n      </button>\\n    </div>\\n  );\\n}\",\"html\":\"<!doctype html>\\n<html lang='en'>\\n  <head>\\n    <meta charset='UTF-8' />\\n    <meta\\n      name='viewport'\\n      content='width=device-width, initial-scale=1.0' />\\n  </head>\\n  <body>\\n    <div id='root'></div>\\n  </body>\\n</html>\",\"css\":\"body {\\n  font-family: sans-serif;\\n}\",\"tests\":[{\"description\":\"Кнопка отображается с начальным значением\",\"query\":\"button\",\"expectText\":\"Clicks: 0\"},{\"description\":\"Один клик увеличивает значение до 1\",\"query\":\"button\",\"clicks\":1,\"expectText\":\"Clicks: 1\"}]}]"));}),
 "[externals]/next/dist/server/app-render/action-async-storage.external.js [external] (next/dist/server/app-render/action-async-storage.external.js, cjs)", ((__turbopack_context__, module, exports) => {
 
 const mod = __turbopack_context__.x("next/dist/server/app-render/action-async-storage.external.js", () => require("next/dist/server/app-render/action-async-storage.external.js"));
@@ -317,6 +317,59 @@ function Brawser({ code, setCode }) {
     }, this);
 }
 }),
+"[project]/src/lib/runTests.ts [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "runTests",
+    ()=>runTests
+]);
+async function runTests(tests) {
+    const iframe = document.getElementById("preview");
+    if (!iframe) {
+        console.warn("iframe #preview не найден");
+        return [];
+    }
+    const tick = (ms = 50)=>new Promise((r)=>setTimeout(r, ms));
+    await tick(100);
+    const doc = iframe.contentDocument || iframe.contentWindow?.document;
+    if (!doc) {
+        console.warn("iframe документ не доступен");
+        return [];
+    }
+    const results = [];
+    for (const t of tests){
+        const res = {
+            description: t.description,
+            pass: false
+        };
+        try {
+            const el = doc.querySelector(t.query);
+            if (!el) {
+                res.reason = "Элемент не найден";
+                results.push(res);
+                continue;
+            }
+            const clicks = t.clicks ?? 0;
+            for(let i = 0; i < clicks; i++){
+                el.dispatchEvent(new MouseEvent("click", {
+                    bubbles: true,
+                    cancelable: true
+                }));
+                await tick(30);
+            }
+            const actual = (el.textContent || "").trim();
+            res.expected = t.expectText;
+            res.actual = actual;
+            res.pass = t.expectText === undefined ? true : actual === t.expectText;
+        } catch (err) {
+            res.error = err instanceof Error ? err.message : String(err);
+        }
+        results.push(res);
+    }
+    return results;
+}
+}),
 "[project]/src/app/exercise/[id]/page.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
@@ -334,7 +387,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$ico
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$tb$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-icons/tb/index.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$codeEditor$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/components/codeEditor.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$brawser$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/components/brawser.tsx [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$runTests$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/runTests.ts [app-ssr] (ecmascript)");
 "use client";
+;
 ;
 ;
 ;
@@ -394,10 +449,18 @@ function ExercisePage({ params }) {
         exercise,
         initialized
     ]);
-    function runTests(tests) {}
-    const handleCheck = ()=>{
-        const results = runTests(exercise?.tests || []);
+    const handleCheck = async ()=>{
+        if (!exercise?.tests) {
+            console.log("Нет тестов для этого упражнения");
+            return;
+        }
+        const results = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$runTests$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["runTests"])(exercise.tests);
         console.log("Результаты тестов:", results);
+        // простой лог в понятном виде:
+        results.forEach((r)=>{
+            if (r.pass) console.log(`✅ ${r.description}`, r);
+            else console.warn(`❌ ${r.description}`, r);
+        });
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "relative font-sans px-16 mt-10 h-screen",
@@ -410,7 +473,7 @@ function ExercisePage({ params }) {
                         children: exercise?.title
                     }, void 0, false, {
                         fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                        lineNumber: 118,
+                        lineNumber: 124,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -422,25 +485,25 @@ function ExercisePage({ params }) {
                                     size: 12
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                                    lineNumber: 121,
+                                    lineNumber: 127,
                                     columnNumber: 13
                                 }, this),
                                 " назад"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                            lineNumber: 120,
+                            lineNumber: 126,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                        lineNumber: 119,
+                        lineNumber: 125,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                lineNumber: 117,
+                lineNumber: 123,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -457,14 +520,14 @@ function ExercisePage({ params }) {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$tb$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TbCodeCircleFilled"], {}, void 0, false, {
                                                 fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                                                lineNumber: 131,
+                                                lineNumber: 137,
                                                 columnNumber: 15
                                             }, this),
                                             exercise?.theme
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                                        lineNumber: 130,
+                                        lineNumber: 136,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -472,14 +535,14 @@ function ExercisePage({ params }) {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$pi$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PiFireFill"], {}, void 0, false, {
                                                 fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                                                lineNumber: 135,
+                                                lineNumber: 141,
                                                 columnNumber: 15
                                             }, this),
                                             exercise?.dificult
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                                        lineNumber: 134,
+                                        lineNumber: 140,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -487,20 +550,20 @@ function ExercisePage({ params }) {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$hi$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["HiClock"], {}, void 0, false, {
                                                 fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                                                lineNumber: 139,
+                                                lineNumber: 145,
                                                 columnNumber: 15
                                             }, this),
                                             exercise?.time
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                                        lineNumber: 138,
+                                        lineNumber: 144,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                                lineNumber: 129,
+                                lineNumber: 135,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -508,13 +571,13 @@ function ExercisePage({ params }) {
                                 children: exercise?.requirements
                             }, void 0, false, {
                                 fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                                lineNumber: 144,
+                                lineNumber: 150,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                        lineNumber: 128,
+                        lineNumber: 134,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -529,12 +592,12 @@ function ExercisePage({ params }) {
                                     onChange: (newCode)=>setCode(newCode)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                                    lineNumber: 150,
+                                    lineNumber: 156,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                                lineNumber: 149,
+                                lineNumber: 155,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -544,24 +607,24 @@ function ExercisePage({ params }) {
                                     setCode: setCode
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                                    lineNumber: 160,
+                                    lineNumber: 166,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                                lineNumber: 159,
+                                lineNumber: 165,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                        lineNumber: 148,
+                        lineNumber: 154,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                lineNumber: 126,
+                lineNumber: 132,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -572,22 +635,22 @@ function ExercisePage({ params }) {
                     children: "Проверть"
                 }, void 0, false, {
                     fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                    lineNumber: 167,
+                    lineNumber: 173,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/exercise/[id]/page.tsx",
-                lineNumber: 166,
+                lineNumber: 172,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/exercise/[id]/page.tsx",
-        lineNumber: 116,
+        lineNumber: 122,
         columnNumber: 5
     }, this);
 }
 }),
 ];
 
-//# sourceMappingURL=%5Broot-of-the-server%5D__8d6fbf48._.js.map
+//# sourceMappingURL=%5Broot-of-the-server%5D__11d975f3._.js.map

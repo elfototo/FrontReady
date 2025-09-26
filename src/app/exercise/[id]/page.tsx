@@ -9,6 +9,14 @@ import { PiFireFill } from "react-icons/pi";
 import { TbCodeCircleFilled } from "react-icons/tb";
 import CodeEditor from "../../components/codeEditor";
 import Brawser from "../../components/brawser";
+import { TestCase, runTests } from "@/lib/runTests";
+
+type Test = {
+  description: string;
+  query: string;
+  expectText: string;
+  clicks?: number;
+};
 
 type Exercise = {
   id: number;
@@ -21,7 +29,7 @@ type Exercise = {
   html: string;
   app: string;
   css: string;
-  index: string;
+  tests: Test[];
   [key: string]: unknown;
 };
 
@@ -94,6 +102,22 @@ export default function ExercisePage({
     console.log("сохранили изменения в localStorage", key, code);
   }, [code, exercise, initialized]);
 
+  const handleCheck = async () => {
+    if (!exercise?.tests) {
+      console.log("Нет тестов для этого упражнения");
+      return;
+    }
+
+    const results = await runTests(exercise.tests as TestCase[]);
+    console.log("Результаты тестов:", results);
+
+    // простой лог в понятном виде:
+    results.forEach((r) => {
+      if (r.pass) console.log(`✅ ${r.description}`, r);
+      else console.warn(`❌ ${r.description}`, r);
+    });
+  };
+
   return (
     <div className="relative font-sans px-16 mt-10 h-screen">
       <div className="flex justify-between">
@@ -108,7 +132,7 @@ export default function ExercisePage({
       <div className="flex gap-5">
         {/* Условия */}
         <div className="w-1/4">
-          <div className="flex gap-5 text-gray-400 whitespace-nowrap">
+          <div className="flex gap-5 text-gray-400 whitespace-nowrap flex-wrap mt-5">
             <div className="flex items-center gap-1">
               <TbCodeCircleFilled />
               {exercise?.theme}
@@ -127,7 +151,7 @@ export default function ExercisePage({
             {exercise?.requirements}
           </div>
         </div>
-        <div className="w-full flex gap-5 h-full">
+        <div className="w-full flex gap-5 h-full mt-5">
           <div className="w-1/2">
             <CodeEditor
               code={code}
@@ -146,7 +170,12 @@ export default function ExercisePage({
       </div>
 
       <div className="fixed bottom-0 left-0 w-full h-20 bg-gray-200 flex justify-end items-center px-16 z-10">
-        <button className="p-2 bg-white cursor-pointer rounded-xl">Проверть</button>
+        <button
+          className="p-2 bg-white cursor-pointer rounded-xl"
+          onClick={handleCheck}
+        >
+          Проверть
+        </button>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 (globalThis.TURBOPACK || (globalThis.TURBOPACK = [])).push([typeof document === "object" ? document.currentScript : undefined,
 "[project]/src/app/data/exercise.json (json)", ((__turbopack_context__) => {
 
-__turbopack_context__.v(JSON.parse("[{\"id\":1,\"theme\":\"UI coding\",\"title\":\"Counter (Счётчик)\",\"dificult\":\"Лёгкая\",\"time\":\"5 min\",\"note\":\"Это короткий разминочный вопрос, который поможет тебе привыкнуть к рабочему пространству для кодинга. Реальные UI-вопросы на интервью будут сложнее.\",\"requirements\":\"Сделать так, чтобы текст внутри кнопки отображал количество раз, сколько по ней кликнули.\",\"app\":\"import { useState } from 'react';\\n\\n// Это разминочный вопрос, который поможет тебе\\n// познакомиться с редактором.\\n// Большая часть кода уже заполнена за тебя.\\nexport default function App() {\\n  const [count, setCount] = useState(0);\\n\\n  return (\\n    <div>\\n      <button\\n        onClick={() => {\\n          // Исправь ошибку в следующей строке, \\n          // чтобы завершить задание.\\n          setCount(count - 1);\\n        }}>\\n        Clicks: {count}\\n      </button>\\n    </div>\\n  );\\n}\",\"html\":\"<!doctype html>\\n<html lang='en'>\\n  <head>\\n    <meta charset='UTF-8' />\\n    <meta\\n      name='viewport'\\n      content='width=device-width, initial-scale=1.0' />\\n  </head>\\n  <body>\\n    <div id='root'></div>\\n  </body>\\n</html>\",\"css\":\"body {\\n  font-family: sans-serif;\\n}\",\"index\":\"import React, { StrictMode } from 'react';\\nimport { createRoot } from 'react-dom/client';\\n\\nimport App from './App';\\n\\nimport './styles.css';\\n\\nconst root = createRoot(document.getElementById('root'));\\nroot.render(\\n  <StrictMode>\\n    <App />\\n  </StrictMode>,\\n);\"},{\"id\":2,\"theme\":\"UI coding\",\"title\":\"Counter (Счётчик)\",\"dificult\":\"Лёгкая\",\"time\":\"5 min\",\"note\":\"Это короткий разминочный вопрос, который поможет тебе привыкнуть к рабочему пространству для кодинга. Реальные UI-вопросы на интервью будут сложнее.\",\"requirements\":\"Сделать так, чтобы текст внутри кнопки отображал количество раз, сколько по ней кликнули.\",\"app\":\"import { useState } from 'react';\\n\\n// This is a warm up question to help you\\n// get familiar with the editor.\\n// Most of the code has been filled in for you.\\nexport default function App() {\\n  const [count, setCount] = useState(0);\\n\\n  return (\\n    <div>\\n      <button\\n\\n      onClick={() => {\\n          // Fix the bug in the next line\\n          // to complete the question.\\n          setCount(count - 1);\\n        }}>\\n        Clicks: {count}\\n      </button>\\n    </div>\\n  );\\n}\",\"html\":\"<!doctype html>\\n<html lang='en'>\\n  <head>\\n    <meta charset='UTF-8' />\\n    <meta\\n      name='viewport'\\n      content='width=device-width, initial-scale=1.0' />\\n  </head>\\n  <body>\\n    <div id='root'></div>\\n  </body>\\n</html>\",\"css\":\"body {\\n  font-family: sans-serif;\\n}\",\"index\":\"import React, { StrictMode } from 'react';\\nimport { createRoot } from 'react-dom/client';\\n\\nimport App from './App';\\n\\nimport './styles.css';\\n\\nconst root = createRoot(document.getElementById('root'));\\nroot.render(\\n  <StrictMode>\\n    <App />\\n  </StrictMode>,\\n);\"},{\"id\":3,\"theme\":\"UI coding\",\"title\":\"Counter (Счётчик)\",\"dificult\":\"Лёгкая\",\"time\":\"5 min\",\"note\":\"Это короткий разминочный вопрос, который поможет тебе привыкнуть к рабочему пространству для кодинга. Реальные UI-вопросы на интервью будут сложнее.\",\"requirements\":\"Сделать так, чтобы текст внутри кнопки отображал количество раз, сколько по ней кликнули.\",\"app\":\"import { useState } from 'react';\\n\\nexport default function App() {\\n  const [count, setCount] = useState(0);\\n\\n  return (\\n    <div>\\n      <button\\n\\n      onClick={() => {\\n          \\n          setCount(count - 1);\\n        }}>\\n        Clicks: {count}\\n      </button>\\n    </div>\\n  );\\n}\",\"html\":\"<!doctype html>\\n<html lang='en'>\\n  <head>\\n    <meta charset='UTF-8' />\\n    <meta\\n      name='viewport'\\n      content='width=device-width, initial-scale=1.0' />\\n  </head>\\n  <body>\\n    <div id='root'></div>\\n  </body>\\n</html>\",\"css\":\"body {\\n  font-family: sans-serif;\\n}\",\"index\":\"import React, { StrictMode } from 'react';\\nimport { createRoot } from 'react-dom/client';\\n\\nimport App from './App';\\n\\nimport './styles.css';\\n\\nconst root = createRoot(document.getElementById('root'));\\nroot.render(\\n  <StrictMode>\\n    <App />\\n  </StrictMode>,\\n);\"}]"));}),
+__turbopack_context__.v(JSON.parse("[{\"id\":1,\"theme\":\"UI coding\",\"title\":\"Counter (Счётчик)\",\"dificult\":\"Лёгкая\",\"time\":\"5 min\",\"note\":\"Это короткий разминочный вопрос, который поможет тебе привыкнуть к рабочему пространству для кодинга. Реальные UI-вопросы на интервью будут сложнее.\",\"requirements\":\"Сделать так, чтобы текст внутри кнопки отображал количество раз, сколько по ней кликнули.\",\"app\":\"import { useState } from 'react';\\n\\n// Это разминочный вопрос, который поможет тебе\\n// познакомиться с редактором.\\n// Большая часть кода уже заполнена за тебя.\\nexport default function App() {\\n  const [count, setCount] = useState(0);\\n\\n  return (\\n    <div>\\n      <button\\n        onClick={() => {\\n          // Исправь ошибку в следующей строке, \\n          // чтобы завершить задание.\\n          setCount(count - 1);\\n        }}>\\n        Clicks: {count}\\n      </button>\\n    </div>\\n  );\\n}\",\"html\":\"<!doctype html>\\n<html lang='en'>\\n  <head>\\n    <meta charset='UTF-8' />\\n    <meta\\n      name='viewport'\\n      content='width=device-width, initial-scale=1.0' />\\n  </head>\\n  <body>\\n    <div id='root'></div>\\n  </body>\\n</html>\",\"css\":\"body {\\n  font-family: sans-serif;\\n}\",\"tests\":[{\"description\":\"Кнопка отображается с начальным значением\",\"query\":\"button\",\"expectText\":\"Clicks: 0\"},{\"description\":\"Один клик увеличивает значение до 1\",\"query\":\"button\",\"clicks\":1,\"expectText\":\"Clicks: 1\"},{\"description\":\"Несколько кликов увеличивают значение правильно\",\"query\":\"button\",\"clicks\":5,\"expectText\":\"Clicks: 5\"}]}]"));}),
 "[project]/src/app/components/card.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
@@ -175,7 +175,7 @@ function Exercises() {
                         children: "Задачи"
                     }, void 0, false, {
                         fileName: "[project]/src/app/exercise/page.tsx",
-                        lineNumber: 32,
+                        lineNumber: 39,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -187,25 +187,25 @@ function Exercises() {
                                     size: 12
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/exercise/page.tsx",
-                                    lineNumber: 35,
+                                    lineNumber: 42,
                                     columnNumber: 13
                                 }, this),
                                 " назад"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/exercise/page.tsx",
-                            lineNumber: 34,
+                            lineNumber: 41,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/exercise/page.tsx",
-                        lineNumber: 33,
+                        lineNumber: 40,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/exercise/page.tsx",
-                lineNumber: 31,
+                lineNumber: 38,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -221,12 +221,12 @@ function Exercises() {
                                 requirements: ex.requirements
                             }, ex.id, false, {
                                 fileName: "[project]/src/app/exercise/page.tsx",
-                                lineNumber: 42,
+                                lineNumber: 49,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/app/exercise/page.tsx",
-                        lineNumber: 40,
+                        lineNumber: 47,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -235,24 +235,24 @@ function Exercises() {
                             children: "Темы"
                         }, void 0, false, {
                             fileName: "[project]/src/app/exercise/page.tsx",
-                            lineNumber: 54,
+                            lineNumber: 61,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/exercise/page.tsx",
-                        lineNumber: 53,
+                        lineNumber: 60,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/exercise/page.tsx",
-                lineNumber: 39,
+                lineNumber: 46,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/exercise/page.tsx",
-        lineNumber: 30,
+        lineNumber: 37,
         columnNumber: 5
     }, this);
 }

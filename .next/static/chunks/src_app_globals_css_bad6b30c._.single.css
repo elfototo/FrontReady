@@ -512,10 +512,6 @@
 @layer components;
 
 @layer utilities {
-  .absolute {
-    position: absolute;
-  }
-
   .fixed {
     position: fixed;
   }
@@ -530,10 +526,6 @@
 
   .bottom-0 {
     bottom: calc(var(--spacing) * 0);
-  }
-
-  .bottom-10 {
-    bottom: calc(var(--spacing) * 10);
   }
 
   .left-0 {
@@ -568,6 +560,10 @@
     margin-block: calc(var(--spacing) * 10);
   }
 
+  .mt-5 {
+    margin-top: calc(var(--spacing) * 5);
+  }
+
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
   }
@@ -596,10 +592,6 @@
     display: table;
   }
 
-  .h-10 {
-    height: calc(var(--spacing) * 10);
-  }
-
   .h-20 {
     height: calc(var(--spacing) * 20);
   }
@@ -618,10 +610,6 @@
 
   .w-1\/2 {
     width: 50%;
-  }
-
-  .w-1\/3 {
-    width: 33.3333%;
   }
 
   .w-1\/4 {
@@ -670,6 +658,10 @@
 
   .grid-rows-\[20px_1fr_20px\] {
     grid-template-rows: 20px 1fr 20px;
+  }
+
+  .flex-wrap {
+    flex-wrap: wrap;
   }
 
   .items-center {

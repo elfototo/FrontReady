@@ -8,7 +8,7 @@
   "static/chunks/node_modules_react-icons_lib_844c6c50._.js",
   "static/chunks/node_modules_@babel_standalone_babel_de28aa25.js",
   "static/chunks/node_modules_f7eeab7d._.js",
-  "static/chunks/src_app_74d016e7._.js"
+  "static/chunks/src_7b2fb45e._.js"
 ],
     source: "dynamic"
 });

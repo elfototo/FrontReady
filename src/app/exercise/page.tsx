@@ -8,6 +8,13 @@ import Link from "next/link";
 import { FaArrowRotateLeft } from "react-icons/fa6";
 import Card from "../components/card";
 
+type Test = {
+  description: string;
+  query: string;
+  expectText: string;
+  clicks?: number;
+};
+
 type Exercise = {
   id: number;
   theme: string;
@@ -19,7 +26,7 @@ type Exercise = {
   html: string;
   app: string;
   css: string;
-  index: string;
+  tests: Test[];
   [key: string]: unknown;
 };
 

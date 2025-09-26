@@ -88,6 +88,7 @@ export default function Brawser({
 
   return (
     <iframe
+      id="preview"
       title="preview"
       srcDoc={srcDoc}
       sandbox="allow-scripts allow-same-origin"
