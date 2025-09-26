@@ -27,8 +27,9 @@ type Language = "index.html" | "styles.css" | "App.js";
 type Test = {
   description: string;
   query: string;
-  expectText: string;
   clicks?: number;
+  expectText?: string;
+  type?: string; // вместо литералов
 };
 
 type Exercise = {
@@ -181,7 +182,7 @@ export default function CodeEditor({
       </div>
 
       <Editor
-        height="79vh"
+        height="70vh"
         theme={theme}
         path={files[activeFile].name}
         defaultLanguage={files[activeFile].language}

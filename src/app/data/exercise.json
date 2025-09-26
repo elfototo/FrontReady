@@ -12,15 +12,10 @@
     "css": "body {\n  font-family: sans-serif;\n}",
     "tests": [
       {
-        "description": "Кнопка отображается с начальным значением",
-        "query": "button",
-        "expectText": "Clicks: 0"
-      },
-      {
-        "description": "Один клик увеличивает значение до 1",
+        "description": "Один клик увеличивает значение на 1",
         "query": "button",
         "clicks": 1,
-        "expectText": "Clicks: 1"
+        "type": "increment"
       }
     ]
   }

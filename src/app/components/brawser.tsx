@@ -94,7 +94,9 @@ export default function Brawser({
       sandbox="allow-scripts allow-same-origin"
       width="100%"
       height="100%"
-      style={{ border: "1px solid #ccc", borderRadius: "8px"}}
+      style={{
+        borderRadius: "8px",
+      }}
     />
   );
 }

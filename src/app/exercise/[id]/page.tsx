@@ -10,12 +10,20 @@ import { TbCodeCircleFilled } from "react-icons/tb";
 import CodeEditor from "../../components/codeEditor";
 import Brawser from "../../components/brawser";
 import { TestCase, runTests } from "@/lib/runTests";
+import TestsConsole from "@/app/components/testsConsole";
+
+type TestResult = {
+  description: string;
+  pass: boolean;
+  error?: string;
+};
 
 type Test = {
   description: string;
   query: string;
-  expectText: string;
   clicks?: number;
+  expectText?: string;
+  type?: string; // вместо литералов
 };
 
 type Exercise = {
@@ -81,9 +89,9 @@ export default function ExercisePage({
       console.log("есть сохраненное");
     } else {
       const initial = {
-        "index.html": exercise.html ?? "",
-        "styles.css": exercise.css ?? "",
-        "App.js": exercise.app ?? "",
+        "index.html": exercise.html ?? undefined,
+        "styles.css": exercise.css ?? undefined,
+        "App.js": exercise.app ?? undefined,
       };
 
       setCode(initial);
@@ -102,20 +110,16 @@ export default function ExercisePage({
     console.log("сохранили изменения в localStorage", key, code);
   }, [code, exercise, initialized]);
 
+  const [testResults, setTestResults] = useState<TestResult[]>([]);
+
   const handleCheck = async () => {
+    
     if (!exercise?.tests) {
       console.log("Нет тестов для этого упражнения");
       return;
     }
-
     const results = await runTests(exercise.tests as TestCase[]);
-    console.log("Результаты тестов:", results);
-
-    // простой лог в понятном виде:
-    results.forEach((r) => {
-      if (r.pass) console.log(`✅ ${r.description}`, r);
-      else console.warn(`❌ ${r.description}`, r);
-    });
+    setTestResults(results); // сохраняем в state
   };
 
   return (
@@ -132,7 +136,7 @@ export default function ExercisePage({
       <div className="flex gap-5">
         {/* Условия */}
         <div className="w-1/4">
-          <div className="flex gap-5 text-gray-400 whitespace-nowrap flex-wrap mt-5">
+          <div className="flex gap-5 text-slate-400 whitespace-nowrap flex-wrap mt-5">
             <div className="flex items-center gap-1">
               <TbCodeCircleFilled />
               {exercise?.theme}
@@ -162,14 +166,21 @@ export default function ExercisePage({
           </div>
 
           {/* Браузер */}
-          <div className="w-1/2">
+          <div className="w-1/2 relative border-1 border-slate-300 rounded-xl overflow-hidden">
             <Brawser code={code} setCode={setCode} />
+            <div className="absolute bottom-0 w-full">
+              <TestsConsole
+                code={code}
+                exercise={exercise}
+                results={testResults}
+              />
+            </div>
           </div>
         </div>
         {/* Code Editor */}
       </div>
 
-      <div className="fixed bottom-0 left-0 w-full h-20 bg-gray-200 flex justify-end items-center px-16 z-10">
+      <div className="fixed bottom-0 left-0 w-full h-20 bg-slate-200 flex justify-end items-center px-16 z-10">
         <button
           className="p-2 bg-white cursor-pointer rounded-xl"
           onClick={handleCheck}
