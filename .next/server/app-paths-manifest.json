@@ -3,5 +3,6 @@
   "/exercise/[id]/page": "app/exercise/[id]/page.js",
   "/exercise/page": "app/exercise/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/page": "app/page.js"
+  "/page": "app/page.js",
+  "/qwestion/page": "app/qwestion/page.js"
 }
