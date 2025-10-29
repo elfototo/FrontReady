@@ -2,13 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 export default function Home() {
   return (
-    <div className="relative font-sans flex flex-col items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 bg-[#fdfdc9]">
+    <div className="font-sans flex flex-col items-center justify-center min-h-screen p-8 pb-20 gap-16 sm:p-20 bg-[#fdfdc9]">
       <div className="flex gap-6 items-center justify-center w-full">
-        <div className="flex flex-col gap-5 text-[#af8cbd]">
-          <h1 className=" text-[#af8cbd] lg:text-8xl text-5xl font-extrabold">
+        <div className="flex flex-col text-[#af8cbd]">
+          <h1 className="text-[#af8cbd] lg:text-8xl text-5xl font-extrabold mb-5">
             FrontReady
           </h1>
-          <p className="text-xl wrap">
+          <p className="text-xl mb-5">
             Прокачай свои навыки фронтенд-разработки — от простых вопросов <br/> до
             реальных задач. Начни путь к уверенному коду уже сегодня!
           </p>
