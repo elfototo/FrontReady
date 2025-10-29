@@ -1,11 +1,46 @@
 import Link from "next/link";
+import Image from "next/image";
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <h1>FrontReady</h1>
-      <div className="grid gap-2 w-[10rem]">
-        <Link href={"/qwestion"} className="py-2 w-full rounded flex justify-center cursor-pointer bg-emerald-400 text-white m-auto hover:bg-emerald-600">К вопросам</Link>
-        <Link href={"/exercise"} className="py-2 w-full rounded flex justify-center cursor-pointer bg-emerald-400 text-white m-auto hover:bg-emerald-600">К упражнениям</Link>
+    <div className="relative font-sans flex flex-col items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 bg-[#fdfdc9]">
+      <div className="flex gap-6 items-center justify-center w-full">
+        <div className="flex flex-col gap-5 text-[#af8cbd]">
+          <h1 className=" text-[#af8cbd] lg:text-8xl text-5xl font-extrabold">
+            FrontReady
+          </h1>
+          <p className="text-xl wrap">
+            Прокачай свои навыки фронтенд-разработки — от простых вопросов <br/> до
+            реальных задач. Начни путь к уверенному коду уже сегодня!
+          </p>
+          <div className="flex gap-2">
+            <button className="">
+              <Link
+                href={"/qwestion"}
+                className="px-4 py-2 rounded flex justify-center cursor-pointer bg-[#c69fd5] text-white m-auto hover:bg-[#af8cbd] flex-nowrap items-center text-xl"
+              >
+                К вопросам
+              </Link>
+            </button>
+
+            <button className="">
+              <Link
+                href={"/exercise"}
+                className="p-2 rounded flex justify-center cursor-pointer bg-[#c69fd5] text-white m-auto hover:bg-[#af8cbd] flex-nowrap   items-center text-xl"
+              >
+                К упражнениям
+              </Link>
+            </button>
+          </div>
+        </div>
+        <div>
+          <Image
+            src="/home.png"
+            alt="home"
+            height={500}
+            width={500}
+            style={{}}
+          />
+        </div>
       </div>
     </div>
   );
