@@ -88,6 +88,10 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$imag
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$markdown$2f$lib$2f$index$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__Markdown__as__default$3e$__ = __turbopack_context__.i("[project]/node_modules/react-markdown/lib/index.js [app-rsc] (ecmascript) <export Markdown as default>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$tb$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-icons/tb/index.mjs [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$md$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-icons/md/index.mjs [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react.js [app-rsc] (ecmascript)");
+"use cliemt";
+;
+;
 ;
 ;
 ;
@@ -101,62 +105,95 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$ico
 ;
 function Qwestions() {
     const questions = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$data$2f$qwestion$2e$json__$28$json$29$__["default"];
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "font-sans grid justify-items-center p-8 pb-20 gap-16 sm:p-20",
+    const [openMenu, setOpenMenu] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["useState"])(false);
+    const handleOpen = ()=>{
+        setOpenMenu(!openMenu);
+    };
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
+        className: "font-sans lg:grid px-5 xl:pb-20 xl:gap-10 sm:p-20",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex justify-between",
+                className: "flex justify-between mb-5",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                        className: "text-4xl",
+                        className: "hidden xl:block text-4xl",
                         children: "Вопросы"
                     }, void 0, false, {
                         fileName: "[project]/src/app/qwestion/page.tsx",
-                        lineNumber: 36,
+                        lineNumber: 44,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            onClick: handleOpen,
+                            className: "flex items-center gap-2 text-gray-400 cursor-pointer p-2 border-1 border-gray-400 rounded-xl",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["FaList"], {}, void 0, false, {
+                                    fileName: "[project]/src/app/qwestion/page.tsx",
+                                    lineNumber: 50,
+                                    columnNumber: 13
+                                }, this),
+                                " Список"
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/app/qwestion/page.tsx",
+                            lineNumber: 46,
+                            columnNumber: 11
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/qwestion/page.tsx",
+                        lineNumber: 45,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                         href: "/",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex items-center gap-2",
+                            className: "flex items-center gap-2 text-gray-400 cursor-pointer p-2 border-1 border-gray-400 rounded-xl",
                             children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa6$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["FaArrowRotateLeft"], {
-                                    size: 12
-                                }, void 0, false, {
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa6$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["FaArrowRotateLeft"], {}, void 0, false, {
                                     fileName: "[project]/src/app/qwestion/page.tsx",
-                                    lineNumber: 39,
+                                    lineNumber: 55,
                                     columnNumber: 13
                                 }, this),
-                                " назад"
+                                " Назад"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/qwestion/page.tsx",
-                            lineNumber: 38,
+                            lineNumber: 54,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/qwestion/page.tsx",
-                        lineNumber: 37,
+                        lineNumber: 53,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/qwestion/page.tsx",
-                lineNumber: 35,
+                lineNumber: 43,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                className: "text-4xl",
+                children: "Вопросы"
+            }, void 0, false, {
+                fileName: "[project]/src/app/qwestion/page.tsx",
+                lineNumber: 60,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex gap-6",
+                className: "flex xl:gap-6 w-full",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "w-[20%]",
+                        className: "xl:w-[20%] xl:block hidden sticky top-20 self-start h-auto max-h-[80vh] overflow-y-auto border-r pr-4",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                 className: "text-2xl",
                                 children: "Список"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/qwestion/page.tsx",
-                                lineNumber: 46,
+                                lineNumber: 64,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -170,32 +207,32 @@ function Qwestions() {
                                                 children: item.title
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/qwestion/page.tsx",
-                                                lineNumber: 54,
+                                                lineNumber: 72,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/qwestion/page.tsx",
-                                            lineNumber: 53,
+                                            lineNumber: 71,
                                             columnNumber: 17
                                         }, this)
                                     }, item.id, false, {
                                         fileName: "[project]/src/app/qwestion/page.tsx",
-                                        lineNumber: 49,
+                                        lineNumber: 67,
                                         columnNumber: 15
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/app/qwestion/page.tsx",
-                                lineNumber: 47,
+                                lineNumber: 65,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/qwestion/page.tsx",
-                        lineNumber: 45,
+                        lineNumber: 63,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "w-[80%]",
+                        className: "xl:w-[80%] w-full",
                         children: questions.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 id: item.title,
                                 className: "my-10",
@@ -206,11 +243,11 @@ function Qwestions() {
                                             components: {
                                                 code ({ children }) {
                                                     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("code", {
-                                                        className: "bg-gray-100 dark:bg-gray-700 rounded text-sm p-1 font-bold",
+                                                        className: "bg-gray-100 dark:bg-gray-700 rounded text-md p-1 font-bold",
                                                         children: children
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/qwestion/page.tsx",
-                                                        lineNumber: 68,
+                                                        lineNumber: 86,
                                                         columnNumber: 25
                                                     }, void 0);
                                                 }
@@ -218,12 +255,12 @@ function Qwestions() {
                                             children: item.title
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/qwestion/page.tsx",
-                                            lineNumber: 64,
+                                            lineNumber: 82,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/qwestion/page.tsx",
-                                        lineNumber: 63,
+                                        lineNumber: 81,
                                         columnNumber: 15
                                     }, this),
                                     Array.isArray(item.content) && item.content.map((block, index)=>{
@@ -236,11 +273,11 @@ function Qwestions() {
                                                         components: {
                                                             code ({ children }) {
                                                                 return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("code", {
-                                                                    className: "bg-gray-100 dark:bg-gray-700 dark:text-gray-200 rounded text-sm p-1 font-bold",
+                                                                    className: "bg-gray-100 dark:bg-gray-700 dark:text-gray-200 rounded text-md p-1 font-bold",
                                                                     children: children
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                    lineNumber: 91,
+                                                                    lineNumber: 109,
                                                                     columnNumber: 35
                                                                 }, void 0);
                                                             }
@@ -248,12 +285,12 @@ function Qwestions() {
                                                         children: block.text
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/qwestion/page.tsx",
-                                                        lineNumber: 87,
+                                                        lineNumber: 105,
                                                         columnNumber: 27
                                                     }, this)
                                                 }, key, false, {
                                                     fileName: "[project]/src/app/qwestion/page.tsx",
-                                                    lineNumber: 86,
+                                                    lineNumber: 104,
                                                     columnNumber: 25
                                                 }, this);
                                             case "paragraph":
@@ -263,11 +300,11 @@ function Qwestions() {
                                                         components: {
                                                             code ({ children }) {
                                                                 return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("code", {
-                                                                    className: "bg-gray-100 dark:bg-gray-700 dark:text-gray-200 rounded text-sm p-1 font-bold",
+                                                                    className: "bg-gray-100 dark:bg-gray-700 dark:text-gray-200 rounded text-md p-1 font-bold",
                                                                     children: children
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                    lineNumber: 110,
+                                                                    lineNumber: 128,
                                                                     columnNumber: 35
                                                                 }, void 0);
                                                             }
@@ -275,12 +312,12 @@ function Qwestions() {
                                                         children: block.text
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/qwestion/page.tsx",
-                                                        lineNumber: 106,
+                                                        lineNumber: 124,
                                                         columnNumber: 27
                                                     }, this)
                                                 }, key, false, {
                                                     fileName: "[project]/src/app/qwestion/page.tsx",
-                                                    lineNumber: 105,
+                                                    lineNumber: 123,
                                                     columnNumber: 25
                                                 }, this);
                                             case "mainParagraph":
@@ -293,23 +330,23 @@ function Qwestions() {
                                                                 size: 40
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                lineNumber: 129,
+                                                                lineNumber: 147,
                                                                 columnNumber: 29
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/qwestion/page.tsx",
-                                                            lineNumber: 128,
+                                                            lineNumber: 146,
                                                             columnNumber: 27
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$markdown$2f$lib$2f$index$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__Markdown__as__default$3e$__["default"], {
                                                             components: {
                                                                 code ({ children }) {
                                                                     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("code", {
-                                                                        className: "bg-gray-100 dark:bg-gray-700 dark:text-gray-200 rounded text-sm p-1 font-bold",
+                                                                        className: "bg-gray-100 dark:bg-gray-700 dark:text-gray-200 rounded text-md p-1 font-bold",
                                                                         children: children
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                        lineNumber: 135,
+                                                                        lineNumber: 153,
                                                                         columnNumber: 35
                                                                     }, void 0);
                                                                 }
@@ -317,13 +354,13 @@ function Qwestions() {
                                                             children: block.text
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/qwestion/page.tsx",
-                                                            lineNumber: 131,
+                                                            lineNumber: 149,
                                                             columnNumber: 27
                                                         }, this)
                                                     ]
                                                 }, key, true, {
                                                     fileName: "[project]/src/app/qwestion/page.tsx",
-                                                    lineNumber: 124,
+                                                    lineNumber: 142,
                                                     columnNumber: 25
                                                 }, this);
                                             case "positive":
@@ -339,23 +376,23 @@ function Qwestions() {
                                                                         size: 12
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                        lineNumber: 159,
+                                                                        lineNumber: 177,
                                                                         columnNumber: 33
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                    lineNumber: 158,
+                                                                    lineNumber: 176,
                                                                     columnNumber: 31
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$markdown$2f$lib$2f$index$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__Markdown__as__default$3e$__["default"], {
                                                                     components: {
                                                                         code ({ children }) {
                                                                             return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("code", {
-                                                                                className: "bg-green-200 dark:bg-green-900  dark:text-gray-200 rounded text-sm p-1 font-bold",
+                                                                                className: "bg-green-200 dark:bg-green-900  dark:text-gray-200 rounded text-md p-1 font-bold",
                                                                                 children: children
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                                lineNumber: 166,
+                                                                                lineNumber: 184,
                                                                                 columnNumber: 39
                                                                             }, void 0);
                                                                         }
@@ -363,18 +400,18 @@ function Qwestions() {
                                                                     children: li
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                    lineNumber: 162,
+                                                                    lineNumber: 180,
                                                                     columnNumber: 31
                                                                 }, this)
                                                             ]
                                                         }, i, true, {
                                                             fileName: "[project]/src/app/qwestion/page.tsx",
-                                                            lineNumber: 157,
+                                                            lineNumber: 175,
                                                             columnNumber: 29
                                                         }, this))
                                                 }, key, false, {
                                                     fileName: "[project]/src/app/qwestion/page.tsx",
-                                                    lineNumber: 152,
+                                                    lineNumber: 170,
                                                     columnNumber: 25
                                                 }, this);
                                             case "negative":
@@ -390,23 +427,23 @@ function Qwestions() {
                                                                         size: 12
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                        lineNumber: 192,
+                                                                        lineNumber: 210,
                                                                         columnNumber: 33
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                    lineNumber: 191,
+                                                                    lineNumber: 209,
                                                                     columnNumber: 31
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$markdown$2f$lib$2f$index$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__Markdown__as__default$3e$__["default"], {
                                                                     components: {
                                                                         code ({ children }) {
                                                                             return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("code", {
-                                                                                className: "bg-red-200 dark:bg-red-900 rounded text-sm p-1 font-bold",
+                                                                                className: "bg-red-200 dark:bg-red-900 rounded text-md p-1 font-bold",
                                                                                 children: children
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                                lineNumber: 199,
+                                                                                lineNumber: 217,
                                                                                 columnNumber: 39
                                                                             }, void 0);
                                                                         }
@@ -414,18 +451,18 @@ function Qwestions() {
                                                                     children: li
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                    lineNumber: 195,
+                                                                    lineNumber: 213,
                                                                     columnNumber: 31
                                                                 }, this)
                                                             ]
                                                         }, i, true, {
                                                             fileName: "[project]/src/app/qwestion/page.tsx",
-                                                            lineNumber: 190,
+                                                            lineNumber: 208,
                                                             columnNumber: 29
                                                         }, this))
                                                 }, key, false, {
                                                     fileName: "[project]/src/app/qwestion/page.tsx",
-                                                    lineNumber: 185,
+                                                    lineNumber: 203,
                                                     columnNumber: 25
                                                 }, this);
                                             case "main":
@@ -439,12 +476,12 @@ function Qwestions() {
                                                                 size: 40
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                lineNumber: 223,
+                                                                lineNumber: 241,
                                                                 columnNumber: 29
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/qwestion/page.tsx",
-                                                            lineNumber: 222,
+                                                            lineNumber: 240,
                                                             columnNumber: 27
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -457,23 +494,23 @@ function Qwestions() {
                                                                                 size: 12
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                                lineNumber: 229,
+                                                                                lineNumber: 247,
                                                                                 columnNumber: 35
                                                                             }, this)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                            lineNumber: 228,
+                                                                            lineNumber: 246,
                                                                             columnNumber: 33
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$markdown$2f$lib$2f$index$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__Markdown__as__default$3e$__["default"], {
                                                                             components: {
                                                                                 code ({ children }) {
                                                                                     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("code", {
-                                                                                        className: "bg-gray-100 dark:bg-gray-700 rounded text-sm p-1 font-bold",
+                                                                                        className: "bg-gray-100 dark:bg-gray-700 rounded text-md p-1 font-bold",
                                                                                         children: children
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                                        lineNumber: 235,
+                                                                                        lineNumber: 253,
                                                                                         columnNumber: 41
                                                                                     }, void 0);
                                                                                 }
@@ -481,24 +518,24 @@ function Qwestions() {
                                                                             children: li
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                            lineNumber: 231,
+                                                                            lineNumber: 249,
                                                                             columnNumber: 33
                                                                         }, this)
                                                                     ]
                                                                 }, i, true, {
                                                                     fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                    lineNumber: 227,
+                                                                    lineNumber: 245,
                                                                     columnNumber: 31
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/qwestion/page.tsx",
-                                                            lineNumber: 225,
+                                                            lineNumber: 243,
                                                             columnNumber: 27
                                                         }, this)
                                                     ]
                                                 }, key, true, {
                                                     fileName: "[project]/src/app/qwestion/page.tsx",
-                                                    lineNumber: 218,
+                                                    lineNumber: 236,
                                                     columnNumber: 25
                                                 }, this);
                                             case "list":
@@ -514,23 +551,23 @@ function Qwestions() {
                                                                         size: 12
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                        lineNumber: 262,
+                                                                        lineNumber: 280,
                                                                         columnNumber: 33
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                    lineNumber: 261,
+                                                                    lineNumber: 279,
                                                                     columnNumber: 31
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$markdown$2f$lib$2f$index$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__Markdown__as__default$3e$__["default"], {
                                                                     components: {
                                                                         code ({ children }) {
                                                                             return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("code", {
-                                                                                className: "bg-gray-100 dark:bg-gray-700 rounded text-sm p-1 font-bold",
+                                                                                className: "bg-gray-100 dark:bg-gray-700 rounded text-md p-1 font-bold",
                                                                                 children: children
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                                lineNumber: 268,
+                                                                                lineNumber: 286,
                                                                                 columnNumber: 39
                                                                             }, void 0);
                                                                         }
@@ -538,18 +575,18 @@ function Qwestions() {
                                                                     children: li
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                    lineNumber: 264,
+                                                                    lineNumber: 282,
                                                                     columnNumber: 31
                                                                 }, this)
                                                             ]
                                                         }, i, true, {
                                                             fileName: "[project]/src/app/qwestion/page.tsx",
-                                                            lineNumber: 260,
+                                                            lineNumber: 278,
                                                             columnNumber: 29
                                                         }, this))
                                                 }, key, false, {
                                                     fileName: "[project]/src/app/qwestion/page.tsx",
-                                                    lineNumber: 255,
+                                                    lineNumber: 273,
                                                     columnNumber: 25
                                                 }, this);
                                             case "links":
@@ -566,7 +603,7 @@ function Qwestions() {
                                                                     size: 10
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                    lineNumber: 299,
+                                                                    lineNumber: 317,
                                                                     columnNumber: 31
                                                                 }, this),
                                                                 " ",
@@ -574,12 +611,12 @@ function Qwestions() {
                                                             ]
                                                         }, i, true, {
                                                             fileName: "[project]/src/app/qwestion/page.tsx",
-                                                            lineNumber: 292,
+                                                            lineNumber: 310,
                                                             columnNumber: 29
                                                         }, this))
                                                 }, key, false, {
                                                     fileName: "[project]/src/app/qwestion/page.tsx",
-                                                    lineNumber: 287,
+                                                    lineNumber: 305,
                                                     columnNumber: 25
                                                 }, this);
                                             case "code":
@@ -595,7 +632,7 @@ function Qwestions() {
                                                     children: block.code
                                                 }, key, false, {
                                                     fileName: "[project]/src/app/qwestion/page.tsx",
-                                                    lineNumber: 309,
+                                                    lineNumber: 327,
                                                     columnNumber: 25
                                                 }, this);
                                             case "image":
@@ -607,7 +644,7 @@ function Qwestions() {
                                                     className: "w-[80%] h-full p-5 bg-white m-auto"
                                                 }, key, false, {
                                                     fileName: "[project]/src/app/qwestion/page.tsx",
-                                                    lineNumber: 322,
+                                                    lineNumber: 340,
                                                     columnNumber: 25
                                                 }, this);
                                             case "table":
@@ -626,11 +663,11 @@ function Qwestions() {
                                                                             components: {
                                                                                 code ({ children }) {
                                                                                     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("code", {
-                                                                                        className: "bg-gray-100 dark:bg-gray-700 rounded text-sm p-1 font-bold",
+                                                                                        className: "bg-gray-100 dark:bg-gray-700 rounded text-md p-1 font-bold",
                                                                                         children: children
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                                        lineNumber: 357,
+                                                                                        lineNumber: 375,
                                                                                         columnNumber: 43
                                                                                     }, void 0);
                                                                                 }
@@ -638,22 +675,22 @@ function Qwestions() {
                                                                             children: header
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                            lineNumber: 353,
+                                                                            lineNumber: 371,
                                                                             columnNumber: 35
                                                                         }, this)
                                                                     }, i, false, {
                                                                         fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                        lineNumber: 349,
+                                                                        lineNumber: 367,
                                                                         columnNumber: 33
                                                                     }, this))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                lineNumber: 347,
+                                                                lineNumber: 365,
                                                                 columnNumber: 29
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/qwestion/page.tsx",
-                                                            lineNumber: 346,
+                                                            lineNumber: 364,
                                                             columnNumber: 27
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -664,11 +701,11 @@ function Qwestions() {
                                                                                 components: {
                                                                                     code ({ children }) {
                                                                                         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("code", {
-                                                                                            className: "bg-gray-100 dark:bg-gray-700 rounded text-sm p-1 font-bold",
+                                                                                            className: "bg-gray-100 dark:bg-gray-700 rounded text-md p-1 font-bold",
                                                                                             children: children
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                                            lineNumber: 382,
+                                                                                            lineNumber: 400,
                                                                                             columnNumber: 45
                                                                                         }, void 0);
                                                                                     }
@@ -676,28 +713,28 @@ function Qwestions() {
                                                                                 children: cell
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                                lineNumber: 378,
+                                                                                lineNumber: 396,
                                                                                 columnNumber: 37
                                                                             }, this)
                                                                         }, j, false, {
                                                                             fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                            lineNumber: 374,
+                                                                            lineNumber: 392,
                                                                             columnNumber: 35
                                                                         }, this))
                                                                 }, i, false, {
                                                                     fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                    lineNumber: 372,
+                                                                    lineNumber: 390,
                                                                     columnNumber: 31
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/qwestion/page.tsx",
-                                                            lineNumber: 370,
+                                                            lineNumber: 388,
                                                             columnNumber: 27
                                                         }, this)
                                                     ]
                                                 }, key, true, {
                                                     fileName: "[project]/src/app/qwestion/page.tsx",
-                                                    lineNumber: 342,
+                                                    lineNumber: 360,
                                                     columnNumber: 25
                                                 }, this);
                                             default:
@@ -707,24 +744,24 @@ function Qwestions() {
                                 ]
                             }, item.id, true, {
                                 fileName: "[project]/src/app/qwestion/page.tsx",
-                                lineNumber: 62,
+                                lineNumber: 80,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/app/qwestion/page.tsx",
-                        lineNumber: 60,
+                        lineNumber: 78,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/qwestion/page.tsx",
-                lineNumber: 44,
+                lineNumber: 62,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/qwestion/page.tsx",
-        lineNumber: 34,
+        lineNumber: 42,
         columnNumber: 5
     }, this);
 }

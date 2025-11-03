@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { FaArrowRotateLeft } from "react-icons/fa6";
 import questionsData from "../data/qwestion.json";
@@ -8,6 +10,9 @@ import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import { TbPointFilled } from "react-icons/tb";
 import { MdNotificationImportant } from "react-icons/md";
+import { FaList } from "react-icons/fa";
+import { useState } from "react";
+import { IoMdClose } from "react-icons/io";
 
 type ContentBlock =
   | { type: "title"; text: string }
@@ -29,26 +34,55 @@ type Question = {
 
 export default function Qwestions() {
   const questions: Question[] = questionsData;
+  const [openMenu, setOpenMenu] = useState(false);
+
+  const handleOpen = () => {
+    setOpenMenu(!openMenu);
+    console.log("openMenu", openMenu);
+  };
 
   return (
-    <div className="font-sans grid justify-items-center p-8 pb-20 gap-16 sm:p-20">
-      <div className="flex justify-between">
-        <h1 className="text-4xl">Вопросы</h1>
+    <main className="font-sans lg:grid px-5 xl:pb-20 xl:gap-10 sm:p-20">
+      <div className="flex justify-between mb-5">
+        <h1 className="hidden xl:block text-4xl">Вопросы</h1>
+        <div className="xl:hidden">
+          <button
+            onClick={handleOpen}
+            className="flex items-center gap-2 text-gray-400 cursor-pointer px-3 py-2 border-1 border-gray-400 rounded-full "
+          >
+            <FaList /> Список
+          </button>
+        </div>
         <Link href={"/"}>
-          <div className="flex items-center gap-2">
-            <FaArrowRotateLeft size={12} /> назад
+          <div className="flex items-center gap-2 text-gray-400 cursor-pointer px-3 py-2 border-1 border-gray-400 rounded-full">
+            <FaArrowRotateLeft /> Назад
           </div>
         </Link>
       </div>
 
-      <div className="flex gap-6">
-        <div className="w-[20%]">
-          <h2 className="text-2xl">Список</h2>
-          <ul className="list-disc list-inside">
+      <h1 className="text-4xl xl:hidden">Вопросы</h1>
+
+      <div className="flex xl:gap-6 w-full">
+        <div
+          className={`lg:w-[30%] w-[75%] absolute left-0 top-0 pt-20 bg-white  border-1 border-gray-200 shadow-lg ${
+            openMenu ? "block" : "hidden"
+          }`}
+        >
+          <div className="text-2xl top-0 bg-white w-full pb-3 shadow-lg px-4 flex justify-between">
+            <h2>Список</h2>
+            <button
+              className="cursor-pointer"
+              onClick={() => setOpenMenu(false)}
+            >
+              <IoMdClose />
+            </button>
+          </div>
+
+          <ul className="px-4 list-disc list-inside">
             {questions.map((item) => (
               <li
                 key={item.id}
-                className="flex items-center cursor-pointer text-gray-400  hover:text-black dark:hover:text-white py-2 border-t-1 solid border-gray-300"
+                className="flex text-md items-center cursor-pointer text-gray-400  hover:text-black dark:hover:text-white py-4 border-t-1 solid border-gray-300"
               >
                 <a href={`#${item.title}`} className="flex items-center gap-2">
                   <h3>{item.title}</h3>
@@ -57,7 +91,27 @@ export default function Qwestions() {
             ))}
           </ul>
         </div>
-        <div className="w-[80%]">
+
+        <div className={`hidden xl:block w-[20%] bg-white `}>
+          <div className="text-2xl top-0 bg-white w-full pb-3 flex justify-between">
+            <h2>Список</h2>
+          </div>
+
+          <ul className="list-disc list-inside border-r-1 border-gray-300">
+            {questions.map((item) => (
+              <li
+                key={item.id}
+                className="flex text-md items-center cursor-pointer text-gray-400  hover:text-black dark:hover:text-white py-4 pr-3 border-t-1 solid border-gray-300"
+              >
+                <a href={`#${item.title}`} className="flex items-center gap-2">
+                  <h3>{item.title}</h3>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="xl:w-[80%] w-full">
           {questions.map((item) => (
             <div key={item.id} id={item.title} className="my-10">
               <h2 className="font-bold text-2xl">
@@ -65,7 +119,7 @@ export default function Qwestions() {
                   components={{
                     code({ children }) {
                       return (
-                        <code className="bg-gray-100 dark:bg-gray-700 rounded text-sm p-1 font-bold">
+                        <code className="bg-gray-100 dark:bg-gray-700 rounded text-md p-1 font-bold">
                           {children}
                         </code>
                       );
@@ -88,7 +142,7 @@ export default function Qwestions() {
                             components={{
                               code({ children }) {
                                 return (
-                                  <code className="bg-gray-100 dark:bg-gray-700 dark:text-gray-200 rounded text-sm p-1 font-bold">
+                                  <code className="bg-gray-100 dark:bg-gray-700 dark:text-gray-200 rounded text-md p-1 font-bold">
                                     {children}
                                   </code>
                                 );
@@ -107,7 +161,7 @@ export default function Qwestions() {
                             components={{
                               code({ children }) {
                                 return (
-                                  <code className="bg-gray-100 dark:bg-gray-700 dark:text-gray-200 rounded text-sm p-1 font-bold">
+                                  <code className="bg-gray-100 dark:bg-gray-700 dark:text-gray-200 rounded text-md p-1 font-bold">
                                     {children}
                                   </code>
                                 );
@@ -132,7 +186,7 @@ export default function Qwestions() {
                             components={{
                               code({ children }) {
                                 return (
-                                  <code className="bg-gray-100 dark:bg-gray-700 dark:text-gray-200 rounded text-sm p-1 font-bold">
+                                  <code className="bg-gray-100 dark:bg-gray-700 dark:text-gray-200 rounded text-md p-1 font-bold">
                                     {children}
                                   </code>
                                 );
@@ -163,7 +217,7 @@ export default function Qwestions() {
                                 components={{
                                   code({ children }) {
                                     return (
-                                      <code className="bg-green-200 dark:bg-green-900  dark:text-gray-200 rounded text-sm p-1 font-bold">
+                                      <code className="bg-green-200 dark:bg-green-900  dark:text-gray-200 rounded text-md p-1 font-bold">
                                         {children}
                                       </code>
                                     );
@@ -196,7 +250,7 @@ export default function Qwestions() {
                                 components={{
                                   code({ children }) {
                                     return (
-                                      <code className="bg-red-200 dark:bg-red-900 rounded text-sm p-1 font-bold">
+                                      <code className="bg-red-200 dark:bg-red-900 rounded text-md p-1 font-bold">
                                         {children}
                                       </code>
                                     );
@@ -232,7 +286,7 @@ export default function Qwestions() {
                                   components={{
                                     code({ children }) {
                                       return (
-                                        <code className="bg-gray-100 dark:bg-gray-700 rounded text-sm p-1 font-bold">
+                                        <code className="bg-gray-100 dark:bg-gray-700 rounded text-md p-1 font-bold">
                                           {children}
                                         </code>
                                       );
@@ -265,7 +319,7 @@ export default function Qwestions() {
                                 components={{
                                   code({ children }) {
                                     return (
-                                      <code className="bg-gray-100 dark:bg-gray-700 rounded text-sm p-1 font-bold">
+                                      <code className="bg-gray-100 dark:bg-gray-700 rounded text-md p-1 font-bold">
                                         {children}
                                       </code>
                                     );
@@ -354,7 +408,7 @@ export default function Qwestions() {
                                     components={{
                                       code({ children }) {
                                         return (
-                                          <code className="bg-gray-100 dark:bg-gray-700 rounded text-sm p-1 font-bold">
+                                          <code className="bg-gray-100 dark:bg-gray-700 rounded text-md p-1 font-bold">
                                             {children}
                                           </code>
                                         );
@@ -379,7 +433,7 @@ export default function Qwestions() {
                                       components={{
                                         code({ children }) {
                                           return (
-                                            <code className="bg-gray-100 dark:bg-gray-700 rounded text-sm p-1 font-bold">
+                                            <code className="bg-gray-100 dark:bg-gray-700 rounded text-md p-1 font-bold">
                                               {children}
                                             </code>
                                           );
@@ -404,6 +458,6 @@ export default function Qwestions() {
           ))}
         </div>
       </div>
-    </div>
+    </main>
   );
 }
