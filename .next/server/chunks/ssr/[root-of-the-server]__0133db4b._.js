@@ -132,10 +132,10 @@ function Qwestions() {
         console.log("openMenu", openMenu);
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
-        className: "font-sans lg:grid px-5 xl:pb-20 xl:gap-10 sm:p-20",
+        className: "font-sans lg:grid px-[1rem] xl:pb-20 xl:gap-10 sm:p-20",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex justify-between mb-5",
+                className: "flex justify-between mb-5 pt-[2rem]",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                         className: "hidden xl:block text-4xl",
@@ -146,7 +146,7 @@ function Qwestions() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "xl:hidden",
+                        className: "xl:hidden ",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                             onClick: handleOpen,
                             className: "flex items-center gap-2 text-gray-400 cursor-pointer px-3 py-2 border-1 border-gray-400 rounded-full ",
@@ -688,23 +688,42 @@ function Qwestions() {
                                                 if (!("items" in block) || !Array.isArray(block.items)) return null;
                                                 return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "my-4 mx-4 grid-cols-1 text-green-600",
-                                                    children: block.items.map((link, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                                            href: link,
-                                                            target: "_blank",
-                                                            rel: "noopen noreferrer",
-                                                            className: "flex gap-2 items-center hover:underline",
-                                                            children: [
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FaLink"], {
-                                                                    size: 10
-                                                                }, void 0, false, {
+                                                    children: block.items.map((link, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "flex items-center gap-2",
+                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                                href: link,
+                                                                target: "_blank",
+                                                                rel: "noopen noreferrer",
+                                                                className: "flex gap-2 items-center hover:underline  break-all",
+                                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                    className: "flex gap-2 place-items-baseline",
+                                                                    children: [
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FaLink"], {
+                                                                                size: 10
+                                                                            }, void 0, false, {
+                                                                                fileName: "[project]/src/app/qwestion/page.tsx",
+                                                                                lineNumber: 355,
+                                                                                columnNumber: 37
+                                                                            }, this)
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/src/app/qwestion/page.tsx",
+                                                                            lineNumber: 354,
+                                                                            columnNumber: 35
+                                                                        }, this),
+                                                                        link
+                                                                    ]
+                                                                }, void 0, true, {
                                                                     fileName: "[project]/src/app/qwestion/page.tsx",
                                                                     lineNumber: 353,
-                                                                    columnNumber: 31
-                                                                }, this),
-                                                                " ",
-                                                                link
-                                                            ]
-                                                        }, i, true, {
+                                                                    columnNumber: 33
+                                                                }, this)
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/app/qwestion/page.tsx",
+                                                                lineNumber: 347,
+                                                                columnNumber: 31
+                                                            }, this)
+                                                        }, i, false, {
                                                             fileName: "[project]/src/app/qwestion/page.tsx",
                                                             lineNumber: 346,
                                                             columnNumber: 29
@@ -722,12 +741,28 @@ function Qwestions() {
                                                     showLineNumbers: true,
                                                     customStyle: {
                                                         borderRadius: "8px",
-                                                        padding: "12px"
+                                                        padding: "12px",
+                                                        fontSize: "14px",
+                                                        overflowX: "auto",
+                                                        lineHeight: "1.5",
+                                                        whiteSpace: "pre-wrap",
+                                                        wordBreak: "break-word"
+                                                    },
+                                                    ...{
+                                                        codeTagProps: {
+                                                            style: {
+                                                                whiteSpace: "pre-wrap",
+                                                                wordBreak: "break-word"
+                                                            }
+                                                        }
+                                                    },
+                                                    ...{
+                                                        className: "syntax-wrap"
                                                     },
                                                     children: block.code
                                                 }, key, false, {
                                                     fileName: "[project]/src/app/qwestion/page.tsx",
-                                                    lineNumber: 363,
+                                                    lineNumber: 369,
                                                     columnNumber: 25
                                                 }, this);
                                             case "image":
@@ -739,7 +774,7 @@ function Qwestions() {
                                                     className: "w-[80%] h-full p-5 bg-white m-auto"
                                                 }, key, false, {
                                                     fileName: "[project]/src/app/qwestion/page.tsx",
-                                                    lineNumber: 376,
+                                                    lineNumber: 405,
                                                     columnNumber: 25
                                                 }, this);
                                             case "table":
@@ -762,7 +797,7 @@ function Qwestions() {
                                                                                         children: children
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                                        lineNumber: 411,
+                                                                                        lineNumber: 440,
                                                                                         columnNumber: 43
                                                                                     }, void 0);
                                                                                 }
@@ -770,22 +805,22 @@ function Qwestions() {
                                                                             children: header
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                            lineNumber: 407,
+                                                                            lineNumber: 436,
                                                                             columnNumber: 35
                                                                         }, this)
                                                                     }, i, false, {
                                                                         fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                        lineNumber: 403,
+                                                                        lineNumber: 432,
                                                                         columnNumber: 33
                                                                     }, this))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                lineNumber: 401,
+                                                                lineNumber: 430,
                                                                 columnNumber: 29
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/qwestion/page.tsx",
-                                                            lineNumber: 400,
+                                                            lineNumber: 429,
                                                             columnNumber: 27
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -800,7 +835,7 @@ function Qwestions() {
                                                                                             children: children
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                                            lineNumber: 436,
+                                                                                            lineNumber: 465,
                                                                                             columnNumber: 45
                                                                                         }, void 0);
                                                                                     }
@@ -808,28 +843,28 @@ function Qwestions() {
                                                                                 children: cell
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                                lineNumber: 432,
+                                                                                lineNumber: 461,
                                                                                 columnNumber: 37
                                                                             }, this)
                                                                         }, j, false, {
                                                                             fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                            lineNumber: 428,
+                                                                            lineNumber: 457,
                                                                             columnNumber: 35
                                                                         }, this))
                                                                 }, i, false, {
                                                                     fileName: "[project]/src/app/qwestion/page.tsx",
-                                                                    lineNumber: 426,
+                                                                    lineNumber: 455,
                                                                     columnNumber: 31
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/qwestion/page.tsx",
-                                                            lineNumber: 424,
+                                                            lineNumber: 453,
                                                             columnNumber: 27
                                                         }, this)
                                                     ]
                                                 }, key, true, {
                                                     fileName: "[project]/src/app/qwestion/page.tsx",
-                                                    lineNumber: 396,
+                                                    lineNumber: 425,
                                                     columnNumber: 25
                                                 }, this);
                                             default:

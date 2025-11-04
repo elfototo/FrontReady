@@ -24,3 +24,27 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* общий стиль для переноса */
+.syntax-wrap pre {
+  white-space: pre-wrap !important;
+  word-break: break-word !important;
+  overflow-x: visible !important;
+}
+
+/* Скрываем номера в мобильной версии */
+@media (max-width: 767px) {
+  /* селектор для разных версий react-syntax-highlighter —
+     попробуем покрыть оба варианта названий классов */
+  .syntax-wrap .react-syntax-highlighter-line-number,
+  .syntax-wrap .react-syntax-highlighter-line-numbers,
+  .syntax-wrap .react-syntax-highlighter-line,
+  .syntax-wrap .react-syntax-highlighter-line-number::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  /* дополнительно уменьшаем отступы, если были */
+  .syntax-wrap pre {
+    padding-left: 0 !important;
+  }
+}

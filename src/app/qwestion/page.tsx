@@ -42,10 +42,10 @@ export default function Qwestions() {
   };
 
   return (
-    <main className="font-sans lg:grid px-5 xl:pb-20 xl:gap-10 sm:p-20">
-      <div className="flex justify-between mb-5">
+    <main className="font-sans lg:grid px-[1rem] xl:pb-20 xl:gap-10 sm:p-20">
+      <div className="flex justify-between mb-5 pt-[2rem]">
         <h1 className="hidden xl:block text-4xl">Вопросы</h1>
-        <div className="xl:hidden">
+        <div className="xl:hidden ">
           <button
             onClick={handleOpen}
             className="flex items-center gap-2 text-gray-400 cursor-pointer px-3 py-2 border-1 border-gray-400 rounded-full "
@@ -343,15 +343,21 @@ export default function Qwestions() {
                           className="my-4 mx-4 grid-cols-1 text-green-600"
                         >
                           {block.items.map((link, i) => (
-                            <a
-                              key={i}
-                              href={link}
-                              target="_blank"
-                              rel="noopen noreferrer"
-                              className="flex gap-2 items-center hover:underline"
-                            >
-                              <FaLink size={10} /> {link}
-                            </a>
+                            <div key={i} className="flex items-center gap-2">
+                              <a
+                                href={link}
+                                target="_blank"
+                                rel="noopen noreferrer"
+                                className="flex gap-2 items-center hover:underline  break-all"
+                              >
+                                <div className="flex gap-2 place-items-baseline">
+                                  <div>
+                                    <FaLink size={10} />
+                                  </div>
+                                  {link}
+                                </div>
+                              </a>
+                            </div>
                           ))}
                         </div>
                       );
@@ -365,7 +371,30 @@ export default function Qwestions() {
                           language="javascript"
                           style={oneDark}
                           showLineNumbers
-                          customStyle={{ borderRadius: "8px", padding: "12px" }}
+                          customStyle={{
+                            borderRadius: "8px",
+                            padding: "12px",
+                            fontSize: "14px",
+                            overflowX: "auto",
+                            lineHeight: "1.5",
+                            whiteSpace: "pre-wrap",
+                            wordBreak: "break-word",
+                          }}
+                          {...({
+                            codeTagProps: {
+                              style: {
+                                whiteSpace: "pre-wrap",
+                                wordBreak: "break-word",
+                              },
+                            },
+                          } as unknown as React.ComponentProps<
+                            typeof SyntaxHighlighter
+                          >)}
+                          {...({
+                            className: "syntax-wrap",
+                          } as unknown as React.ComponentProps<
+                            typeof SyntaxHighlighter
+                          >)}
                         >
                           {block.code}
                         </SyntaxHighlighter>
