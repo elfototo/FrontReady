@@ -42,31 +42,44 @@ export default function Qwestions() {
   };
 
   return (
-    <main className="font-sans lg:grid px-[1rem] xl:pb-20 xl:gap-10 sm:p-20">
-      <div className="flex justify-between mb-5 pt-[2rem]">
+    <main className="relative font-sans lg:grid px-[1rem] xl:gap-10">
+      <div className="flex justify-between mt-[2rem] pt-[1rem] ">
         <h1 className="hidden xl:block text-4xl">Вопросы</h1>
         <div className="xl:hidden ">
           <button
             onClick={handleOpen}
-            className="flex items-center gap-2 text-gray-400 cursor-pointer px-3 py-2 border-1 border-gray-400 rounded-full "
+            className="flex items-center gap-2 text-white cursor-pointer p-5 border-1 rounded-full fixed top-[2rem] bg-violet-400 shadow-md"
           >
-            <FaList /> Список
+            <FaList />
           </button>
         </div>
         <Link href={"/"}>
-          <div className="flex items-center gap-2 text-gray-400 cursor-pointer px-3 py-2 border-1 border-gray-400 rounded-full">
-            <FaArrowRotateLeft /> Назад
+          <div
+            className="flex items-center gap-2 text-gray-400 cursor-pointer p-5 border-1 border-gray-400 rounded-full bg-white shadow-md fixed right-[1rem] top-[2rem] xl:sticky xl:top-[1rem] xl:bottom-auto"
+          >
+            <FaArrowRotateLeft />
           </div>
         </Link>
       </div>
 
-      <h1 className="text-4xl xl:hidden">Вопросы</h1>
+      <h1 className="text-4xl xl:hidden pt-[5rem]">Вопросы</h1>
 
-      <div className="flex xl:gap-6 w-full">
+      <div className="flex xl:gap-6 w-full overflow-hidden">
         <div
-          className={`lg:w-[30%] w-[75%] absolute left-0 top-0 pt-20 bg-white  border-1 border-gray-200 shadow-lg ${
+          className={`bg-black opacity-40 w-full h-full absolute z-0 top-0 right-0 ${
             openMenu ? "block" : "hidden"
           }`}
+        ></div>
+
+        <div
+          className={`z-10 lg:w-[30%] w-[75%] absolute left-0 top-0 pt-[2rem] bg-white  border-1 border-gray-200 shadow-lg ${
+            openMenu ? "block" : "hidden"
+          }`}
+          style={{
+            height: "100vh",
+            overflowY: "auto",
+            overflowX: "hidden",
+          }}
         >
           <div className="text-2xl top-0 bg-white w-full pb-3 shadow-lg px-4 flex justify-between">
             <h2>Список</h2>
@@ -84,7 +97,11 @@ export default function Qwestions() {
                 key={item.id}
                 className="flex text-md items-center cursor-pointer text-gray-400  hover:text-black dark:hover:text-white py-4 border-t-1 solid border-gray-300"
               >
-                <a href={`#${item.title}`} className="flex items-center gap-2">
+                <a
+                  href={`#${item.title}`}
+                  onClick={handleOpen}
+                  className="flex items-center gap-2"
+                >
                   <h3>{item.title}</h3>
                 </a>
               </li>
