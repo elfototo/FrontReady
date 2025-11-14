@@ -23,7 +23,7 @@ export default function Home() {
 
         <div className="z-10 flex flex-col md:flex-row gap-6 items-center justify-end w-full pt-10 min-h-screen md:justify-center">
           {/* <div className="hidden md:block absolute bottom-0 w-full bg-gray-50 h-[68vh] z-0"></div> */}
-          <div className="relative z-10 flex flex-col text-gray-500 justify-center items-center text-center max-w-lg bg-white mx-[2rem] mb-[20vh] md:mb-0 rounded-xl shadow-lg md:shadow-none md:mr-5 md:items-start md:text-left md:mx-0 p-[2.4rem] md:px-10 md:bg-transparent">
+          <div className="relative z-10 flex flex-col text-gray-500 justify-center items-center text-center max-w-lg bg-white mx-[2rem] mb-[15vh] md:mb-0 rounded-xl shadow-lg md:shadow-none md:mr-5 md:items-start md:text-left md:mx-0 p-[2.4rem] md:px-10 md:bg-transparent">
             
             <h1 className="lg:text-[4.4rem] md:text-[4rem] text-[2.5rem] font-extrabold mb-4 md:mb-[0.1rem] text-violet-400 ">
               FrontReady

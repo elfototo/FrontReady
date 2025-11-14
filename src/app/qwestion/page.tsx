@@ -42,8 +42,8 @@ export default function Qwestions() {
   };
 
   return (
-    <main className="relative font-sans lg:grid px-[1rem] xl:gap-10">
-      <div className="flex justify-between mt-[2rem] pt-[1rem] ">
+    <main className="relative font-sans lg:grid px-[1rem] xl:gap-10 max-w-[1200px] mx-auto">
+      <div className="flex justify-between xl:mt-[2rem] pt-[1rem] ">
         <h1 className="hidden xl:block text-4xl">Вопросы</h1>
         <div className="xl:hidden ">
           <button
@@ -54,9 +54,7 @@ export default function Qwestions() {
           </button>
         </div>
         <Link href={"/"}>
-          <div
-            className="flex items-center gap-2 text-gray-400 cursor-pointer p-5 border-1 border-gray-400 rounded-full bg-white shadow-md fixed right-[1rem] top-[2rem] xl:sticky xl:top-[1rem] xl:bottom-auto"
-          >
+          <div className="flex items-center gap-2 text-gray-400 cursor-pointer p-5 border-1 border-gray-400 rounded-full bg-white shadow-md fixed right-[1rem] top-[2rem] xl:sticky xl:top-[1rem] xl:bottom-auto">
             <FaArrowRotateLeft />
           </div>
         </Link>
@@ -69,10 +67,11 @@ export default function Qwestions() {
           className={`bg-black opacity-40 w-full h-full absolute z-0 top-0 right-0 ${
             openMenu ? "block" : "hidden"
           }`}
+          onClick={() => setOpenMenu(false)}
         ></div>
 
         <div
-          className={`z-10 lg:w-[30%] w-[75%] absolute left-0 top-0 pt-[2rem] bg-white  border-1 border-gray-200 shadow-lg ${
+          className={`z-10 lg:w-[30%] w-[75%] fixed left-0 top-0 pt-[2rem] bg-white  border-1 border-gray-200 shadow-lg ${
             openMenu ? "block" : "hidden"
           }`}
           style={{
@@ -360,21 +359,20 @@ export default function Qwestions() {
                           className="my-4 mx-4 grid-cols-1 text-green-600"
                         >
                           {block.items.map((link, i) => (
-                            <div key={i} className="flex items-center gap-2">
-                              <a
-                                href={link}
-                                target="_blank"
-                                rel="noopen noreferrer"
-                                className="flex gap-2 items-center hover:underline  break-all"
-                              >
-                                <div className="flex gap-2 place-items-baseline">
-                                  <div>
-                                    <FaLink size={10} />
-                                  </div>
-                                  {link}
+                            <a
+                              href={link}
+                              key={i}
+                              target="_blank"
+                              rel="noopen noreferrer"
+                              className="flex gap-2 items-center hover:underline  break-all"
+                            >
+                              <div className="flex gap-2 place-items-baseline">
+                                <div>
+                                  <FaLink size={10} />
                                 </div>
-                              </a>
-                            </div>
+                                {link}
+                              </div>
+                            </a>
                           ))}
                         </div>
                       );
@@ -439,40 +437,16 @@ export default function Qwestions() {
                         return null;
                       }
                       return (
-                        <table
-                          key={key}
-                          className="my-6 border-collapse border bprder-gray-400 w-full "
-                        >
-                          <thead className="bg-green-200">
-                            <tr>
-                              {block.headers.map((header, i) => (
-                                <th
-                                  key={i}
-                                  className="border border-gray-400 px-4 py-2"
-                                >
-                                  <ReactMarkdown
-                                    components={{
-                                      code({ children }) {
-                                        return (
-                                          <code className="bg-gray-100 dark:bg-gray-700 rounded text-md p-1 font-bold">
-                                            {children}
-                                          </code>
-                                        );
-                                      },
-                                    }}
-                                  >
-                                    {header}
-                                  </ReactMarkdown>
-                                </th>
-                              ))}
-                            </tr>
-                          </thead>
-                          <tbody>
-                            {block.rows.map((row, i) => (
-                              <tr key={i}>
-                                {row.map((cell: string, j: number) => (
-                                  <td
-                                    key={j}
+                        <div className="my-6 w-full overflow-x-auto">
+                          <table
+                            key={key}
+                            className="my-6 border-collapse border bprder-gray-400 w-full "
+                          >
+                            <thead className="bg-green-200">
+                              <tr>
+                                {block.headers.map((header, i) => (
+                                  <th
+                                    key={i}
                                     className="border border-gray-400 px-4 py-2"
                                   >
                                     <ReactMarkdown
@@ -486,14 +460,40 @@ export default function Qwestions() {
                                         },
                                       }}
                                     >
-                                      {cell}
+                                      {header}
                                     </ReactMarkdown>
-                                  </td>
+                                  </th>
                                 ))}
                               </tr>
-                            ))}
-                          </tbody>
-                        </table>
+                            </thead>
+                            <tbody>
+                              {block.rows.map((row, i) => (
+                                <tr key={i}>
+                                  {row.map((cell: string, j: number) => (
+                                    <td
+                                      key={j}
+                                      className="border border-gray-400 px-4 py-2"
+                                    >
+                                      <ReactMarkdown
+                                        components={{
+                                          code({ children }) {
+                                            return (
+                                              <code className="bg-gray-100 dark:bg-gray-700 rounded text-md p-1 font-bold">
+                                                {children}
+                                              </code>
+                                            );
+                                          },
+                                        }}
+                                      >
+                                        {cell}
+                                      </ReactMarkdown>
+                                    </td>
+                                  ))}
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
                       );
 
                     default:

@@ -55,7 +55,7 @@ function Home() {
                     className: "z-10 flex flex-col md:flex-row gap-6 items-center justify-end w-full pt-10 min-h-screen md:justify-center",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "relative z-10 flex flex-col text-gray-500 justify-center items-center text-center max-w-lg bg-white mx-[2rem] mb-[20vh] md:mb-0 rounded-xl shadow-lg md:shadow-none md:mr-5 md:items-start md:text-left md:mx-0 p-[2.4rem] md:px-10 md:bg-transparent",
+                            className: "relative z-10 flex flex-col text-gray-500 justify-center items-center text-center max-w-lg bg-white mx-[2rem] mb-[15vh] md:mb-0 rounded-xl shadow-lg md:shadow-none md:mr-5 md:items-start md:text-left md:mx-0 p-[2.4rem] md:px-10 md:bg-transparent",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                                     className: "lg:text-[4.4rem] md:text-[4rem] text-[2.5rem] font-extrabold mb-4 md:mb-[0.1rem] text-violet-400 ",

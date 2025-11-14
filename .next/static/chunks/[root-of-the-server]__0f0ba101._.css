@@ -641,17 +641,8 @@
     position: static;
   }
 
-  .sticky {
-    position: -webkit-sticky;
-    position: sticky;
-  }
-
   .top-0 {
     top: calc(var(--spacing) * 0);
-  }
-
-  .top-\[1rem\] {
-    top: 1rem;
   }
 
   .top-\[2rem\] {
@@ -662,24 +653,12 @@
     right: calc(var(--spacing) * 0);
   }
 
-  .right-5 {
-    right: calc(var(--spacing) * 5);
-  }
-
-  .right-10 {
-    right: calc(var(--spacing) * 10);
-  }
-
   .right-\[1rem\] {
     right: 1rem;
   }
 
   .bottom-0 {
     bottom: calc(var(--spacing) * 0);
-  }
-
-  .bottom-\[1rem\] {
-    bottom: 1rem;
   }
 
   .left-0 {
@@ -705,6 +684,11 @@
   .mx-\[2rem\] {
     margin-left: 2rem;
     margin-right: 2rem;
+  }
+
+  .mx-auto {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .my-4 {
@@ -747,8 +731,8 @@
     margin-bottom: calc(var(--spacing) * 7);
   }
 
-  .mb-\[20vh\] {
-    margin-bottom: 20vh;
+  .mb-\[15vh\] {
+    margin-bottom: 15vh;
   }
 
   .ml-4 {
@@ -833,6 +817,10 @@
 
   .w-full {
     width: 100%;
+  }
+
+  .max-w-\[1200px\] {
+    max-width: 1200px;
   }
 
   .max-w-lg {
@@ -929,6 +917,10 @@
 
   .overflow-visible {
     overflow: visible;
+  }
+
+  .overflow-x-auto {
+    overflow-x: auto;
   }
 
   .rounded {
@@ -1061,10 +1053,6 @@
     padding-inline: calc(var(--spacing) * 2);
   }
 
-  .px-3 {
-    padding-inline: calc(var(--spacing) * 3);
-  }
-
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
   }
@@ -1103,28 +1091,12 @@
     padding-top: calc(var(--spacing) * 10);
   }
 
-  .pt-20 {
-    padding-top: calc(var(--spacing) * 20);
-  }
-
   .pt-\[1rem\] {
     padding-top: 1rem;
   }
 
-  .pt-\[2\.2rem\] {
-    padding-top: 2.2rem;
-  }
-
-  .pt-\[2\.3rem\] {
-    padding-top: 2.3rem;
-  }
-
   .pt-\[2rem\] {
     padding-top: 2rem;
-  }
-
-  .pt-\[3rem\] {
-    padding-top: 3rem;
   }
 
   .pt-\[5px\] {
@@ -1246,16 +1218,8 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  .opacity-10 {
-    opacity: .1;
-  }
-
   .opacity-40 {
     opacity: .4;
-  }
-
-  .opacity-50 {
-    opacity: .5;
   }
 
   .shadow-2xl {
@@ -1311,18 +1275,6 @@
   @media (min-width: 40rem) {
     .sm\:p-20 {
       padding: calc(var(--spacing) * 20);
-    }
-  }
-
-  @media (min-width: 48rem) {
-    .md\:right-0 {
-      right: calc(var(--spacing) * 0);
-    }
-  }
-
-  @media (min-width: 48rem) {
-    .md\:right-\[2rem\] {
-      right: 2rem;
     }
   }
 
@@ -1527,6 +1479,12 @@
   }
 
   @media (min-width: 80rem) {
+    .xl\:mt-\[2rem\] {
+      margin-top: 2rem;
+    }
+  }
+
+  @media (min-width: 80rem) {
     .xl\:block {
       display: block;
     }
@@ -1553,12 +1511,6 @@
   @media (min-width: 80rem) {
     .xl\:gap-10 {
       gap: calc(var(--spacing) * 10);
-    }
-  }
-
-  @media (min-width: 80rem) {
-    .xl\:pb-20 {
-      padding-bottom: calc(var(--spacing) * 20);
     }
   }
 
