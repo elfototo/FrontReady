@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 15, "column": 0}, "map": {"version":3,"sources":["file:///Users/liza/Desktop/FrontReady/src/app/components/CounterButton.tsx"],"sourcesContent":["export default function CounterButton() {\n    return(\n        <div className=\"w-auto\">\n        <button className=\"bg-gray-200 p-3 cursor-pointer\">Счетчик +1</button>\n        </div>\n    )\n}"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACpB,qBACI,8OAAC;QAAI,WAAU;kBACf,cAAA,8OAAC;YAAO,WAAU;sBAAiC;;;;;;;;;;;AAG3D","debugId":null}},
+    {"offset": {"line": 42, "column": 0}, "map": {"version":3,"sources":["file:///Users/liza/Desktop/FrontReady/src/app/practice/page.tsx"],"sourcesContent":["import CounterButton from \"../components/CounterButton\";\n\nexport default function Practice() {\n\n    return (\n        <main className=\"relative font-sans lg:grid px-[1rem] xl:gap-10 max-w-[1200px] mx-auto\">\n            <h1 className=\"mt-10 text-2xl\">Список коспонентов</h1>\n            <CounterButton/>\n        </main>\n    )\n}"],"names":[],"mappings":";;;;;AAAA;;;AAEe,SAAS;IAEpB,qBACI,8OAAC;QAAK,WAAU;;0BACZ,8OAAC;gBAAG,WAAU;0BAAiB;;;;;;0BAC/B,8OAAC,qJAAa;;;;;;;;;;;AAG1B","debugId":null}}]
+}

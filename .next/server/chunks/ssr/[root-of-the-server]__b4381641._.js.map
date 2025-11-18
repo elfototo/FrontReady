@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 15, "column": 0}, "map": {"version":3,"sources":["file:///Users/liza/Desktop/FrontReady/src/app/practice/page.tsx"],"sourcesContent":["export default function Practice() {\n\n    return (\n        <main className=\"relative font-sans lg:grid px-[1rem] xl:gap-10 max-w-[1200px] mx-auto\">\n            <h1 className=\"mt-10 text-2xl\">Список коспонентов</h1>\n            \n        </main>\n    )\n}"],"names":[],"mappings":";;;;;;AAAe,SAAS;IAEpB,qBACI,8OAAC;QAAK,WAAU;kBACZ,cAAA,8OAAC;YAAG,WAAU;sBAAiB;;;;;;;;;;;AAI3C","debugId":null}}]
+}

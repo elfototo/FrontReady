@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 export default function Home() {
   return (
     <main className="relative min-h-screen">
@@ -24,7 +23,6 @@ export default function Home() {
         <div className="z-10 flex flex-col md:flex-row gap-6 items-center justify-end w-full pt-10 min-h-screen md:justify-center">
           {/* <div className="hidden md:block absolute bottom-0 w-full bg-gray-50 h-[68vh] z-0"></div> */}
           <div className="relative z-10 flex flex-col text-gray-500 justify-center items-center text-center max-w-lg bg-white mx-[2rem] mb-[15vh] md:mb-0 rounded-xl shadow-lg md:shadow-none md:mr-5 md:items-start md:text-left md:mx-0 p-[2.4rem] md:px-10 md:bg-transparent">
-            
             <h1 className="lg:text-[4.4rem] md:text-[4rem] text-[2.5rem] font-extrabold mb-4 md:mb-[0.1rem] text-violet-400 ">
               FrontReady
             </h1>
@@ -37,7 +35,7 @@ export default function Home() {
               <button className="">
                 <Link
                   href={"/qwestion"}
-                  className="md:px-6 md:py-2 py-[0.6rem] rounded-full flex justify-center cursor-pointer border-1 border-transparent hover:bg-violet-500 text-white m-auto bg-violet-400 flex-nowrap items-center text-sm md:text-[1rem]"
+                  className="md:px-6 md:py-2 py-[0.6rem] rounded-full flex justify-center cursor-pointer border-1 border-transparent hover:bg-violet-500 text-white m-auto bg-violet-400 flex-nowrap items-center text-sm md:text-[1rem] text-nowrap"
                 >
                   К вопросам
                 </Link>
@@ -46,22 +44,23 @@ export default function Home() {
               <button className="">
                 <Link
                   href={"/exercise"}
-                  className="md:px-6 md:py-2 py-[0.6rem] rounded-full flex justify-center cursor-pointer border-1 border-transparent hover:bg-violet-500 text-white  m-auto bg-violet-400 flex-nowrap items-center  text-sm md:text-[1rem]"
+                  className="md:px-6 md:py-2 py-[0.6rem] rounded-full flex justify-center cursor-pointer border-1 border-transparent hover:bg-violet-500 text-white  m-auto bg-violet-400 flex-nowrap items-center  text-sm md:text-[1rem] text-nowrap"
                 >
                   К упражнениям
                 </Link>
               </button>
             </div>
+            <button className="mt-5">
+              <Link
+                href={"/practice"}
+                className="md:px-6 md:py-2 py-[0.6rem] rounded-full flex justify-center cursor-pointer border-1 hover:bg-violet-100 text-violet-400  m-auto border-violet-400 flex-nowrap items-center  text-sm md:text-[1rem]"
+              >
+                Готовые компоненты
+              </Link>
+            </button>
           </div>
 
           <div className="z-10 hidden md:block mt-[2rem] md:mt-0  h-auto md:w-[25rem]">
-            {/* <Image
-              src="/home copy 2.png"
-              alt="home"
-              height={400}
-              width={400}
-              className="lg:w-full h-auto"
-            /> */}
           </div>
         </div>
       </div>
