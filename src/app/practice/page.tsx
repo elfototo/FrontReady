@@ -4,6 +4,8 @@ import  Accordion from "../components/Accordion";
 import FormWithValidation from "../components/FormWithValidation";
 import DataAPI from "../components/DataAPI";
 import SearchFilterList from "../components/SearchFilterList";
+import ModalWindow from "../components/ModalWindow";
+import Tabs from "../components/Tabs";
 
 export default function Practice() {
   return (
@@ -40,6 +42,16 @@ export default function Practice() {
       <h2>Search / Filter List</h2>
       <div className="border-1 border-gray-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm ">
         <SearchFilterList/>
+      </div>
+
+       <h2>Modal Window</h2>
+      <div className="border-1 border-gray-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm ">
+        <ModalWindow/>
+      </div>
+
+      <h2>Tabs</h2>
+      <div className="border-1 border-gray-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm ">
+        <Tabs/>
       </div>
     </main>
   );
