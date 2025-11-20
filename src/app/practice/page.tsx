@@ -6,6 +6,7 @@ import DataAPI from "../components/DataAPI";
 import SearchFilterList from "../components/SearchFilterList";
 import ModalWindow from "../components/ModalWindow";
 import Tabs from "../components/Tabs";
+import Pagination from "../components/Pagination";
 
 export default function Practice() {
   return (
@@ -52,6 +53,11 @@ export default function Practice() {
       <h2>Tabs</h2>
       <div className="border-1 border-gray-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm ">
         <Tabs/>
+      </div>
+
+      <h2>Pagination</h2>
+      <div className="border-1 border-gray-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm ">
+        <Pagination/>
       </div>
     </main>
   );
