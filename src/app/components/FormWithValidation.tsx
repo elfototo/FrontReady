@@ -1,130 +1,129 @@
 "use client";
-
 import { useState } from "react";
 
-interface formValues {
+type Form = {
   name: string;
   email: string;
   password: string;
-}
+};
 
-export default function FormWithValidation() {
-  const [values, setValues] = useState<formValues>({
+export default function FormWithValidation2() {
+  const [values, setValues] = useState<Form>({
     name: "",
     email: "",
     password: "",
   });
+  const [errors, setErrors] = useState<Partial<Form>>({});
 
-  const [errors, setErrors] = useState<Partial<formValues>>({});
-
-  const validateField = (name: string, value: string) => {
+  const validationFields = (name: string, value: string) => {
     switch (name) {
       case "name":
-        if (!value.trim()) return "Имя не должно быть пустым";
-        if (value.trim().length < 2) return "Минимум 2 символа";
+        if (!value.trim()) return "Поле не должно быть пустым";
+        if (value.trim().length < 2) return "Не менее 2 знаков";
         return null;
+
       case "email":
-        if (!value.trim()) return "email не должен быть пустым";
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value))
-          return "Некорректный email";
+        if (!value.trim()) return "Поле не должно быть пустым";
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) return "Некорректный email";
         return null;
 
       case "password":
-        if (!value.trim()) return "Пароль не должен быть пустым";
-        if (value.trim().length < 5) return "Минимум 5 символов";
+        if (!value.trim()) return "Поле не должно быть пустым";
+        if (value.trim().length < 5) return "Не менее 5 знаков";
         return null;
     }
   };
 
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value, name } = e.target;
+    const { name, value } = e.target;
 
     setValues((prev) => ({ ...prev, [name]: value }));
-
-    setErrors((prev) => ({ ...prev, [name]: validateField(name, value) }));
+    setErrors((prev) => ({ ...prev, [name]: validationFields(name, value) }));
   };
 
   const handleOnBlur = (e: React.FocusEvent<HTMLInputElement>) => {
-    const { value, name } = e.target;
+    const { name, value } = e.target;
 
-    setErrors((prev) => ({ ...prev, [name]: validateField(name, value) }));
+    setErrors((prev) => ({ ...prev, [name]: validationFields(name, value) }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleOnSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const newErrors: Partial<formValues> = {};
+    const newErrors: Partial<Form> = {};
 
-    (Object.keys(values) as (keyof formValues)[]).forEach((key) => {
-      const error = validateField(key, values[key]);
+    (Object.keys(values) as (keyof Form)[]).forEach((key) => {
+        const err = validationFields(key, values[key]);
 
-      if (error) newErrors[key] = error;
-    });
-
-    setErrors(newErrors);
+        if (err) newErrors[key] = err;
+    })
 
     if (Object.keys(newErrors).length === 0) {
-      alert("Форма отправлена");
-      console.log("values", values);
+        alert("Form sent");
     }
 
     setValues({
-      name: "",
-      email: "",
-      password: "",
-    });
+        name: "",
+        email: "",
+        password: ""
+    })
   };
 
-  const errorList = Object.values(errors);
-  const hasError = errorList.some((error) => error);
-  const isValid = !hasError && Object.values(values).every((v) => v.trim());
+  const isValid = !Object.values(errors).some((err) => err) && Object.values(values).every((v) => v !== "");
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="max-w-[700px] bg-slate-50 p-10 rounded-2xl"
-    >
-      <div className="mb-5">
-        <label className="mr-2">Name</label>
-        <input
-          name="name"
-          value={values.name}
-          onChange={handleOnChange}
-          onBlur={handleOnBlur}
-          className="border border-stone-300 rounded-lg p-1"
-        />
-      </div>
-      {errors.name && <p className="p-2 text-red-400">{errors.name}</p>}
-      <div className="mb-5">
-        <label className="mr-2">Email</label>
-        <input
-          name="email"
-          value={values.email}
-          onChange={handleOnChange}
-          onBlur={handleOnBlur}
-          className="border border-stone-300 rounded-lg p-1"
-        />
-      </div>
-      {errors.email && <p className="p-2 text-red-400">{errors.email}</p>}
-      <div className="mb-5">
-        <label className="mr-2">Password</label>
-        <input
-          name="password"
-          value={values.password}
-          onChange={handleOnChange}
-          onBlur={handleOnBlur}
-          type="password"
-          className="border border-stone-300 rounded-lg p-1"
-        />
-      </div>
-      {errors.password && <p className="p-2 text-red-400">{errors.password}</p>}
+    <div className="flex items-center justify-center">
+      <form onSubmit={handleOnSubmit} className="grid grid-cols-[1fr_3fr] gap-5">
+        <label htmlFor="name">Name:</label>
+        <div className="grid">
+          <input
+            value={values.name}
+            onChange={handleOnChange}
+            onBlur={handleOnBlur}
+            className="p-2 bg-gray-50 border border-gray-300 rounded-lg"
+            name="name"
+            id="name"
+            placeholder="name"
+            type="text"
+          />
+          {errors.name && <p className="text-red-400">{errors.name}</p>}
+        </div>
 
-      <button
-        disabled={!isValid}
-        className="cursor-pointer p-2 bg-blue-400 text-white rounded-lg w-full"
-      >
-        Зарегистрироваться
-      </button>
-    </form>
+        <label htmlFor="email">Email:</label>
+
+        <div className="grid">
+          <input
+            value={values.email}
+            onChange={handleOnChange}
+            onBlur={handleOnBlur}
+            className="p-2 bg-gray-50 border border-gray-300 rounded-lg"
+            name="email"
+            id="email"
+            placeholder="email"
+            type="text"
+          />
+          {errors.email && <p className="text-red-400">{errors.email}</p>}
+        </div>
+
+        <label htmlFor="password">Password:</label>
+        <div className="grid">
+          <input
+            value={values.password}
+            onChange={handleOnChange}
+            onBlur={handleOnBlur}
+            className="p-2 bg-gray-50 border border-gray-300 rounded-lg"
+            name="password"
+            id="password"
+            placeholder="password"
+            type="password"
+          />
+          {errors.password && <p className="text-red-400">{errors.password}</p>}
+        </div>
+
+        <button disabled={!isValid} className={`${isValid ? " bg-blue-400  cursor-pointer" : "bg-blue-100 cursor-not-allowed"} w-full col-span-full rounded-lg py-2 text-white`}>
+          Send
+        </button>
+      </form>
+    </div>
   );
 }
