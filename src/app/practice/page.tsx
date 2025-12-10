@@ -9,6 +9,8 @@ import Tabs from "../components/Tabs";
 import Pagination from "../components/Pagination";
 import Dropdown from "../components/Dropdown";
 import Autocomplete from "../components/Autocomplete";
+import InfinityScrollIntObs from "../components/InfinityScrollIntObs";
+import InfinityScrollEvent from "../components/InfinityScrollEvent";
 
 import CounterButton2 from "../components/CounterButton2";
 import ToggleBtn2 from "../components/ToggleBtn2";
@@ -93,6 +95,16 @@ export default function Practice() {
           ]}
           placeholder="type..."
         />
+      </div>
+
+      <h2>intersection observer infinity scroll</h2>
+      <div className="border-1 border-gray-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm ">
+        <InfinityScrollIntObs />
+      </div>
+
+      <h2>infinity scroll event</h2>
+      <div className="border-1 border-gray-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm ">
+        <InfinityScrollEvent />
       </div>
 
       <h2>Counter Button</h2>
