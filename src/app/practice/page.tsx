@@ -11,6 +11,7 @@ import Dropdown from "../components/Dropdown";
 import Autocomplete from "../components/Autocomplete";
 import InfinityScrollIntObs from "../components/InfinityScrollIntObs";
 import InfinityScrollEvent from "../components/InfinityScrollEvent";
+import SearchWithDelay from "../components/SearchWithDelay";
 
 import CounterButton2 from "../components/CounterButton2";
 import ToggleBtn2 from "../components/ToggleBtn2";
@@ -105,6 +106,18 @@ export default function Practice() {
       <h2>infinity scroll event</h2>
       <div className="border-1 border-gray-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm ">
         <InfinityScrollEvent />
+      </div>
+
+      <h2>Debounced Search</h2>
+      <div className="border-1 border-gray-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm ">
+        <SearchWithDelay
+          options={[
+            { id: 1, label: "Apple", value: "Apple" },
+            { id: 2, label: "Orange", value: "Orange" },
+            { id: 3, label: "Banana", value: "Banana" },
+          ]}
+          placeholder="search fruit"
+        />
       </div>
 
       <h2>Counter Button</h2>
