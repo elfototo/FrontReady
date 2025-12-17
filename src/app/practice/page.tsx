@@ -12,6 +12,7 @@ import Autocomplete from "../components/Autocomplete";
 import InfinityScrollIntObs from "../components/InfinityScrollIntObs";
 import InfinityScrollEvent from "../components/InfinityScrollEvent";
 import SearchWithDelay from "../components/SearchWithDelay";
+import SortableTable from "../components/SortableTable";
 
 import CounterButton2 from "../components/CounterButton2";
 import ToggleBtn2 from "../components/ToggleBtn2";
@@ -118,6 +119,11 @@ export default function Practice() {
           ]}
           placeholder="search fruit"
         />
+      </div>
+
+      <h2>Sortable Table</h2>
+      <div className="border-1 border-gray-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm ">
+        <SortableTable />
       </div>
 
       <h2>Counter Button</h2>

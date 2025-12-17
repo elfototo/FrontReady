@@ -120,6 +120,7 @@
     --color-gray-500: #6a7282;
     --color-gray-700: #364153;
     --color-gray-800: #1e2939;
+    --color-gray-900: #101828;
     --color-black: #000;
     --color-white: #fff;
     --spacing: .25rem;
@@ -177,6 +178,7 @@
       --color-gray-500: color(display-p3 .421287 .446085 .504784);
       --color-gray-700: color(display-p3 .219968 .253721 .318679);
       --color-gray-800: color(display-p3 .125854 .159497 .216835);
+      --color-gray-900: color(display-p3 .070423 .0928982 .151928);
     }
   }
 
@@ -215,6 +217,7 @@
       --color-gray-500: lab(47.7841% -.393182 -10.0268);
       --color-gray-700: lab(27.1134% -.956401 -12.3224);
       --color-gray-800: lab(16.1051% -1.18239 -11.7533);
+      --color-gray-900: lab(8.11897% .811279 -12.254);
     }
   }
 }
@@ -677,6 +680,10 @@
     margin-inline: calc(var(--spacing) * 4);
   }
 
+  .mx-10 {
+    margin-inline: calc(var(--spacing) * 10);
+  }
+
   .mx-\[2rem\] {
     margin-left: 2rem;
     margin-right: 2rem;
@@ -705,10 +712,6 @@
 
   .mt-1 {
     margin-top: calc(var(--spacing) * 1);
-  }
-
-  .mt-2 {
-    margin-top: calc(var(--spacing) * 2);
   }
 
   .mt-5 {
@@ -743,6 +746,10 @@
     margin-bottom: 15vh;
   }
 
+  .ml-2 {
+    margin-left: calc(var(--spacing) * 2);
+  }
+
   .ml-4 {
     margin-left: calc(var(--spacing) * 4);
   }
@@ -769,6 +776,10 @@
 
   .hidden {
     display: none;
+  }
+
+  .inline-block {
+    display: inline-block;
   }
 
   .table {
@@ -825,6 +836,10 @@
 
   .w-1\/4 {
     width: 25%;
+  }
+
+  .w-4 {
+    width: calc(var(--spacing) * 4);
   }
 
   .w-6 {
@@ -1153,6 +1168,10 @@
     background-color: var(--color-gray-200);
   }
 
+  .bg-gray-300 {
+    background-color: var(--color-gray-300);
+  }
+
   .bg-green-50 {
     background-color: var(--color-green-50);
   }
@@ -1253,6 +1272,10 @@
     padding-inline: calc(var(--spacing) * 8);
   }
 
+  .px-10 {
+    padding-inline: calc(var(--spacing) * 10);
+  }
+
   .px-16 {
     padding-inline: calc(var(--spacing) * 16);
   }
@@ -1328,6 +1351,10 @@
     text-align: center;
   }
 
+  .text-start {
+    text-align: start;
+  }
+
   .font-sans {
     font-family: var(--font-geist-sans);
   }
@@ -1385,12 +1412,20 @@
     color: var(--color-gray-200);
   }
 
+  .text-gray-300 {
+    color: var(--color-gray-300);
+  }
+
   .text-gray-400 {
     color: var(--color-gray-400);
   }
 
   .text-gray-500 {
     color: var(--color-gray-500);
+  }
+
+  .text-gray-900 {
+    color: var(--color-gray-900);
   }
 
   .text-green-500 {
