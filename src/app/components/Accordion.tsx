@@ -1,6 +1,12 @@
 "use client";
 import { useState } from "react";
 
+type Accordion = {
+  id: number;
+  title: string;
+  content: string;
+};
+
 export default function Accordion() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -8,39 +14,45 @@ export default function Accordion() {
     setOpenIndex(openIndex === i ? null : i);
   };
 
-  const items = [
+  const items: Accordion[] = [
     {
-      title: "what is react?",
-      content: "react is a framework",
+      id: 1,
+      title: "title1",
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur aliquid, voluptatum accusamus esse mollitia commodi quas alias modi debitis optio nobis aperiam exercitationem officiis autem, earum porro. Quos, non fuga?",
     },
     {
-      title: "what is next?",
-      content: "next is a reacts framework",
+      id: 2,
+      title: "title2",
+      content:
+        "Aspernatur aliquid, voluptatum accusamus esse mollitia commodi quas alias modi debitis optio nobis aperiam exercitationem officiis autem, earum porro. Quos, non fuga?",
     },
     {
-      title: "what is HTML?",
-      content: "HTML is a giperLinks",
+      id: 3,
+      title: "title3",
+      content:
+        "Quos, non fuga? it amet consectetur adipisicing elit. Aspernatur aliquid, voluptatum accusamus esse mollitia commodi quas alias modi debitis optio nobis aperiam exercitationem officiis autem, earum porro.",
     },
   ];
 
   return (
     <div className="flex justify-center items-center w-full">
       <div className="w-[50%]">
-        {items.map((item, i) => (
-          <div className="w-full" key={i}>
+        {items.map((item) => (
+          <div className="w-full" key={item.id}>
             <button
-              onClick={() => handleToggele(i)}
+              onClick={() => handleToggele(item.id)}
               className="cursor-pointer bg-blue-400 text-white w-full"
             >
               <span>{item.title}</span>
-              <span className="ml-5">{openIndex === i ? "-" : "+"}</span>
+              <span className="ml-5">{openIndex === item.id ? "-" : "+"}</span>
             </button>
-            {openIndex === i && (
+            {openIndex === item.id && (
               <div className="p-5 bg-gray-100 ">{item.content}</div>
             )}
           </div>
         ))}
-      </div>
+      </div> 
     </div>
   );
 }

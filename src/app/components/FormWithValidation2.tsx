@@ -1,129 +1,127 @@
 "use client";
+
 import { useState } from "react";
 
-type Form = {
+type User = {
   name: string;
   email: string;
   password: string;
 };
 
 export default function FormWithValidation2() {
-  const [values, setValues] = useState<Form>({
+  const [userForm, setUserForm] = useState<User>({
     name: "",
     email: "",
     password: "",
   });
-  const [errors, setErrors] = useState<Partial<Form>>({});
+  const [errors, setErrors] = useState<Partial<User>>({});
 
-  const validationFields = (name: string, value: string) => {
+  const validate = (name: string, value: string) => {
     switch (name) {
       case "name":
-        if (!value.trim()) return "Поле не должно быть пустым";
-        if (value.trim().length < 2) return "Не менее 2 знаков";
+        if (value.trim() === "" || value.trim().length < 2) return "requed";
         return null;
 
       case "email":
-        if (!value.trim()) return "Поле не должно быть пустым";
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) return "Некорректный email";
+        if (value.trim() === "" || !value.includes("@")) return "requed";
         return null;
 
       case "password":
-        if (!value.trim()) return "Поле не должно быть пустым";
-        if (value.trim().length < 5) return "Не менее 5 знаков";
+        if (value.trim() === "" || value.trim().length < 5) return "requed";
         return null;
     }
   };
 
-  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handlerOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
 
-    setValues((prev) => ({ ...prev, [name]: value }));
-    setErrors((prev) => ({ ...prev, [name]: validationFields(name, value) }));
+    setErrors((prev) => ({ ...prev, [name]: validate(name, value) }));
+    setUserForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleOnBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+  const handleonBlur = (e: React.FocusEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
 
-    setErrors((prev) => ({ ...prev, [name]: validationFields(name, value) }));
+    setErrors((prev) => ({ ...prev, [name]: validate(name, value) }));
   };
 
   const handleOnSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const newErrors: Partial<Form> = {};
+    const newErrorList: Partial<User> = {};
 
-    (Object.keys(values) as (keyof Form)[]).forEach((key) => {
-        const err = validationFields(key, values[key]);
+    (Object.keys(userForm) as (keyof User)[]).forEach((key) => {
+      const err = validate(key, userForm[key]);
 
-        if (err) newErrors[key] = err;
-    })
+      if (err) {
+        newErrorList[key] = err;
+      }
+    });
 
-    if (Object.keys(newErrors).length === 0) {
-        alert("Form sent");
-    }
-
-    setValues({
+    if (Object.keys(newErrorList).length === 0) {
+      alert("form sent");
+      setUserForm({
         name: "",
         email: "",
-        password: ""
-    })
+        password: "",
+      });
+    }
   };
 
-  const isValid = !Object.values(errors).some((err) => err) && Object.values(values).every((v) => v !== "");
+  const isValid =
+    !Object.values(errors).some((err) => err) &&
+    Object.values(userForm).every((v) => v.trim() !== "");
 
   return (
-    <div className="flex items-center justify-center">
-      <form onSubmit={handleOnSubmit} className="grid grid-cols-[1fr_3fr] gap-5">
-        <label htmlFor="name">Name:</label>
-        <div className="grid">
-          <input
-            value={values.name}
-            onChange={handleOnChange}
-            onBlur={handleOnBlur}
-            className="p-2 bg-gray-50 border border-gray-300 rounded-lg"
-            name="name"
-            id="name"
-            placeholder="name"
-            type="text"
-          />
-          {errors.name && <p className="text-red-400">{errors.name}</p>}
-        </div>
-
-        <label htmlFor="email">Email:</label>
-
-        <div className="grid">
-          <input
-            value={values.email}
-            onChange={handleOnChange}
-            onBlur={handleOnBlur}
-            className="p-2 bg-gray-50 border border-gray-300 rounded-lg"
-            name="email"
-            id="email"
-            placeholder="email"
-            type="text"
-          />
-          {errors.email && <p className="text-red-400">{errors.email}</p>}
-        </div>
-
-        <label htmlFor="password">Password:</label>
-        <div className="grid">
-          <input
-            value={values.password}
-            onChange={handleOnChange}
-            onBlur={handleOnBlur}
-            className="p-2 bg-gray-50 border border-gray-300 rounded-lg"
-            name="password"
-            id="password"
-            placeholder="password"
-            type="password"
-          />
-          {errors.password && <p className="text-red-400">{errors.password}</p>}
-        </div>
-
-        <button disabled={!isValid} className={`${isValid ? " bg-blue-400  cursor-pointer" : "bg-blue-100 cursor-not-allowed"} w-full col-span-full rounded-lg py-2 text-white`}>
-          Send
-        </button>
-      </form>
-    </div>
+    <form className="w-lg grid gap-5" onSubmit={handleOnSubmit}>
+      <label htmlFor="name">Name:</label>
+      <div className="grid">
+        <input
+          type="text"
+          name="name"
+          value={userForm.name}
+          onChange={handlerOnChange}
+          onBlur={handleonBlur}
+          className="px-3 py-2 border border-gray-300 rounded"
+        />
+        {errors?.name && <span className="text-red-400">{errors.name}</span>}
+      </div>
+      <label htmlFor="email">Email:</label>
+      <div className="grid">
+        <input
+          type="text"
+          name="email"
+          value={userForm.email}
+          onChange={handlerOnChange}
+          onBlur={handleonBlur}
+          className="px-3 py-2 border border-gray-300 rounded"
+        />
+        {errors?.email && <span className="text-red-400">{errors.email}</span>}
+      </div>
+      <label htmlFor="password">Password:</label>
+      <div className="grid">
+        <input
+          type="password"
+          name="password"
+          value={userForm.password}
+          onChange={handlerOnChange}
+          onBlur={handleonBlur}
+          className="px-3 py-2 border border-gray-300 rounded"
+        />
+        {errors?.password && (
+          <span className="text-red-400">{errors.password}</span>
+        )}
+      </div>
+      <button
+        disabled={!isValid}
+        className={`px-3 py-2 ${
+          isValid
+            ? "bg-blue-400 cursor-pointer"
+            : "bg-blue-200 cursor-not-allowed"
+        } rounded text-white`}
+      >
+        Submit
+      </button>
+    </form>
   );
 }

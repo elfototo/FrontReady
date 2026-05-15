@@ -152,7 +152,7 @@ export default function MultiStepForm() {
   };
 
   return (
-    <div className="max-w-md mx-auto border p-4 rounded">
+    <div className="max-w-md mx-auto border border-gray-300 p-4 rounded">
       <h2 className="text-xl font-bold mb-5">{currentStep?.title}</h2>
 
       {state.step === 1 && (

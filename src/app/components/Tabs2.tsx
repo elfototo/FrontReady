@@ -1,77 +1,96 @@
 "use client";
 
 import { useState } from "react";
+
 type Tab = {
   id: number;
   title: string;
   content: string;
 };
+
+const TABS: Tab[] = [
+  {
+    id: 1,
+    title: "title1",
+    content: "content1",
+  },
+  {
+    id: 2,
+    title: "title2",
+    content: "content2",
+  },
+  {
+    id: 3,
+    title: "title3",
+    content: "content3",
+  },
+];
+
 export default function Tabs2() {
   const [active, setActive] = useState<number>(0);
 
-  const tabs: Tab[] = [
-    { id: 1, title: "tab 1", content: "content 1" },
-    { id: 2, title: "tab 2", content: "content 2" },
-    { id: 3, title: "tab 3", content: "content 3" },
-  ];
+  const handlerKeyDown = (
+    e: React.KeyboardEvent<HTMLButtonElement>,
+    idx: number
+  ) => {
+    switch (e.key) {
+      case "ArrowLeft":
+        e.preventDefault();
+        setActive((prev) => (active > 0 ? prev - 1 : TABS.length - 1));
+        break;
 
-  const handleOnKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>, idx: number) => {
-    if (e.key === "ArrowRight") {
-        setActive((v) => (v + 1) % tabs.length);
-    } else if (e.key === "ArrowLeft") {
-        setActive((v) => (v - 1 + tabs.length) % tabs.length)
-    } else if (e.key === "Enter" || e.key === "") {
+      case "ArrowRight":
+        e.preventDefault();
+        setActive((prev) => (prev + 1) % TABS.length);
+        break;
+
+      case "Enter":
         e.preventDefault();
         setActive(idx);
+        break;
     }
-  }
+  };
 
   return (
-    <div className="flex flex-col items-center justify-center">
-      <div className="w-[500px] h-auto ">
-        <div
-          role="tablist"
-          area-label="Exemple Tabs"
-          className="flex gap-2 mb-5"
-        >
-          {tabs.map((tab, i) => {
-            const isActive = i === active;
+    <div className="w-lg">
+      <div role="tablist">
+        {TABS.map((tab, i) => {
+          const isActive = i === active;
 
-            return (
-              <button
-                key={tab.id}
-                role="tab"
-                aria-selected={isActive}
-                aria-controls={`panel-${tab.id}`}
-                id={`tab-${tab.id}`}
-                tabIndex={isActive ? 0 : -1}
-                onClick={() => setActive(i)}
-                onKeyDown={(e) => handleOnKeyDown(e, i)}
-                className={`px-4 py-1 ${
-                  isActive ? "bg-blue-400 text-white" : "bg-gray-200 text-black"
-                }`}
-              >
-                {tab.title}
-              </button>
-            );
-          })}
-        </div>
-        <div>
-          {tabs.map((t, i) => {
-            if (i !== active) return null;
-            return (
-              <div
-                key={t.id}
-                role="tabpanel"
-                id={`panel-${t.id}`}
-                aria-labelledby={`tab-${t.id}`}
-                className="p-5 border border-gray-200 rounded-lg w-full"
-              >
-                {t.content}
-              </div>
-            );
-          })}
-        </div>
+          return (
+            <button
+              className={`px-3 py-2 ${
+                isActive ? "bg-blue-300" : "bg-gray-400"
+              }`}
+              key={tab.id}
+              role="tab"
+              id={`tab-${tab.id}`}
+              tabIndex={isActive ? 0 : -1}
+              aria-selected={isActive}
+              aria-controls={`panel-${tab.id}`}
+              onClick={() => setActive(i)}
+              onKeyDown={(e) => handlerKeyDown(e, i)}
+            >
+              {tab.title}
+            </button>
+          );
+        })}
+      </div>
+      <div className="p-5 bg-gray-100">
+        {TABS.map((tab, i) => {
+          if (i !== active) return null;
+
+          return (
+            <div
+              key={tab.id}
+              role="tabpanel"
+              id={`panel-${tab.id}`}
+              aria-labelledby={`tap-${tab.id}`}
+            >
+              {tab.content}
+            </div>
+          );
+        })}
       </div>
     </div>
   );

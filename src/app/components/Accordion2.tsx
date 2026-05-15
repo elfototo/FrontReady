@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 
 type Accordion = {
@@ -8,50 +9,52 @@ type Accordion = {
 };
 
 export default function Accordion2() {
-  const [isActive, setIsActive] = useState<number | null>(0);
+  const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
 
-  const accordionItems: Accordion[] = [
+  const itemsAccordiins: Accordion[] = [
     {
       id: 1,
       title: "title1",
-      content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur aliquid, voluptatum accusamus esse mollitia commodi quas alias modi debitis optio nobis aperiam exercitationem officiis autem, earum porro. Quos, non fuga?",
+      content: "content1",
     },
     {
       id: 2,
       title: "title2",
-      content:
-        "Aspernatur aliquid, voluptatum accusamus esse mollitia commodi quas alias modi debitis optio nobis aperiam exercitationem officiis autem, earum porro. Quos, non fuga?",
+      content: "content2",
     },
     {
       id: 3,
       title: "title3",
-      content:
-        "Quos, non fuga? it amet consectetur adipisicing elit. Aspernatur aliquid, voluptatum accusamus esse mollitia commodi quas alias modi debitis optio nobis aperiam exercitationem officiis autem, earum porro.",
+      content: "content3",
     },
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center mx-auto">
-      <div className="w-[500px]">
-        {accordionItems.map((item) => (
-          <div key={item.id} className="w-full">
-            <button
+    <div className="w-[500px]">
+      <ul>
+        {itemsAccordiins.map((item) => (
+          <div key={item.id}>
+            <li
+              className="bg-blue-400 text-white cursor-pointer px-3 py-2 text-center"
               onClick={() =>
-                setIsActive((prev) => (prev === item.id ? null : item.id))
+                activeIndexes.includes(item.id)
+                  ? setActiveIndexes(activeIndexes.filter((i) => i !== item.id))
+                  : setActiveIndexes((prev) => [...prev, item.id])
               }
-              className="w-full bg-blue-400 text-white cursor-pointer"
             >
-              {item.title}
-              {isActive === item.id ? "-" : "+"}
-            </button>
-
-            {isActive === item.id && (
+              <div> 
+                <span>{item.title}</span>
+                <span className="ml-2">
+                  {activeIndexes.includes(item.id) ? "-" : "+"}
+                </span>
+              </div>
+            </li>
+            {activeIndexes.includes(item.id) && (
               <div className="p-5 bg-gray-100">{item.content}</div>
             )}
           </div>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }

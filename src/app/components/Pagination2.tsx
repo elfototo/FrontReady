@@ -1,53 +1,48 @@
 "use client";
-import { useState } from "react";
+
+import { useState, useEffect } from "react";
 
 export default function Pagination2() {
   const [currentPage, setCurrentPage] = useState(1);
 
-  const date = Array.from(
-    { length: 100 },
-    (_, i) => i + 1 + `Lorem, ipsum dolor sit amet`
-  );
+  const data = Array.from({ length: 100 }, (_, i) => `Item ${i + 1}`);
 
   const itemsInPage = 10;
-  const totalPages = Math.ceil(date.length / 10);
 
+  const totalPages = Math.ceil(data.length / itemsInPage);
   const start = (currentPage - 1) * itemsInPage;
-  const itemsInCurrentPage = date.slice(start, start + itemsInPage);
+  const itemsOfCurrentPage = data.slice(start, start + itemsInPage);
 
   return (
-    <div className="flex flex-col items-center justify-center">
-      <div className="max-w-[500px] grid grid-cols-2 gap-5 mb-10">
-        {itemsInCurrentPage.map((item) => (
-          <div className="p-5 bg-gray-100" key={item}>
+    <div className="max-w-xl">
+      <ul className="grid grid-cols-2 gap-3 mb-5">
+        {itemsOfCurrentPage.map((item, index) => (
+          <li className="p-5 bg-gray-300 rounded" key={index}>
             {item}
-          </div>
+          </li>
         ))}
-      </div>
-      <div className="flex gap-5">
+      </ul>
+      <div className="flex justify-between">
         <button
-          disabled={currentPage === 1}
+          disabled={currentPage === 1 }
+          className="p-2 bg-blue-400 cursor-pointer"
           onClick={() => setCurrentPage((prev) => prev - 1)}
-          className="p-2 bg-blue-400 text-white rounded-l-lg"
         >
-          Left
+          Back
         </button>
         {Array.from({ length: totalPages }, (_, i) => i + 1).map((i) => (
-          <button
-            onClick={() => setCurrentPage(i)}
-            className={`p-2 hover:bg-gray-200" ${currentPage === i ? "bg-blue-400 text-white" : "bg-transparent"}`}
-            key={i}
-          >
+          (
+          <button className={`${currentPage === i ? "bg-blue-300 text-white" : "bg-gray-300"} cursor-pointer p-2`} key={i}>
             {i}
           </button>
+        )
         ))}
-        <button
-          disabled={currentPage === totalPages}
+         <button
+          disabled={currentPage === totalPages }
+          className="p-2 bg-blue-400 cursor-pointer"
           onClick={() => setCurrentPage((prev) => prev + 1)}
-          className="p-2 bg-blue-400 text-white rounded-r-lg"
         >
-          Right
-        </button>
+          Next</button>
       </div>
     </div>
   );

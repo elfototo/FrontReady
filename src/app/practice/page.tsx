@@ -14,6 +14,7 @@ import InfinityScrollEvent from "../components/InfinityScrollEvent";
 import SearchWithDelay from "../components/SearchWithDelay";
 import SortableTable from "../components/SortableTable";
 import MultiStepForm from "../components/MultiStepForm";
+import TimerCountdown from "../components/TimerCountdown";
 
 import CounterButton2 from "../components/CounterButton2";
 import ToggleBtn2 from "../components/ToggleBtn2";
@@ -23,12 +24,43 @@ import DataAPI2 from "../components/DataAPI2";
 import SearchFilterList2 from "../components/SearchFilterList2";
 import ModalWindow2 from "../components/ModalWindow2";
 import Pagination2 from "../components/Pagination2";
+import Dropdown2 from "../components/Dropdown2";
+import Autocomplete2 from "../components/Autocomplete2";
+import InfinityScrollIntObs2 from "../components/InfinityScrollIntObs2";
+import InfinityScrollEvent2 from "../components/InfinityScrollEvent2";
+import MultiStepForm2 from "../components/MultiStepForm2";
+import SortableTable2 from "../components/SortableTable2";
 import Tabs2 from "../components/Tabs2";
+import TimerCountdown2 from "../components/TimerCountdown2";
+import FaqCard from "../components/FaqCard";
+import SearchableUserList from "../components/SearchableUserList";
+import ToastNotifications from "../components/ToastNotifications";
+import MiniKanbanBoard from "../components/MiniKanbanBoard";
 
 export default function Practice() {
   return (
     <main className="relative font-sans lg:grid px-[1rem] xl:gap-10 max-w-[1200px] mx-auto">
       <h1 className="mt-10 text-2xl">Список коспонентов</h1>
+
+      <h2>Mini Kanban Board</h2>
+      <div className="border-1 border-gray-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm bg-gradient-to-t from-[#edeff9] to-[#eceef9]">
+        <MiniKanbanBoard />
+      </div>
+
+      <h2>Toast Notifications</h2>
+      <div className="border-1 border-gray-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm bg-gradient-to-t from-[#edeff9] to-[#eceef9]">
+        <ToastNotifications />
+      </div>
+
+      <h2>Searchable User List</h2>
+      <div className="border-1 border-gray-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm bg-blue-400">
+        <SearchableUserList />
+      </div>
+
+      <h2>Expandable FAQ Card</h2>
+      <div className="border-1 border-gray-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm bg-gray-800">
+        <FaqCard />
+      </div>
 
       <h2>Counter Button</h2>
       <div className="border-1 border-gray-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm ">
@@ -100,10 +132,10 @@ export default function Practice() {
         />
       </div>
 
-      <h2>intersection observer infinity scroll</h2>
+      {/* <h2>intersection observer infinity scroll</h2>
       <div className="border-1 border-gray-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm ">
         <InfinityScrollIntObs />
-      </div>
+      </div> */}
 
       <h2>infinity scroll event</h2>
       <div className="border-1 border-gray-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm ">
@@ -132,30 +164,73 @@ export default function Practice() {
         <MultiStepForm />
       </div>
 
+      <h2>Timer Countdown</h2>
+      <div className="border-1 border-gray-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm ">
+        <TimerCountdown />
+      </div>
+
+      <h2>Accordion</h2>
+      <div className="border-1 border-gray-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm ">
+        <Accordion2 />
+      </div>
+
+      <h2>Autocomplete</h2>
+      <div className="border-1 border-gray-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm ">
+        <Autocomplete2
+          options={[
+            { id: 1, label: "Apple", value: "apple" },
+            { id: 2, label: "Orange", value: "orange" },
+            { id: 3, label: "Banana", value: "banana" },
+          ]}
+          placeholder="type..."
+        />
+      </div>
+
+      <h2>DataAPI2</h2>
+      <div className="border-1 border-gray-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm ">
+        <DataAPI2 />
+      </div>
+
       <h2>Counter Button</h2>
       <div className="border-1 border-gray-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm ">
         <CounterButton2 />
       </div>
 
-      <h2>Toggle Button</h2>
+      <h2>Dropdown / Select</h2>
       <div className="border-1 border-gray-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm ">
-        <ToggleBtn2 />
+        <Dropdown2
+          options={[
+            { id: 1, label: "Apple", value: "apple" },
+            { id: 2, label: "Orange", value: "orange" },
+            { id: 3, label: "Banana", value: "banana" },
+          ]}
+          placeholder="Choose fruit"
+        />
       </div>
 
-      <h2>Accordion</h2>
-
-      <div className="border-1 border-gray-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm ">
-        <Accordion2 />
-      </div>
-
-      <h2>1111111111</h2>
+      <h2>Форма с валидацией</h2>
       <div className="border-1 border-gray-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm ">
         <FormWithValidation2 />
       </div>
 
-      <h2>Fetch Data from API</h2>
+      <h2>infinity scroll event</h2>
       <div className="border-1 border-gray-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm ">
-        <DataAPI2 />
+        <InfinityScrollEvent2 />
+      </div>
+
+      {/* <h2>intersection observer infinity scroll</h2>
+      <div className="border-1 border-gray-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm ">
+        <InfinityScrollIntObs2 />
+      </div> */}
+
+      <h2>Multi-step Form with useReducer</h2>
+      <div className="border-1 border-gray-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm ">
+        <MultiStepForm2 />
+      </div>
+
+      <h2>Pagination</h2>
+      <div className="border-1 border-gray-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm ">
+        <Pagination2 />
       </div>
 
       <h2>Search / Filter List</h2>
@@ -163,9 +238,9 @@ export default function Practice() {
         <SearchFilterList2 />
       </div>
 
-      <h2>Modal Window</h2>
+      <h2>Sortable Table</h2>
       <div className="border-1 border-gray-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm ">
-        <ModalWindow2 />
+        <SortableTable2 />
       </div>
 
       <h2>Tabs</h2>
@@ -173,9 +248,9 @@ export default function Practice() {
         <Tabs2 />
       </div>
 
-      <h2>Pagination</h2>
+      <h2>Timer Countdown</h2>
       <div className="border-1 border-gray-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm ">
-        <Pagination2 />
+        <TimerCountdown2 />
       </div>
     </main>
   );
