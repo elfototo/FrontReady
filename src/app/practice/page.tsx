@@ -43,7 +43,7 @@ export default function Practice() {
       <h1 className="mt-10 text-2xl">Список коспонентов</h1>
 
       <h2>Mini Kanban Board</h2>
-      <div className="border-1 border-gray-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm bg-gradient-to-t from-[#edeff9] to-[#eceef9]">
+      <div className=" bg-blue-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm">
         <MiniKanbanBoard />
       </div>
 
