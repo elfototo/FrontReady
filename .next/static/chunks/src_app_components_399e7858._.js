@@ -4958,6 +4958,11 @@ _s(MiniKanbanBoard, "SvIK8d5WT9y/c+LCOG3LNPDmSmQ=");
 _c = MiniKanbanBoard;
 const Task = (param)=>{
     let { title, content, status, tasks, setTasks, id } = param;
+    const st = [
+        "todo",
+        "inProgress",
+        "done"
+    ];
     const handleMoveLeft = (status, id)=>{
         if (status === "todo") {
             return;
@@ -5025,7 +5030,7 @@ const Task = (param)=>{
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/components/MiniKanbanBoard.tsx",
-                lineNumber: 177,
+                lineNumber: 179,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5066,7 +5071,7 @@ const Task = (param)=>{
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/components/MiniKanbanBoard.tsx",
-        lineNumber: 176,
+        lineNumber: 178,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };

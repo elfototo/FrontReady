@@ -36,11 +36,17 @@ import FaqCard from "../components/FaqCard";
 import SearchableUserList from "../components/SearchableUserList";
 import ToastNotifications from "../components/ToastNotifications";
 import MiniKanbanBoard from "../components/MiniKanbanBoard";
+import MultiSelectTagsInput from "../components/MultiSelectTagsInput";
 
 export default function Practice() {
   return (
     <main className="relative font-sans lg:grid px-[1rem] xl:gap-10 max-w-[1200px] mx-auto">
       <h1 className="mt-10 text-2xl">Список коспонентов</h1>
+
+      <h2>Multi Select Tags Input</h2>
+      <div className=" bg-blue-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm">
+        <MultiSelectTagsInput />
+      </div>
 
       <h2>Mini Kanban Board</h2>
       <div className=" bg-blue-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm">

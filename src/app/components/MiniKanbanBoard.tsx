@@ -132,6 +132,8 @@ type TaskProps = {
 };
 
 const Task = ({ title, content, status, tasks, setTasks, id }: TaskProps) => {
+  const st = ["todo", "inProgress", "done"];
+
   const handleMoveLeft = (status: string, id: number) => {
     if (status === "todo") {
       return;
@@ -175,8 +177,6 @@ const Task = ({ title, content, status, tasks, setTasks, id }: TaskProps) => {
   return (
     <main className="rounded-2xl p-3 bg-white border border-white/20 text-gray-700 flex flex-col gap-3 items-center shadow-2xl">
       <div className="text-start">
-        
-
         <h1 className="font-bold text-lg">{title}</h1>
         <p className="text-sm">{content}</p>
       </div>
