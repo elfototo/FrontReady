@@ -37,11 +37,33 @@ import SearchableUserList from "../components/SearchableUserList";
 import ToastNotifications from "../components/ToastNotifications";
 import MiniKanbanBoard from "../components/MiniKanbanBoard";
 import MultiSelectTagsInput from "../components/MultiSelectTagsInput";
+import HookuseDebounce from "../components/HookuseDebounce";
+import DiscoverEvents from "../components/DiscoverEvents";
+import Button from "../components/comForTreining/Button";
 
 export default function Practice() {
   return (
     <main className="relative font-sans lg:grid px-[1rem] xl:gap-10 max-w-[1200px] mx-auto">
       <h1 className="mt-10 text-2xl">Список коспонентов</h1>
+
+      <h2>Button variants</h2>
+      <div className=" bg-white flex items-center justify-center py-[100px] rounded-2xl shadow-sm gap-5">
+        <Button variant="primary">Primary</Button>
+        <Button variant="secondary">Secondary</Button>
+        <Button variant="ghost" disabled={false}>
+          Ghost
+        </Button>
+      </div>
+
+      <h2>Discover Events</h2>
+      <div className=" bg-[#041638] flex items-center justify-center py-[100px] rounded-2xl shadow-sm">
+        <DiscoverEvents />
+      </div>
+
+      <h2>useDebounce hook</h2>
+      <div className=" bg-blue-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm">
+        <HookuseDebounce />
+      </div>
 
       <h2>Multi Select Tags Input</h2>
       <div className=" bg-blue-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm">
