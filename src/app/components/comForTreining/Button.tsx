@@ -17,8 +17,8 @@ export default function Button({ ...props }: ButtonProps) {
   };
 
   return (
-    <button 
-        onClick={props.onClick} 
+    <button
+        onClick={props.onClick}
         className={`${variantButton[props.variant]} px-2 py-1 rounded-xl hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-100`}
         disabled={props.disabled}>
             {props.children}
