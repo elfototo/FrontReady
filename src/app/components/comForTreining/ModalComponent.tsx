@@ -1,31 +1,18 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { RiCloseLargeFill } from "react-icons/ri";
 
 type ModalComponentProps = {
   children: React.ReactNode;
-  isOpen: boolean;
+  isOpen?: boolean;
   onClose: () => void;
 };
 
-function ModalComponent({ children, isOpen, onClose }: ModalComponentProps) {
-  const conteinerRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    const handleClick = (e: MouseEvent) => {
-      if (
-        isOpen &&
-        conteinerRef.current &&
-        conteinerRef.current.contains(e.target as Node)
-      ) {
-        onClose();
-      }
-    };
-
-    document.addEventListener("click", handleClick);
-
-    return () => document.removeEventListener("click", handleClick);
-  }, [isOpen, onClose]);
+export function ModalComponent({
+  children,
+  isOpen,
+  onClose,
+}: ModalComponentProps) {
 
   useEffect(() => {
     if (!isOpen) return;
@@ -44,11 +31,15 @@ function ModalComponent({ children, isOpen, onClose }: ModalComponentProps) {
 
   return (
     <div className="z-99">
-      <div ref={conteinerRef} className="fixed top-0 left-0 w-full h-full bg-black/20 backdrop-blur-[2px]"></div>
+      <div
+        data-testid="modal-overlay"
+        onClick={onClose}
+        className="fixed top-0 left-0 w-full h-full bg-black/20 backdrop-blur-[2px]"
+      ></div>
 
       <div
         role="dialog"
-        aria-modal="true"   
+        aria-modal="true"
         className="bg-white p-5 flex flex-col fixed w-md h-auto shadow-2xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-2xl text-gray-600"
       >
         {children}
@@ -90,6 +81,7 @@ export default function Modal1() {
               minus vel maxime?
             </p>
             <button
+              aria-label="Close-modal"
               onClick={handleClose}
               className="bg-blue-950 px-3 py-2 rounded-lg text-white cursor-pointer"
             >
