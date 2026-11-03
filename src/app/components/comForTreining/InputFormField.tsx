@@ -70,8 +70,9 @@ export function Input({ ...props }: InputProps) {
 
   return (
     <>
-      <label htmlFor={props.type}>{props.type}</label>
+      <label htmlFor={props.type}>{props.label}</label>
       <input
+        id={props.type}
         className="bg-white rounded-lg px-3 py-2"
         onBlur={handleOnBlur}
         onChange={handleOnChange}
