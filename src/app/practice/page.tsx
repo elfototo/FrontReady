@@ -41,6 +41,8 @@ import MultiSelectTagsInput from "../components/MultiSelectTagsInput";
 import HookuseDebounce from "../components/HookuseDebounce";
 import DiscoverEvents from "../components/DiscoverEvents";
 import Button from "../components/comForTreining/Button";
+import Modal1 from "../components/comForTreining/ModalComponent";
+import { useState } from "react";
 import Avatar from "../components/comForTreining/AvatarBadge";
 import Tooltip from "../components/comForTreining/Tooltip";
 import { AiTwotoneSetting } from "react-icons/ai";
@@ -51,6 +53,18 @@ export default function Practice() {
     <main className="relative font-sans lg:grid px-[1rem] xl:gap-10 max-w-[1200px] mx-auto">
       <h1 className="mt-10 text-2xl">Список коспонентов</h1>
 
+      <h2>Modal component</h2>
+      <div className=" bg-[#041638] flex items-center justify-center py-[100px] rounded-2xl shadow-sm">
+        <Modal1/>
+      </div>
+
+      <h2>Button variants</h2>
+      <div className=" bg-white flex items-center justify-center py-[100px] rounded-2xl shadow-sm gap-5">
+        <Button variant="primary">Primary</Button>
+        <Button variant="secondary">Secondary</Button>
+        <Button variant="ghost" disabled={false}>
+          Ghost
+        </Button>
       <h2>Avatar + Badge</h2>
       <div className="bg-[#041638] flex items-center justify-center py-[100px] rounded-2xl shadow-sm">
         <Avatar status="online" name="Sara  Corner" src={"../favicon.ico"} />
