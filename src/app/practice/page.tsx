@@ -40,37 +40,18 @@ import MiniKanbanBoard from "../components/MiniKanbanBoard";
 import MultiSelectTagsInput from "../components/MultiSelectTagsInput";
 import HookuseDebounce from "../components/HookuseDebounce";
 import DiscoverEvents from "../components/DiscoverEvents";
-import Button from "../components/comForTreining/Button";
-import { CardCard } from "../components/comForTreining/Card";
+
 
 export default function Practice() {
   return (
     <main className="relative font-sans lg:grid px-[1rem] xl:gap-10 max-w-[1200px] mx-auto">
       <h1 className="mt-10 text-2xl">Список коспонентов</h1>
 
-      <h2>Card variants</h2>
-      <div className=" bg-white flex items-center justify-center py-[100px] rounded-2xl shadow-sm gap-5 border border-gray-100">
-        <CardCard>
-          <CardCard.Media>
-            <div className="bg-gray-400 w-full h-[300px]" />
-          </CardCard.Media>
-
-          <CardCard.Content>
-            <CardCard.Title>Title</CardCard.Title>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
-            qui necessitatibus fugit eum consectetur quam veniam doloribus unde
-            <CardCard.Action>action</CardCard.Action>
-          </CardCard.Content>
-        </CardCard>
-      </div>
-
-      <h2>Button variants</h2>
-      <div className=" bg-white flex items-center justify-center py-[100px] rounded-2xl shadow-sm gap-5 border border-gray-100">
-        <Button variant="primary">Primary</Button>
-        <Button variant="secondary">Secondary</Button>
-        <Button variant="ghost" disabled>
-          Ghost
-        </Button>
+      <h2>To playground</h2>
+      <div className=" bg-[#041638] flex items-center justify-center py-[100px] rounded-2xl shadow-sm">
+        <button className="bg-white px-3 py-2 rounded-full text-[#041638]">
+          <Link href={"/practice/playground"}>To playground</Link>
+        </button>
       </div>
 
       <h2>Discover Events</h2>
