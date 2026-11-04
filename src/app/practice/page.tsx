@@ -71,13 +71,6 @@ export default function Practice() {
         </FormField>
       </div>
 
-      <h2>Button variants</h2>
-      <div className=" bg-white flex items-center justify-center py-[100px] rounded-2xl shadow-sm gap-5">
-        <Button variant="primary">Primary</Button>
-        <Button variant="secondary">Secondary</Button>
-        <Button variant="ghost" disabled={false}>
-          Ghost
-        </Button>
       <h2>To playground</h2>
       <div className=" bg-[#041638] flex items-center justify-center py-[100px] rounded-2xl shadow-sm">
         <button className="bg-white px-3 py-2 rounded-full text-[#041638]">
