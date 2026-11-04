@@ -40,6 +40,8 @@ import MiniKanbanBoard from "../components/MiniKanbanBoard";
 import MultiSelectTagsInput from "../components/MultiSelectTagsInput";
 import HookuseDebounce from "../components/HookuseDebounce";
 import DiscoverEvents from "../components/DiscoverEvents";
+import Button from "../components/comForTreining/Button";
+import { FormField, Input } from "../components/comForTreining/InputFormField";
 
 
 export default function Practice() {
@@ -47,6 +49,35 @@ export default function Practice() {
     <main className="relative font-sans lg:grid px-[1rem] xl:gap-10 max-w-[1200px] mx-auto">
       <h1 className="mt-10 text-2xl">Список коспонентов</h1>
 
+      <h2>Input Form Field</h2>
+      <div className=" bg-blue-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm">
+        <FormField>
+          <Input
+            label="email"
+            name="email"
+            error="please write correct email"
+            placeholder="Enter your email"
+            type="email"
+            required
+          />
+          <Input
+            label="password"
+            name="password"
+            error="please write correct password"
+            placeholder="Enter your email"
+            type="password"
+            required
+          />
+        </FormField>
+      </div>
+
+      <h2>Button variants</h2>
+      <div className=" bg-white flex items-center justify-center py-[100px] rounded-2xl shadow-sm gap-5">
+        <Button variant="primary">Primary</Button>
+        <Button variant="secondary">Secondary</Button>
+        <Button variant="ghost" disabled={false}>
+          Ghost
+        </Button>
       <h2>To playground</h2>
       <div className=" bg-[#041638] flex items-center justify-center py-[100px] rounded-2xl shadow-sm">
         <button className="bg-white px-3 py-2 rounded-full text-[#041638]">
