@@ -2,36 +2,51 @@ type CardProps = {
   children: React.ReactNode;
 };
 
-type CardComponent = React.FC<CardProps> & {
-  Media: typeof CardMedia;
-  Title: typeof CardTitle;
-  Content: typeof CardContent;
+type CardCardComponent = React.FC<CardProps> & {
+  Media: React.FC<CardProps>;
+  Title: React.FC<CardProps>;
+  Content: React.FC<CardProps>;
+  Action: React.FC<CardProps>;
 };
-function CardMedia({ children }: CardProps) {
-  return <div className="overflow-hidden">{children}</div>;
-}
 
-function CardTitle({ children }: CardProps) {
-  return <div className="font-bold">{children}</div>;
-}
-
-function CardContent({ children }: CardProps) {
-  return <div className="p-5 flex flex-col">{children}</div>;
-}
-
-const Card = (({ children }: CardProps) => {
+function Media({ children }: CardProps) {
   return (
-    <article className="w-full max-w-xs lg:max-w-md overflow-hidden flex flex-col bg-white rounded-xl">
-      {children}
-    </article>
+    <div className="w-full overflow-hidden h-full object-cover">{children}</div>
   );
-}) as CardComponent;
+}
 
+function Title({ children }: CardProps) {
+  return <div className="font-bold text-2xl">{children}</div>;
+}
 
+function Content({ children }: CardProps) {
+  return <div className="px-2 flex flex-col gap-5 mb-2 my-5">{children}</div>;
+}
 
-Card.Media = CardMedia;
-Card.Title = CardTitle;
-Card.Content = CardContent;
+function Action({ children }: CardProps) {
+  return (
+    <>
+      <article className="w-full max-w-xs lg:max-w-md overflow-hidden flex flex-col bg-white rounded-xl shadow-2xl">
+        {children}
+      </article>
+      <div>
+        <button className="cursor-pointer bg-blue-500 text-white w-full rounded-xl p-2">
+          {children}
+        </button>
+      </div>
+    </>
+  );
+}
 
+export const CardCard: CardCardComponent = ({ children }: CardProps) => {
+  return (
+    <div className="rounded-2xl shadow-2xl bg-gray-50 border border-gray-200 w-[350px] max-w-[300px], overflow-hidden ">
+      {children}
+    </div>
+  );
+};
 
-export default Card;
+CardCard.Media = Media;
+CardCard.Title = Title;
+CardCard.Content = Content;
+CardCard.Action = Action;

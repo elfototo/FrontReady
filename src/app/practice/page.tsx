@@ -1,3 +1,4 @@
+import Link from "next/link";
 import CounterButton from "../components/CounterButton";
 import ToggleBtn from "../components/ToggleBtn";
 import Accordion from "../components/Accordion";
@@ -41,6 +42,8 @@ import HookuseDebounce from "../components/HookuseDebounce";
 import DiscoverEvents from "../components/DiscoverEvents";
 import Button from "../components/comForTreining/Button";
 import { FormField, Input } from "../components/comForTreining/InputFormField";
+
+
 export default function Practice() {
   return (
     <main className="relative font-sans lg:grid px-[1rem] xl:gap-10 max-w-[1200px] mx-auto">
@@ -75,6 +78,11 @@ export default function Practice() {
         <Button variant="ghost" disabled={false}>
           Ghost
         </Button>
+      <h2>To playground</h2>
+      <div className=" bg-[#041638] flex items-center justify-center py-[100px] rounded-2xl shadow-sm">
+        <button className="bg-white px-3 py-2 rounded-full text-[#041638]">
+          <Link href={"/practice/playground"}>To playground</Link>
+        </button>
       </div>
 
       <h2>Discover Events</h2>
