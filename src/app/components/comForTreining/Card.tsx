@@ -23,6 +23,9 @@ function Content({ children }: CardProps) {
 
 function Action({ children }: CardProps) {
   return (
+    <article className="w-full max-w-xs lg:max-w-md overflow-hidden flex flex-col bg-white rounded-xl shadow-2xl">
+      {children}
+    </article>
     <div>
       <button className="bg-blue-500 text-white w-full rounded-xl p-2">{children}</button>
     </div>
