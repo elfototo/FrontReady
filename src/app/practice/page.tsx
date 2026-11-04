@@ -49,7 +49,7 @@ export default function Practice() {
       <h1 className="mt-10 text-2xl">Список коспонентов</h1>
 
       <h2>Card variants</h2>
-      <div className=" bg-white flex items-center justify-center py-[100px] rounded-2xl shadow-sm gap-5">
+      <div className=" bg-white flex items-center justify-center py-[100px] rounded-2xl shadow-sm gap-5 border border-gray-100">
         <CardCard>
           <CardCard.Media>
             <div className="bg-gray-400 w-full h-[300px]" />
@@ -65,7 +65,7 @@ export default function Practice() {
       </div>
 
       <h2>Button variants</h2>
-      <div className=" bg-white flex items-center justify-center py-[100px] rounded-2xl shadow-sm gap-5">
+      <div className=" bg-white flex items-center justify-center py-[100px] rounded-2xl shadow-sm gap-5 border border-gray-100">
         <Button variant="primary">Primary</Button>
         <Button variant="secondary">Secondary</Button>
         <Button variant="ghost" disabled>

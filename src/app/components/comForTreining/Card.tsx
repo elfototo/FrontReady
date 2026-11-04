@@ -10,7 +10,9 @@ type CardCardComponent = React.FC<CardProps> & {
 };
 
 function Media({ children }: CardProps) {
-  return <div className="w-full overflow-hidden h-full object-cover">{children}</div>;
+  return (
+    <div className="w-full overflow-hidden h-full object-cover">{children}</div>
+  );
 }
 
 function Title({ children }: CardProps) {
@@ -23,12 +25,16 @@ function Content({ children }: CardProps) {
 
 function Action({ children }: CardProps) {
   return (
-    <article className="w-full max-w-xs lg:max-w-md overflow-hidden flex flex-col bg-white rounded-xl shadow-2xl">
-      {children}
-    </article>
-    <div>
-      <button className="bg-blue-500 text-white w-full rounded-xl p-2">{children}</button>
-    </div>
+    <>
+      <article className="w-full max-w-xs lg:max-w-md overflow-hidden flex flex-col bg-white rounded-xl shadow-2xl">
+        {children}
+      </article>
+      <div>
+        <button className="cursor-pointer bg-blue-500 text-white w-full rounded-xl p-2">
+          {children}
+        </button>
+      </div>
+    </>
   );
 }
 
