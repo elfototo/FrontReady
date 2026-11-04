@@ -1,3 +1,4 @@
+import Link from "next/link";
 import CounterButton from "../components/CounterButton";
 import ToggleBtn from "../components/ToggleBtn";
 import Accordion from "../components/Accordion";
@@ -46,6 +47,10 @@ export default function Practice() {
     <main className="relative font-sans lg:grid px-[1rem] xl:gap-10 max-w-[1200px] mx-auto">
       <h1 className="mt-10 text-2xl">Список коспонентов</h1>
 
+      <button>
+        <Link 
+          className="bg-gray-200 px-3 py-2 rounded-full" href={"practice/playground"}>To playgroung</Link>
+      </button>
       <h2>Button variants</h2>
       <div className=" bg-white flex items-center justify-center py-[100px] rounded-2xl shadow-sm gap-5">
         <Button variant="primary">Primary</Button>
