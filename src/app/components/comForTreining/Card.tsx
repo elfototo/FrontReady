@@ -21,7 +21,7 @@ function CardContent({ children }: CardProps) {
 
 const Card = (({ children }: CardProps) => {
   return (
-    <article className="w-full max-w-xs lg:max-w-md overflow-hidden flex flex-col bg-white rounded-xl">
+    <article className="w-full max-w-xs lg:max-w-md overflow-hidden flex flex-col bg-white rounded-xl shadow-2xl">
       {children}
     </article>
   );
