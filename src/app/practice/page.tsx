@@ -1,4 +1,4 @@
-"use client";
+import Link from "next/link";
 import CounterButton from "../components/CounterButton";
 import ToggleBtn from "../components/ToggleBtn";
 import Accordion from "../components/Accordion";
@@ -43,6 +43,10 @@ import DiscoverEvents from "../components/DiscoverEvents";
 import Button from "../components/comForTreining/Button";
 import Modal1 from "../components/comForTreining/ModalComponent";
 import { useState } from "react";
+import Avatar from "../components/comForTreining/AvatarBadge";
+import Tooltip from "../components/comForTreining/Tooltip";
+import { AiTwotoneSetting } from "react-icons/ai";
+import { FormField, Input } from "../components/comForTreining/InputFormField";
 
 export default function Practice() {
   return (
@@ -61,6 +65,63 @@ export default function Practice() {
         <Button variant="ghost" disabled={false}>
           Ghost
         </Button>
+      <h2>Avatar + Badge</h2>
+      <div className="bg-[#041638] flex items-center justify-center py-[100px] rounded-2xl shadow-sm">
+        <Avatar status="online" name="Sara  Corner" src={"../favicon.ico"} />
+        <Avatar status="offline" name="Antuan" />
+        <Avatar status="away" name="Gregory Support" />
+      </div>
+      <h2>Tooltip</h2>
+      <div className=" bg-[#041638] flex items-center justify-center py-[100px] rounded-2xl shadow-sm">
+        <Tooltip position="left" content="Setting" delay={100}>
+          <button>
+            <AiTwotoneSetting size={25} />
+          </button>
+        </Tooltip>
+        <Tooltip position="top" content="Setting" delay={100}>
+          <button>
+            <AiTwotoneSetting size={25} />
+          </button>
+        </Tooltip>
+        <Tooltip position="bottom" content="Setting" delay={200}>
+          <button>
+            <AiTwotoneSetting size={25} />
+          </button>
+        </Tooltip>
+        <Tooltip position="right" content="Setting" delay={200}>
+          <button>
+            <AiTwotoneSetting size={25} />
+          </button>
+        </Tooltip>
+      </div>
+
+      <h2>Input Form Field</h2>
+      <div className=" bg-blue-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm">
+        <FormField>
+          <Input
+            label="email"
+            name="email"
+            error="please write correct email"
+            placeholder="Enter your email"
+            type="email"
+            required
+          />
+          <Input
+            label="password"
+            name="password"
+            error="please write correct password"
+            placeholder="Enter your email"
+            type="password"
+            required
+          />
+        </FormField>
+      </div>
+
+      <h2>To playground</h2>
+      <div className=" bg-[#041638] flex items-center justify-center py-[100px] rounded-2xl shadow-sm">
+        <button className="bg-white px-3 py-2 rounded-full text-[#041638]">
+          <Link href={"/practice/playground"}>To playground</Link>
+        </button>
       </div>
 
       <h2>Discover Events</h2>
