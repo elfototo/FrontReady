@@ -41,13 +41,45 @@ import MultiSelectTagsInput from "../components/MultiSelectTagsInput";
 import HookuseDebounce from "../components/HookuseDebounce";
 import DiscoverEvents from "../components/DiscoverEvents";
 import Button from "../components/comForTreining/Button";
+import Avatar from "../components/comForTreining/AvatarBadge";
+import Tooltip from "../components/comForTreining/Tooltip";
+import { AiTwotoneSetting } from "react-icons/ai";
 import { FormField, Input } from "../components/comForTreining/InputFormField";
-
 
 export default function Practice() {
   return (
     <main className="relative font-sans lg:grid px-[1rem] xl:gap-10 max-w-[1200px] mx-auto">
       <h1 className="mt-10 text-2xl">Список коспонентов</h1>
+
+      <h2>Avatar + Badge</h2>
+      <div className="bg-[#041638] flex items-center justify-center py-[100px] rounded-2xl shadow-sm">
+        <Avatar status="online" name="Sara  Corner" src={"../favicon.ico"} />
+        <Avatar status="offline" name="Antuan" />
+        <Avatar status="away" name="Gregory Support" />
+      </div>
+      <h2>Tooltip</h2>
+      <div className=" bg-[#041638] flex items-center justify-center py-[100px] rounded-2xl shadow-sm">
+        <Tooltip position="left" content="Setting" delay={100}>
+          <button>
+            <AiTwotoneSetting size={25} />
+          </button>
+        </Tooltip>
+        <Tooltip position="top" content="Setting" delay={100}>
+          <button>
+            <AiTwotoneSetting size={25} />
+          </button>
+        </Tooltip>
+        <Tooltip position="bottom" content="Setting" delay={200}>
+          <button>
+            <AiTwotoneSetting size={25} />
+          </button>
+        </Tooltip>
+        <Tooltip position="right" content="Setting" delay={200}>
+          <button>
+            <AiTwotoneSetting size={25} />
+          </button>
+        </Tooltip>
+      </div>
 
       <h2>Input Form Field</h2>
       <div className=" bg-blue-100 flex items-center justify-center py-[100px] rounded-2xl shadow-sm">
