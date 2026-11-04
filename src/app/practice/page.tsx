@@ -55,7 +55,7 @@ export default function Practice() {
 
       <h2>Modal component</h2>
       <div className=" bg-[#041638] flex items-center justify-center py-[100px] rounded-2xl shadow-sm">
-        <Modal1/>
+        <Modal1 />
       </div>
 
       <h2>Button variants</h2>
@@ -65,6 +65,7 @@ export default function Practice() {
         <Button variant="ghost" disabled={false}>
           Ghost
         </Button>
+      </div>
       <h2>Avatar + Badge</h2>
       <div className="bg-[#041638] flex items-center justify-center py-[100px] rounded-2xl shadow-sm">
         <Avatar status="online" name="Sara  Corner" src={"../favicon.ico"} />
