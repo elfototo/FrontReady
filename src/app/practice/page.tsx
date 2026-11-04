@@ -1,3 +1,4 @@
+import Link from "next/link";
 import CounterButton from "../components/CounterButton";
 import ToggleBtn from "../components/ToggleBtn";
 import Accordion from "../components/Accordion";
