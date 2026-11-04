@@ -31,7 +31,7 @@ function Action({ children }: CardProps) {
 
 export const CardCard: CardCardComponent = ({ children }: CardProps) => {
   return (
-    <div className="rounded-2xl shadow-2xl bg-gray-50 border border-gray-200 w-[350px] max-w-[300px], overflow-hidden">
+    <div className="rounded-2xl shadow-2xl bg-gray-50 border border-gray-200 w-[350px] max-w-[300px], overflow-hidden ">
       {children}
     </div>
   );
