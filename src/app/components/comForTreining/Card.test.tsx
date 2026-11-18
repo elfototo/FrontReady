@@ -1,4 +1,4 @@
-import Card from "./Card";
+import {CardCard} from "./Card";
 import { render, screen } from "@testing-library/react";
 
 import { describe, expect, it } from "vitest";
@@ -6,9 +6,9 @@ import { describe, expect, it } from "vitest";
 describe("Card", () => {
   it("renders children", () => {
     render(
-      <Card>
+      <CardCard>
         <div>Content</div>
-      </Card>,
+      </CardCard>,
     );
 
     expect(screen.getByText("Content")).toBeInTheDocument();
@@ -16,11 +16,11 @@ describe("Card", () => {
 
   it("renders Card.Media", () => {
     render(
-      <Card>
-        <Card.Media>
+      <CardCard>
+        <CardCard.Media>
           <img src="/test.jpg" alt="test" />
-        </Card.Media>
-      </Card>,
+        </CardCard.Media>
+      </CardCard>,
     );
 
     expect(screen.getByAltText("test")).toBeInTheDocument();
@@ -28,11 +28,11 @@ describe("Card", () => {
 
   it("renders Card.Title", () => {
     render(
-      <Card>
-        <Card.Title>
+      <CardCard>
+        <CardCard.Title>
           <h2>title</h2>
-        </Card.Title>
-      </Card>,
+        </CardCard.Title>
+      </CardCard>,
     );
 
     expect(screen.getByText("title")).toBeInTheDocument();
@@ -40,11 +40,11 @@ describe("Card", () => {
 
   it("renders Card.Content", () => {
     render(
-      <Card>
-        <Card.Content>
+      <CardCard>
+        <CardCard.Content>
           <p>content</p>
-        </Card.Content>
-      </Card>,
+        </CardCard.Content>
+      </CardCard>,
     );
 
     expect(screen.getByText("content")).toBeInTheDocument();
