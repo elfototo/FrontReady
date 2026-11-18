@@ -7,28 +7,28 @@ type AccordionProps = {
 
 type TriggerProps = {
   children: React.ReactNode;
-  onClick: () => void;
-  id: string;
-  idContent: string;
-  "aria-expanded": boolean;
+  onClick?: () => void;
+  id?: string;
+  idContent?: string;
+  "aria-expanded"?: boolean;
 };
 
 type ContentProps = {
   children: React.ReactNode;
-  isExpended: boolean;
-  id: string;
-  idTrigger: string;
+  isExpended?: boolean;
+  id?: string;
+  idTrigger?: string;
 };
 
-function Accordion({ children }: AccordionProps) {
+export function Accordion({ children }: AccordionProps) {
   return <div className="text-white grid grid-cols-1 w-2xl">{children}</div>;
 }
 
-function Item({ children }: AccordionProps) {
+export function Item({ children }: AccordionProps) {
   return <div className="flex flex-col w-full">{children}</div>;
 }
 
-function Trigger({
+export function Trigger({
   children,
   onClick,
   idContent,
@@ -49,7 +49,7 @@ function Trigger({
   );
 }
 
-function Content({ children, isExpended, id, idTrigger }: ContentProps) {
+export function Content({ children, isExpended, id, idTrigger }: ContentProps) {
   const [height, setHeight] = useState(0);
   const refConteiner = useRef<HTMLDivElement | null>(null);
 
